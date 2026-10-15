@@ -4,6 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>RC Corrosion Assessment</title>
+  <script>
+    // Apply a saved or requested theme before the page paints (no flash of the wrong theme).
+    (function () {
+      var t = null;
+      try { t = new URLSearchParams(location.search).get("theme") || localStorage.getItem("theme"); } catch (e) {}
+      if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,7 +20,10 @@
       <h1>RC corrosion assessment</h1>
       <p class="sub">Condition, residual capacity and rehabilitation of corroded RC flexural members · ANN + IS 456:2000</p>
     </div>
-    <span class="stage">Stage 2</span>
+    <button type="button" id="theme-toggle" class="theme-switch" role="switch" aria-checked="false">
+      <span class="ts-track" aria-hidden="true"><span class="ts-knob"></span></span>
+      <span class="ts-label">Dark mode</span>
+    </button>
   </header>
 
   <main class="layout">

@@ -14,6 +14,7 @@ cd D:\Projects\Civil-ANN-model-2\ann_model
 ..\.venv\Scripts\python.exe 01_clean_data.py        # ~30 s  -> outputs/data/
 ..\.venv\Scripts\python.exe 02_train_models.py      # ~30 min on 12 cores -> models/, outputs/figures/, outputs/metrics.json
 ..\.venv\Scripts\python.exe 03_compare_analytical.py  # ~5 s -> comparison tables + ABAQUS template
+..\.venv\Scripts\python.exe 04_export_web_model.py   # ~5 s -> webapp/rcassess/model.json (after retraining M3)
 ..\.venv\Scripts\python.exe predict.py --b 150 --D 200 --L 1500 --cover 25 --bar-dia 12 --n-bars 2 --fck 30 --corr 12
 ```
 
@@ -43,7 +44,7 @@ to force a theme. **Print** gives a light-theme report (save as PDF from the pri
 
 For one beam it reports:
 
-* **Corrosion state** (`condition.py`) – Negligible < 1 %, Low 1–5 %, Moderate 5–10 %, High 10–20 %,
+* **Corrosion state** (`webapp/rcassess/condition.py`) – Negligible < 1 %, Low 1–5 %, Moderate 5–10 %, High 10–20 %,
   Severe 20–40 % mass loss. A prior from the exposure class and age is updated with each NDT reading
   (half-cell, corrosion rate, resistivity, UPV, chloride, carbonation/cover), each visual observation
   (staining, cracking, crack width along bars, hammer survey, exposed bars, water ingress) and, if
@@ -57,7 +58,7 @@ For one beam it reports:
 * **Flexure – learned model:** ANN (M3) residual strength % averaged over the corrosion distribution
   (measured value ± its uncertainty, or the inferred state mix), with a 90 % range, converted to kN·m
   with the IS 456 design capacity of the uncorroded section. The range combines three sources,
-  each estimated from the data (see `assessment.py`):
+  each estimated from the data (see `webapp/rcassess/assessment.py`):
   * *diagnostic* – the spread of the corrosion level, pushed through the ANN;
   * *model* – held-out test error (16.6 points for corroded beams) minus specimen scatter;
   * *residual* – scatter between nominally identical specimens in the same study (13.5 points,
@@ -69,7 +70,7 @@ For one beam it reports:
 * **IS 456 conformity:** cover and grade for the exposure class (Tables 16, 5), w/c ratio, cover vs
   bar Ø, crack width (cl. 35.3.2), minimum/maximum tension steel after section loss, xu/d,
   minimum shear steel and stirrup spacing, and capacity vs factored demand.
-* **Rehabilitation strategy** (`rehab.py`) – urgency (Immediate / Urgent / Planned / Routine) with the
+* **Rehabilitation strategy** (`webapp/rcassess/rehab.py`) – urgency (Immediate / Urgent / Planned / Routine) with the
   structural and durability findings behind it, and interventions grouped as structural, corrosion
   control and protection/monitoring. Each is tagged PRIMARY, REQUIRED or CONTINGENT, with its
   EN 1504-9 principle and method, the findings that triggered it, limitations and references
@@ -84,12 +85,35 @@ overridden per case in the form.
 
 | File | Role |
 |---|---|
-| `app.py` | Local web server (Python standard library only) |
-| `assessment.py` | Assessment engine: inputs → corrosion state, flexure, shear, checks, strategy, cautions |
-| `condition.py` | Corrosion-state evidence model, its likelihood tables and the next-test ranking |
-| `rehab.py` | Urgency, intervention rules and repair material specification |
-| `is456.py` | IS 456 tables, shear capacity and conformity checks |
-| `web/` | Page, styles and script |
+The web app is self-contained in `webapp/` (the folder deployed to Vercel) and needs only NumPy at
+run time: the trained M3 networks are exported to `webapp/rcassess/model.json` by
+`04_export_web_model.py`, which also checks that the NumPy forward pass reproduces scikit-learn exactly.
+The header switch toggles light and dark mode (remembered in the browser; default follows the system).
+
+| File | Role |
+|---|---|
+| `app.py` | Starts `webapp/serve.py` (local server, Python standard library + NumPy) |
+| `webapp/public/` | Page, styles and script (served as static files) |
+| `webapp/api/meta.py`, `webapp/api/assess.py` | The two Vercel Python functions (`GET /api/meta`, `POST /api/assess`) |
+| `webapp/rcassess/assessment.py` | Assessment engine: inputs → corrosion state, flexure, shear, checks, strategy, cautions |
+| `webapp/rcassess/ann.py`, `model.json` | NumPy forward pass of the ANN ensemble and its exported weights and calibration |
+| `webapp/rcassess/condition.py` | Corrosion-state evidence model, its likelihood tables and the next-test ranking |
+| `webapp/rcassess/rehab.py` | Urgency, intervention rules and repair material specification |
+| `webapp/rcassess/is456.py`, `analytical.py` | IS 456 formulas, tables, shear capacity and conformity checks (also used by the training scripts) |
+| `webapp/rcassess/web.py` | HTTP layer shared by the Vercel functions and the local server |
+| `webapp/vercel.json`, `requirements.txt`, `.python-version` | Vercel settings: static files from `public/`, NumPy only, Python 3.12 |
+
+### Deploying to Vercel
+
+From `ann_model\webapp` (Node.js needed for `npx`):
+
+```powershell
+npx vercel login                                          # once per computer, opens the browser
+npx vercel link --yes --project rc-corrosion-assessment   # once, creates the Vercel project
+npx vercel deploy --prod --yes                            # every time you want to publish changes
+```
+
+After retraining M3, run `04_export_web_model.py` first so the deployed model matches.
 
 ## Pipeline
 
@@ -98,8 +122,9 @@ overridden per case in the form.
 | 1 | `01_clean_data.py` | Reads the beam and rebar spreadsheets, converts text to numbers, removes implausible values and duplicate entries, rebuilds residual strength %, and logs every change with its Excel row number in `outputs/data/cleaning_log.csv`. |
 | 2 | `02_train_models.py` | Tunes and trains five ANN models, scores them on papers never seen in training, compares against linear regression, random forest and IS 456, and saves models and figures. |
 | 3 | `03_compare_analytical.py` | Residual strength by corrosion band (measured vs ANN vs IS 456), and the ABAQUS benchmark template / four-way comparison. |
+| 4 | `04_export_web_model.py` | Exports the M3 networks and their calibration to `webapp/rcassess/model.json` for the web app, verified against scikit-learn. |
 | – | `predict.py` | Command-line predictions for a new beam. |
-| – | `analytical.py` | IS 456 capacity formulas (same as `Parameters (input, output & condition).xlsx`, plus the Annex G over-reinforced limit). |
+| – | `webapp/rcassess/analytical.py` | IS 456 capacity formulas (same as `Parameters (input, output & condition).xlsx`, plus the Annex G over-reinforced limit). |
 | – | `config.py` | Paths and assumptions (assumed fy, test fraction, ensemble size). |
 
 ## The models

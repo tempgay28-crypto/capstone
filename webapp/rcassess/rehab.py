@@ -9,8 +9,8 @@ This is a structured checklist for the engineer, not a design: thresholds marked
 the project's assumptions, and every intervention needs specialist design and the current edition
 of the cited standard.
 """
-import is456
-from condition import STATES
+from . import is456
+from .condition import STATES
 
 GROUPS = ["Structural safety and capacity", "Corrosion control and repair", "Protection and monitoring"]
 MIN_CEMENT_KG_M3 = {"Mild": 300, "Moderate": 300, "Severe": 320, "Very severe": 340, "Extreme": 360}  # IS 456 Table 5 (RCC)

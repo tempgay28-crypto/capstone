@@ -66,10 +66,23 @@ h2 { font-size: 14px; margin: 0 0 12px; font-weight: 650; }
   padding: 14px 24px; background: var(--card); border-bottom: 1px solid var(--border);
 }
 .topbar .sub { margin: 2px 0 0; font-size: 13px; }
-.stage {
-  font-size: 12px; color: var(--ink-2); border: 1px solid var(--border);
-  padding: 3px 10px; border-radius: 999px; white-space: nowrap;
+.theme-switch {
+  display: inline-flex; align-items: center; gap: 8px; flex: none; cursor: pointer;
+  background: transparent; border: 0; padding: 4px 2px; font-size: 12.5px; color: var(--ink-2);
 }
+.theme-switch:hover { color: var(--ink); border: 0; }
+.theme-switch:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
+.ts-track {
+  position: relative; width: 38px; height: 22px; border-radius: 999px; flex: none;
+  background: var(--axis); transition: background 0.2s;
+}
+.ts-knob {
+  position: absolute; top: 3px; left: 3px; width: 16px; height: 16px; border-radius: 50%;
+  background: #fff; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25); transition: transform 0.2s;
+}
+.theme-switch[aria-checked="true"] .ts-track { background: var(--accent); }
+.theme-switch[aria-checked="true"] .ts-knob { transform: translateX(16px); }
+@media (prefers-reduced-motion: reduce) { .ts-track, .ts-knob { transition: none; } }
 
 .layout {
   display: grid; grid-template-columns: minmax(340px, 420px) minmax(0, 1fr); gap: 20px;
@@ -189,7 +202,7 @@ button:disabled { opacity: 0.6; cursor: progress; }
 
 .provenance { font-size: 12px; color: var(--ink-2); margin: 4px 4px 0; max-width: 110ch; }
 
-/* ---------- stage 2 ---------- */
+/* ---------- corrosion state and rehabilitation ---------- */
 .grid label.full { grid-column: 1 / -1; }
 .hint { font-size: 12px; color: var(--ink-2); margin: -2px 0 8px; }
 h3 { font-size: 13px; margin: 0 0 8px; font-weight: 650; }
@@ -277,7 +290,7 @@ details.sub-block > summary { cursor: pointer; font-weight: 650; font-size: 13px
   }
   * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   body { background: #fff; }
-  .actions, .report-actions, .stage { display: none; }
+  .actions, .report-actions, .theme-switch { display: none; }
   .layout { grid-template-columns: 1fr; padding: 0; }
   .form { position: static; max-height: none; }
   .panel { break-inside: avoid; }

@@ -14,7 +14,7 @@ import numpy as np
 import pandas as pd
 
 import config
-from analytical import corroded_capacity, effective_depth, steel_area
+from webapp.rcassess.analytical import corroded_capacity, effective_depth, steel_area
 
 LOG = []
 

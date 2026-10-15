@@ -49,7 +49,7 @@ from sklearn.preprocessing import FunctionTransformer, OneHotEncoder, StandardSc
 
 import config  # noqa: E402
 import plotting as P  # noqa: E402
-from analytical import corroded_capacity  # noqa: E402
+from webapp.rcassess.analytical import corroded_capacity  # noqa: E402
 
 warnings.filterwarnings("ignore", category=ConvergenceWarning)
 

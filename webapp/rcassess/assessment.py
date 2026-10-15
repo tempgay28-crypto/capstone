@@ -10,21 +10,20 @@
                  (held-out test error minus specimen scatter, plus disagreement between networks)
      residual    scatter between nominally identical specimens in the same study (irreducible)
 3. Shear and conformity checks (is456.py) and the rehabilitation strategy (rehab.py).
+
+Runs on NumPy alone: the trained networks, their calibration and the training-data ranges are
+read from model.json (written by ann_model/04_export_web_model.py).
 """
 import json
-import warnings
+from pathlib import Path
 
-import joblib
 import numpy as np
-import pandas as pd
 
-import condition
-import config
-import is456
-import rehab
-from analytical import corroded_capacity, effective_depth, steel_area
+from . import condition, is456, rehab
+from .analytical import corroded_capacity, effective_depth, steel_area
+from .ann import Ensemble
 
-warnings.filterwarnings("ignore")
+MODEL_JSON = Path(__file__).resolve().parent / "model.json"
 
 Z90 = 1.645  # two-sided 90 % interval of a normal distribution
 CORR_GRID = np.arange(0.0, 80.01, 0.5)  # % mass loss
@@ -145,58 +144,31 @@ def parse_inputs(raw):
 
 
 class Assessor:
-    def __init__(self):
-        bundle = joblib.load(config.MODEL_DIR / "M3_beam_residual_strength.joblib")
-        self.model, self.features = bundle["model"], bundle["features"]
-        beams = pd.read_csv(config.BEAM_CLEAN_CSV)
-        self.ranges = {c: tuple(beams[c].quantile([0.01, 0.99])) for c in RANGE_CHECK}
-        metrics = json.loads(config.METRICS_JSON.read_text())["models"]["M3_beam_residual_strength"]
-        self.cal = self._calibrate(beams)
-        self.provenance = {
-            "rows_train": metrics["rows_train"], "rows_test": metrics["rows_test"],
-            "papers_train": metrics["papers_train"], "papers_test": metrics["papers_test"],
-            "test_r2": metrics["test"]["ANN"]["r2"], "test_rmse": metrics["test"]["ANN"]["rmse"],
-            "trained_rows": bundle["trained_rows"], **{k: round(v, 2) for k, v in self.cal.items()},
-        }
-
-    @staticmethod
-    def _calibrate(beams):
-        """Error sizes from held-out test papers and replicate specimens (see module docstring)."""
-        t = pd.read_csv(config.OUT_DIR / "test_predictions" / "M3_beam_residual_strength.csv")
-        err = t["ann_pred"] - t["residual_pct"]
-        ctrl = t["corr_pct"] <= 0.5
-        rmse_ctrl = float(np.sqrt((err[ctrl] ** 2).mean()))
-        rmse_corr = float(np.sqrt((err[~ctrl] ** 2).mean()))
-
-        b = beams.dropna(subset=["residual_pct", "corr_pct"])
-        b = b[b["corr_pct"] > 0.5]
-        devs = []
-        for _, g in b.groupby(["source_id", "b_mm", "D_mm", "L_mm", "bar_dia_mm", "n_bars", "fck_mpa"], dropna=False):
-            g = g.sort_values("corr_pct")
-            for _, r in g.groupby((g["corr_pct"].diff() > 2).cumsum()):  # corrosion within 2 points
-                if len(r) >= 2:
-                    devs.extend((r["residual_pct"] - r["residual_pct"].mean()) * np.sqrt(len(r) / (len(r) - 1)))
-        replicate = float(np.sqrt(np.mean(np.square(devs))))
-        replicate = min(replicate, rmse_corr)
-        return {"rmse_controls": rmse_ctrl, "rmse_corroded": rmse_corr, "bias_corroded": float(err[~ctrl].mean()),
-                "replicate_sd": replicate, "model_sd": float(np.sqrt(rmse_corr ** 2 - replicate ** 2)),
-                "replicate_specimens": len(devs)}
+    def __init__(self, model_path=MODEL_JSON):
+        spec = json.loads(Path(model_path).read_text(encoding="utf-8"))
+        self.ensemble = Ensemble(spec)
+        self.features = self.ensemble.features
+        self.ranges = {c: tuple(spec["ranges"][c]) for c in RANGE_CHECK}
+        self.cal = spec["calibration"]
+        self.provenance = spec["provenance"]
 
     def _features(self, x, corr_values):
+        """Model inputs for this section at each corrosion level, columns in the trained order."""
         ast = steel_area(x["bar_dia_mm"], x["n_bars"])
         d = effective_depth(x["D_mm"], x["cover_mm"], x["bar_dia_mm"])
         row = {"b_mm": x["b_mm"], "D_mm": x["D_mm"], "L_mm": x["L_mm"], "cover_mm": x["cover_mm"],
                "bar_dia_mm": x["bar_dia_mm"], "n_bars": x["n_bars"], "fck_mpa": x["fck_mpa"],
                "fiber_pct": x["fiber_pct"], "ast_mm2": ast, "d_eff_mm": d, "rho_pct": 100 * ast / (x["b_mm"] * d),
                "L_over_D": x["L_mm"] / x["D_mm"]}
-        X = pd.DataFrame([row] * len(corr_values))
-        X["corr_pct"] = corr_values
-        return X[self.features]
+        corr_values = np.asarray(corr_values, dtype=float)
+        X = np.empty((len(corr_values), len(self.features)))
+        for j, name in enumerate(self.features):
+            X[:, j] = corr_values if name == "corr_pct" else row[name]
+        return X
 
     def _ann(self, x, corr_values):
         """Mean and spread of the ensemble members' residual-strength predictions."""
-        X = self._features(x, np.asarray(corr_values, dtype=float))
-        members = np.array([m.predict(X) for m in self.model.estimators_])
+        members = self.ensemble.predict_members(self._features(x, corr_values))
         return members.mean(axis=0), members.std(axis=0)
 
     @staticmethod

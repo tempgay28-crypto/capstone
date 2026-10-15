@@ -26,9 +26,24 @@ const VERDICTS = {
 
 // ------------------------------------------------------------------ setup
 
+// ------------------------------------------------------------------ theme switch
+// No saved choice -> follow the operating system; clicking stores an explicit light/dark choice.
+
+const themeSwitch = $("#theme-toggle");
+const darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
+const currentTheme = () => document.documentElement.dataset.theme || (darkQuery.matches ? "dark" : "light");
+const syncThemeSwitch = () => themeSwitch.setAttribute("aria-checked", String(currentTheme() === "dark"));
+
+themeSwitch.addEventListener("click", () => {
+  const next = currentTheme() === "dark" ? "light" : "dark";
+  document.documentElement.dataset.theme = next;
+  try { localStorage.setItem("theme", next); } catch { /* storage blocked: the choice lasts this visit */ }
+  syncThemeSwitch();
+});
+darkQuery.addEventListener("change", syncThemeSwitch);
+syncThemeSwitch();
+
 async function init() {
-  const theme = new URLSearchParams(location.search).get("theme");  // ?theme=light or ?theme=dark
-  if (theme === "light" || theme === "dark") document.documentElement.dataset.theme = theme;
   try {
     META = await (await fetch("/api/meta")).json();
   } catch {

@@ -25,7 +25,7 @@ import numpy as np  # noqa: E402
 import pandas as pd  # noqa: E402
 
 import config  # noqa: E402
-from analytical import corroded_capacity, effective_depth, steel_area  # noqa: E402
+from webapp.rcassess.analytical import corroded_capacity, effective_depth, steel_area  # noqa: E402
 
 METHODS = ["Impressed current", "Salt spray / Environmental", "Natural", "Other / Unspecified"]
 

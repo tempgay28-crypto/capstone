@@ -6,7 +6,7 @@ estimates, not a validated model of corroded-member behaviour.
 """
 import numpy as np
 
-from analytical import effective_depth, moment_capacity_knm, steel_area, xu_max_ratio
+from .analytical import effective_depth, moment_capacity_knm, steel_area, xu_max_ratio
 
 EXPOSURE_CLASSES = ["Mild", "Moderate", "Severe", "Very severe", "Extreme"]
 
