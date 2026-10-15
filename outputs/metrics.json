@@ -1,0 +1,305 @@
+{
+  "fy_assumed_mpa": 500.0,
+  "ensemble_size": 5,
+  "models": {
+    "M1_beam_corrosion": {
+      "target": "corr_pct",
+      "unit": "%",
+      "best_params": {
+        "activation": "tanh",
+        "alpha": "10.0",
+        "hidden_layer_sizes": "(8,)"
+      },
+      "cv_rmse_mean": 8.458,
+      "cv_rmse_std": 1.071,
+      "rows_train": 737,
+      "rows_test": 219,
+      "papers_train": 128,
+      "papers_test": 33,
+      "test": {
+        "ANN": {
+          "n": 219,
+          "r2": 0.027,
+          "rmse": 11.11,
+          "mae": 6.428
+        },
+        "Linear (ridge)": {
+          "n": 219,
+          "r2": 0.059,
+          "rmse": 10.923,
+          "mae": 6.692
+        },
+        "Random forest": {
+          "n": 219,
+          "r2": 0.008,
+          "rmse": 11.22,
+          "mae": 6.168
+        }
+      },
+      "random_row_split_ANN_for_reference": {
+        "n": 219,
+        "r2": 0.298,
+        "rmse": 7.908,
+        "mae": 4.985
+      },
+      "permutation_importance_rmse_increase": {
+        "exposure_days": 1.723,
+        "cl_rebar_pct": 0.943,
+        "nacl_pct": 0.389,
+        "half_cell_mv": 0.34,
+        "bar_dia_mm": 0.254,
+        "pre_crack_mm": 0.06,
+        "fiber_pct": 0.02,
+        "fck_mpa": -0.156,
+        "wc_ratio": -0.771,
+        "cover_mm": -0.796
+      }
+    },
+    "M2_beam_failure_load": {
+      "target": "load_kn",
+      "unit": "kN",
+      "best_params": {
+        "activation": "relu",
+        "alpha": "30.0",
+        "hidden_layer_sizes": "(4,)"
+      },
+      "cv_rmse_mean": 38.014,
+      "cv_rmse_std": 5.969,
+      "rows_train": 686,
+      "rows_test": 191,
+      "papers_train": 104,
+      "papers_test": 27,
+      "test": {
+        "ANN": {
+          "n": 191,
+          "r2": 0.105,
+          "rmse": 37.697,
+          "mae": 29.82
+        },
+        "Linear (ridge)": {
+          "n": 191,
+          "r2": -1.122,
+          "rmse": 58.065,
+          "mae": 40.909
+        },
+        "Random forest": {
+          "n": 191,
+          "r2": 0.011,
+          "rmse": 39.636,
+          "mae": 31.502
+        }
+      },
+      "head_to_head_rows_with_full_IS456_inputs": {
+        "ANN": {
+          "n": 191,
+          "r2": 0.105,
+          "rmse": 37.697,
+          "mae": 29.82
+        },
+        "IS 456 (fy = 500 MPa)": {
+          "n": 191,
+          "r2": -0.689,
+          "rmse": 51.794,
+          "mae": 42.072
+        }
+      },
+      "random_row_split_ANN_for_reference": {
+        "n": 191,
+        "r2": 0.626,
+        "rmse": 34.628,
+        "mae": 24.81
+      },
+      "permutation_importance_rmse_increase": {
+        "fck_mpa": 5.081,
+        "cover_mm": 1.103,
+        "ast_mm2": 0.315,
+        "fiber_pct": 0.248,
+        "n_bars": 0.025,
+        "L_over_D": -0.55,
+        "L_mm": -0.575,
+        "bar_dia_mm": -0.704,
+        "corr_pct": -0.761,
+        "b_mm": -1.527,
+        "rho_pct": -2.876,
+        "d_eff_mm": -4.969,
+        "D_mm": -5.217
+      }
+    },
+    "M3_beam_residual_strength": {
+      "target": "residual_pct",
+      "unit": "%",
+      "best_params": {
+        "activation": "tanh",
+        "alpha": "30.0",
+        "hidden_layer_sizes": "(32, 16)"
+      },
+      "cv_rmse_mean": 17.837,
+      "cv_rmse_std": 2.798,
+      "rows_train": 581,
+      "rows_test": 179,
+      "papers_train": 86,
+      "papers_test": 24,
+      "test": {
+        "ANN": {
+          "n": 179,
+          "r2": 0.26,
+          "rmse": 13.745,
+          "mae": 9.671
+        },
+        "Linear (ridge)": {
+          "n": 179,
+          "r2": 0.277,
+          "rmse": 13.585,
+          "mae": 9.528
+        },
+        "Random forest": {
+          "n": 179,
+          "r2": 0.351,
+          "rmse": 12.865,
+          "mae": 9.009
+        }
+      },
+      "head_to_head_rows_with_full_IS456_inputs": {
+        "ANN": {
+          "n": 179,
+          "r2": 0.26,
+          "rmse": 13.745,
+          "mae": 9.671
+        },
+        "IS 456 (fy = 500 MPa)": {
+          "n": 179,
+          "r2": 0.191,
+          "rmse": 14.371,
+          "mae": 8.987
+        }
+      },
+      "random_row_split_ANN_for_reference": {
+        "n": 179,
+        "r2": 0.206,
+        "rmse": 16.605,
+        "mae": 11.569
+      },
+      "permutation_importance_rmse_increase": {
+        "corr_pct": 2.674,
+        "fck_mpa": 0.592,
+        "D_mm": 0.068,
+        "d_eff_mm": 0.055,
+        "bar_dia_mm": 0.026,
+        "b_mm": 0.016,
+        "ast_mm2": 0.004,
+        "fiber_pct": 0.0,
+        "cover_mm": -0.006,
+        "L_over_D": -0.01,
+        "L_mm": -0.048,
+        "n_bars": -0.048,
+        "rho_pct": -0.29
+      }
+    },
+    "M4a_rebar_residual_yield": {
+      "target": "ry_eng_pct",
+      "unit": "%",
+      "best_params": {
+        "activation": "relu",
+        "alpha": "1.0",
+        "hidden_layer_sizes": "(16,)"
+      },
+      "cv_rmse_mean": 7.045,
+      "cv_rmse_std": 1.029,
+      "rows_train": 2430,
+      "rows_test": 354,
+      "papers_train": 497,
+      "papers_test": 128,
+      "test": {
+        "ANN": {
+          "n": 354,
+          "r2": 0.757,
+          "rmse": 8.325,
+          "mae": 6.116
+        },
+        "Linear (ridge)": {
+          "n": 354,
+          "r2": 0.763,
+          "rmse": 8.214,
+          "mae": 6.311
+        },
+        "Random forest": {
+          "n": 354,
+          "r2": 0.744,
+          "rmse": 8.537,
+          "mae": 5.672
+        }
+      },
+      "random_row_split_ANN_for_reference": {
+        "n": 354,
+        "r2": 0.828,
+        "rmse": 6.672,
+        "mae": 4.836
+      },
+      "permutation_importance_rmse_increase": {
+        "corr_pct": 14.312,
+        "method": 4.17,
+        "bar_dia_mm": 1.414
+      }
+    },
+    "M4b_rebar_residual_ultimate": {
+      "target": "ru_eng_pct",
+      "unit": "%",
+      "best_params": {
+        "activation": "tanh",
+        "alpha": "1.0",
+        "hidden_layer_sizes": "(8,)"
+      },
+      "cv_rmse_mean": 6.302,
+      "cv_rmse_std": 0.777,
+      "rows_train": 2441,
+      "rows_test": 393,
+      "papers_train": 519,
+      "papers_test": 131,
+      "test": {
+        "ANN": {
+          "n": 393,
+          "r2": 0.842,
+          "rmse": 6.816,
+          "mae": 4.888
+        },
+        "Linear (ridge)": {
+          "n": 393,
+          "r2": 0.821,
+          "rmse": 7.246,
+          "mae": 5.44
+        },
+        "Random forest": {
+          "n": 393,
+          "r2": 0.838,
+          "rmse": 6.893,
+          "mae": 4.597
+        }
+      },
+      "random_row_split_ANN_for_reference": {
+        "n": 393,
+        "r2": 0.881,
+        "rmse": 5.409,
+        "mae": 3.8
+      },
+      "permutation_importance_rmse_increase": {
+        "corr_pct": 16.465,
+        "method": 2.939,
+        "bar_dia_mm": 1.171
+      }
+    }
+  },
+  "typical_beam": {
+    "b_mm": 150.0,
+    "D_mm": 225.0,
+    "L_mm": 1750.0,
+    "cover_mm": 25.0,
+    "bar_dia_mm": 12.0,
+    "n_bars": 2.0,
+    "fck_mpa": 35.0,
+    "fiber_pct": 0.0,
+    "ast_mm2": 226.19,
+    "d_eff_mm": 194.0,
+    "rho_pct": 0.78,
+    "L_over_D": 7.78
+  }
+}

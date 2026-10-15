@@ -1,0 +1,1805 @@
+dataset,excel_row,column,raw_value,action,reason
+beam,1010,type,Prestressed Beam,row dropped,not a plain RC flexural beam
+beam,1011,type,Prestressed Beam,row dropped,not a plain RC flexural beam
+beam,1012,type,Prestressed Beam,row dropped,not a plain RC flexural beam
+beam,1013,type,Prestressed Beam,row dropped,not a plain RC flexural beam
+beam,1014,type,Continuous RC Beam,row dropped,not a plain RC flexural beam
+beam,1015,type,Continuous RC Beam,row dropped,not a plain RC flexural beam
+beam,1016,type,Continuous RC Beam,row dropped,not a plain RC flexural beam
+beam,1056,type,RC Beam (UHPC-Strengthened),row dropped,not a plain RC flexural beam
+beam,1057,type,RC Beam (UHPC-Strengthened),row dropped,not a plain RC flexural beam
+beam,1058,type,RC Beam (UHPC-Strengthened),row dropped,not a plain RC flexural beam
+beam,1059,type,RC Beam (UHPC-Strengthened),row dropped,not a plain RC flexural beam
+beam,1060,type,RC Beam (UHPC-Strengthened),row dropped,not a plain RC flexural beam
+beam,1061,type,RC Beam (UHPC-Strengthened),row dropped,not a plain RC flexural beam
+beam,1062,type,RC Beam (UHPC-Strengthened),row dropped,not a plain RC flexural beam
+beam,1063,type,RC Beam (UHPC-Strengthened),row dropped,not a plain RC flexural beam
+beam,1064,type,RC Beam (UHPC-Strengthened),row dropped,not a plain RC flexural beam
+beam,1065,type,RC Beam (UHPC-Strengthened),row dropped,not a plain RC flexural beam
+beam,1066,type,RC Beam (UHPC-Strengthened),row dropped,not a plain RC flexural beam
+beam,1067,type,RC Beam (UHPC-Strengthened),row dropped,not a plain RC flexural beam
+beam,1068,type,RC Beam (UHPC-Strengthened),row dropped,not a plain RC flexural beam
+beam,1069,type,RC Beam (UHPC-Strengthened),row dropped,not a plain RC flexural beam
+beam,1070,type,RC Beam (UHPC-Strengthened),row dropped,not a plain RC flexural beam
+beam,1071,type,RC Beam (UHPC-Strengthened),row dropped,not a plain RC flexural beam
+beam,1072,type,RC Beam (UHPC-Strengthened),row dropped,not a plain RC flexural beam
+beam,1073,type,RC Beam (UHPC-Strengthened),row dropped,not a plain RC flexural beam
+beam,1074,type,Concrete Block (Rebar),row dropped,not a plain RC flexural beam
+beam,1075,type,Concrete Block (Rebar),row dropped,not a plain RC flexural beam
+beam,1076,type,Concrete Block (Rebar),row dropped,not a plain RC flexural beam
+beam,1077,type,Concrete Block (Rebar),row dropped,not a plain RC flexural beam
+beam,1078,type,Concrete Block (Rebar),row dropped,not a plain RC flexural beam
+beam,1079,type,Concrete Block (Rebar),row dropped,not a plain RC flexural beam
+beam,1080,type,RC Prism,row dropped,not a plain RC flexural beam
+beam,1081,type,RC Prism,row dropped,not a plain RC flexural beam
+beam,1082,type,RC Prism,row dropped,not a plain RC flexural beam
+beam,1083,type,RC Beam (Shear),row dropped,not a plain RC flexural beam
+beam,1084,type,RC Beam (Shear),row dropped,not a plain RC flexural beam
+beam,1085,type,RC Beam (Shear),row dropped,not a plain RC flexural beam
+beam,1086,type,RC Beam (Shear),row dropped,not a plain RC flexural beam
+beam,1087,type,RC Beam (Shear),row dropped,not a plain RC flexural beam
+beam,1088,type,RC Beam (Shear),row dropped,not a plain RC flexural beam
+beam,1089,type,RC Beam (Shear),row dropped,not a plain RC flexural beam
+beam,1090,type,RC Beam (Shear),row dropped,not a plain RC flexural beam
+beam,1091,type,RC Beam (Shear),row dropped,not a plain RC flexural beam
+beam,1092,type,RC Beam (Shear),row dropped,not a plain RC flexural beam
+beam,1093,type,RC Beam (Shear),row dropped,not a plain RC flexural beam
+beam,1094,type,RC Beam (Shear),row dropped,not a plain RC flexural beam
+beam,1095,type,RC Beam (Shear),row dropped,not a plain RC flexural beam
+beam,1096,type,RC Beam (Shear),row dropped,not a plain RC flexural beam
+beam,1098,type,RC Beam (Shear),row dropped,not a plain RC flexural beam
+beam,1099,type,In-situ RC Structure,row dropped,not a plain RC flexural beam
+beam,1100,type,RC Slab/Beam (GPR),row dropped,not a plain RC flexural beam
+beam,1101,type,RC Beam (Predictive),row dropped,not a plain RC flexural beam
+beam,1102,type,Review (ML),row dropped,not a plain RC flexural beam
+beam,1103,type,Steel Rebar (Tensile),row dropped,not a plain RC flexural beam
+beam,1104,type,Steel Rebar (Tensile),row dropped,not a plain RC flexural beam
+beam,1105,type,Patent (Apparatus),row dropped,not a plain RC flexural beam
+beam,1106,type,Patent (System),row dropped,not a plain RC flexural beam
+beam,702,corr_pct,3.95% / 2.54% → 3.95% used,set blank,not a number
+beam,1097,load_kn,Reference,set blank,not a number
+beam,149,fiber_pct,11.0,set blank,"outside plausible range [0, 4]"
+beam,898,bar_dia_mm,2.0,set blank,"outside plausible range [6, 40]"
+beam,898,n_bars,30.0,set blank,"outside plausible range [1, 16]"
+beam,335,cl_rebar_pct,33.17,set blank,"outside plausible range [0, 10]"
+beam,336,cl_rebar_pct,31.93,set blank,"outside plausible range [0, 10]"
+beam,337,cl_rebar_pct,27.23,set blank,"outside plausible range [0, 10]"
+beam,338,cl_rebar_pct,30.51,set blank,"outside plausible range [0, 10]"
+beam,339,cl_rebar_pct,32.86,set blank,"outside plausible range [0, 10]"
+beam,340,cl_rebar_pct,38.43,set blank,"outside plausible range [0, 10]"
+beam,341,cl_rebar_pct,31.81,set blank,"outside plausible range [0, 10]"
+beam,342,cl_rebar_pct,29.46,set blank,"outside plausible range [0, 10]"
+beam,631,cl_rebar_pct,27.3,set blank,"outside plausible range [0, 10]"
+beam,632,cl_rebar_pct,35.39,set blank,"outside plausible range [0, 10]"
+beam,751,cl_rebar_pct,12.0,set blank,"outside plausible range [0, 10]"
+beam,759,cl_rebar_pct,15.0,set blank,"outside plausible range [0, 10]"
+beam,760,cl_rebar_pct,20.0,set blank,"outside plausible range [0, 10]"
+beam,789,cl_rebar_pct,15.0,set blank,"outside plausible range [0, 10]"
+beam,790,cl_rebar_pct,20.0,set blank,"outside plausible range [0, 10]"
+beam,994,cl_rebar_pct,12.0,set blank,"outside plausible range [0, 10]"
+beam,1006,cl_rebar_pct,12.0,set blank,"outside plausible range [0, 10]"
+beam,886,corr_pct,100.0,set blank,"outside plausible range [0, 80]"
+beam,898,corr_pct,88.0,set blank,"outside plausible range [0, 80]"
+beam,782,pre_crack_mm,8.7,set blank,"outside plausible range [0, 5]"
+beam,783,pre_crack_mm,13.01,set blank,"outside plausible range [0, 5]"
+beam,784,pre_crack_mm,13.69,set blank,"outside plausible range [0, 5]"
+beam,785,pre_crack_mm,8.72,set blank,"outside plausible range [0, 5]"
+beam,804,pre_crack_mm,11.0,set blank,"outside plausible range [0, 5]"
+beam,805,pre_crack_mm,13.0,set blank,"outside plausible range [0, 5]"
+beam,806,pre_crack_mm,15.0,set blank,"outside plausible range [0, 5]"
+beam,807,pre_crack_mm,12.0,set blank,"outside plausible range [0, 5]"
+beam,808,pre_crack_mm,14.0,set blank,"outside plausible range [0, 5]"
+beam,809,pre_crack_mm,15.0,set blank,"outside plausible range [0, 5]"
+beam,49,*,UC,row dropped,duplicate of an earlier row
+beam,50,*,TC1,row dropped,duplicate of an earlier row
+beam,51,*,TC2,row dropped,duplicate of an earlier row
+beam,52,*,MC,row dropped,duplicate of an earlier row
+beam,53,*,DC,row dropped,duplicate of an earlier row
+beam,106,*,V13I-200,row dropped,duplicate of an earlier row
+beam,110,*,V15S-200,row dropped,duplicate of an earlier row
+beam,152,*,C1-2-1,row dropped,duplicate of an earlier row
+beam,170,*,SY12N,row dropped,duplicate of an earlier row
+beam,184,*,A2,row dropped,duplicate of an earlier row
+beam,185,*,A3,row dropped,duplicate of an earlier row
+beam,186,*,A4,row dropped,duplicate of an earlier row
+beam,187,*,B2,row dropped,duplicate of an earlier row
+beam,188,*,B3,row dropped,duplicate of an earlier row
+beam,189,*,B4,row dropped,duplicate of an earlier row
+beam,190,*,C2,row dropped,duplicate of an earlier row
+beam,226,*,B40,row dropped,duplicate of an earlier row
+beam,231,*,D40,row dropped,duplicate of an earlier row
+beam,234,*,F-U-72-n,row dropped,duplicate of an earlier row
+beam,235,*,F-U-72-n,row dropped,duplicate of an earlier row
+beam,240,*,UUb,row dropped,duplicate of an earlier row
+beam,246,*,UUb,row dropped,duplicate of an earlier row
+beam,247,*,CU-A,row dropped,duplicate of an earlier row
+beam,252,*,Series1-C2,row dropped,duplicate of an earlier row
+beam,253,*,Series1-C3,row dropped,duplicate of an earlier row
+beam,356,*,CB2,row dropped,duplicate of an earlier row
+beam,357,*,CB3,row dropped,duplicate of an earlier row
+beam,434,*,C0,row dropped,duplicate of an earlier row
+beam,435,*,C5,row dropped,duplicate of an earlier row
+beam,436,*,M5S1,row dropped,duplicate of an earlier row
+beam,437,*,M5S2,row dropped,duplicate of an earlier row
+beam,438,*,C10,row dropped,duplicate of an earlier row
+beam,439,*,M10S2,row dropped,duplicate of an earlier row
+beam,440,*,C15,row dropped,duplicate of an earlier row
+beam,441,*,M15S2,row dropped,duplicate of an earlier row
+beam,442,*,M15S2-2L,row dropped,duplicate of an earlier row
+beam,443,*,M15S3,row dropped,duplicate of an earlier row
+beam,479,*,J12,row dropped,duplicate of an earlier row
+beam,480,*,J13,row dropped,duplicate of an earlier row
+beam,567,*,B5,row dropped,duplicate of an earlier row
+beam,585,*,F-7,row dropped,duplicate of an earlier row
+beam,586,*,F-8,row dropped,duplicate of an earlier row
+beam,587,*,F-9,row dropped,duplicate of an earlier row
+beam,588,*,F-10,row dropped,duplicate of an earlier row
+beam,589,*,F-11,row dropped,duplicate of an earlier row
+beam,590,*,F-12,row dropped,duplicate of an earlier row
+beam,598,*,F-20,row dropped,duplicate of an earlier row
+beam,599,*,F-21,row dropped,duplicate of an earlier row
+beam,627,*,L1,row dropped,duplicate of an earlier row
+beam,688,*,CCL03,row dropped,duplicate of an earlier row
+beam,690,*,CCL06,row dropped,duplicate of an earlier row
+beam,706,*,A-2,row dropped,duplicate of an earlier row
+beam,761,*,U,row dropped,duplicate of an earlier row
+beam,762,*,A,row dropped,duplicate of an earlier row
+beam,763,*,B,row dropped,duplicate of an earlier row
+beam,764,*,C,row dropped,duplicate of an earlier row
+beam,823,*,NC-B,row dropped,duplicate of an earlier row
+beam,826,*,NC-E,row dropped,duplicate of an earlier row
+beam,842,*,RC-C,row dropped,duplicate of an earlier row
+beam,846,*,RC-G,row dropped,duplicate of an earlier row
+beam,847,*,RC-H,row dropped,duplicate of an earlier row
+beam,850,*,A1-2,row dropped,duplicate of an earlier row
+beam,853,*,A1-5,row dropped,duplicate of an earlier row
+beam,899,*,C1-F50-52,row dropped,duplicate of an earlier row
+beam,516,residual_pct,163.2,set blank,"residual strength outside [10.0, 160.0] % - check load or control"
+beam,519,residual_pct,160.4,set blank,"residual strength outside [10.0, 160.0] % - check load or control"
+beam,603,residual_pct,271.1,set blank,"residual strength outside [10.0, 160.0] % - check load or control"
+beam,604,residual_pct,230.9,set blank,"residual strength outside [10.0, 160.0] % - check load or control"
+beam,661,residual_pct,162.1,set blank,"residual strength outside [10.0, 160.0] % - check load or control"
+beam,924,residual_pct,162.3,set blank,"residual strength outside [10.0, 160.0] % - check load or control"
+beam,11,load_kn,5.6 kN = 0.4x IS 456,excluded from load model,"load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type"
+beam,42,load_kn,3.1 kN = 0.4x IS 456,excluded from load model,"load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type"
+beam,56,load_kn,7.2 kN = 0.4x IS 456,excluded from load model,"load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type"
+beam,57,load_kn,6.4 kN = 0.4x IS 456,excluded from load model,"load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type"
+beam,58,load_kn,5.9 kN = 0.4x IS 456,excluded from load model,"load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type"
+beam,259,load_kn,120 kN = 6.1x IS 456,excluded from load model,"load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type"
+beam,277,load_kn,21.2 kN = 0.2x IS 456,excluded from load model,"load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type"
+beam,281,load_kn,150 kN = 5.3x IS 456,excluded from load model,"load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type"
+beam,282,load_kn,164 kN = 5.8x IS 456,excluded from load model,"load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type"
+beam,288,load_kn,9.86 kN = 0.4x IS 456,excluded from load model,"load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type"
+beam,289,load_kn,8.12 kN = 0.3x IS 456,excluded from load model,"load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type"
+beam,309,load_kn,17.3 kN = 0.4x IS 456,excluded from load model,"load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type"
+beam,337,load_kn,140 kN = 5.7x IS 456,excluded from load model,"load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type"
+beam,339,load_kn,114.5 kN = 5.0x IS 456,excluded from load model,"load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type"
+beam,348,load_kn,11.3 kN = 0.3x IS 456,excluded from load model,"load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type"
+beam,349,load_kn,10.7 kN = 0.3x IS 456,excluded from load model,"load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type"
+beam,350,load_kn,10.1 kN = 0.3x IS 456,excluded from load model,"load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type"
+beam,351,load_kn,9.4 kN = 0.3x IS 456,excluded from load model,"load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type"
+beam,489,load_kn,245.6 kN = 5.1x IS 456,excluded from load model,"load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type"
+beam,603,load_kn,135 kN = 5.5x IS 456,excluded from load model,"load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type"
+beam,604,load_kn,115 kN = 6.3x IS 456,excluded from load model,"load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type"
+beam,640,load_kn,127.5 kN = 5.5x IS 456,excluded from load model,"load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type"
+beam,641,load_kn,117.7 kN = 6.0x IS 456,excluded from load model,"load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type"
+beam,692,load_kn,1158 kN = 9.3x IS 456,excluded from load model,"load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type"
+beam,693,load_kn,1014 kN = 9.2x IS 456,excluded from load model,"load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type"
+beam,694,load_kn,935 kN = 9.3x IS 456,excluded from load model,"load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type"
+beam,695,load_kn,813 kN = 8.4x IS 456,excluded from load model,"load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type"
+beam,696,load_kn,240.6 kN = 10.1x IS 456,excluded from load model,"load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type"
+beam,697,load_kn,219.1 kN = 9.2x IS 456,excluded from load model,"load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type"
+beam,698,load_kn,233.2 kN = 10.2x IS 456,excluded from load model,"load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type"
+beam,699,load_kn,229.6 kN = 9.6x IS 456,excluded from load model,"load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type"
+beam,700,load_kn,238.4 kN = 10.0x IS 456,excluded from load model,"load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type"
+beam,701,load_kn,247.5 kN = 10.4x IS 456,excluded from load model,"load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type"
+beam,703,load_kn,261.1 kN = 10.9x IS 456,excluded from load model,"load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type"
+beam,704,load_kn,260.3 kN = 10.9x IS 456,excluded from load model,"load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type"
+beam,722,load_kn,72.14 kN = 0.4x IS 456,excluded from load model,"load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type"
+beam,723,load_kn,63.85 kN = 0.3x IS 456,excluded from load model,"load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type"
+beam,774,load_kn,2.7 kN = 0.3x IS 456,excluded from load model,"load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type"
+beam,876,load_kn,182 kN = 6.7x IS 456,excluded from load model,"load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type"
+beam,877,load_kn,148 kN = 5.5x IS 456,excluded from load model,"load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type"
+beam,878,load_kn,145 kN = 5.4x IS 456,excluded from load model,"load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type"
+beam,879,load_kn,115 kN = 6.6x IS 456,excluded from load model,"load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type"
+beam,880,load_kn,105 kN = 6.4x IS 456,excluded from load model,"load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type"
+beam,881,load_kn,102 kN = 6.4x IS 456,excluded from load model,"load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type"
+beam,882,load_kn,76 kN = 6.6x IS 456,excluded from load model,"load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type"
+beam,883,load_kn,65 kN = 6.9x IS 456,excluded from load model,"load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type"
+beam,884,load_kn,53 kN = 6.5x IS 456,excluded from load model,"load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type"
+beam,885,load_kn,38 kN = 9.4x IS 456,excluded from load model,"load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type"
+beam,930,load_kn,182.1 kN = 5.6x IS 456,excluded from load model,"load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type"
+beam,931,load_kn,179.4 kN = 5.0x IS 456,excluded from load model,"load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type"
+beam,932,load_kn,202.8 kN = 5.7x IS 456,excluded from load model,"load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type"
+beam,934,load_kn,202.4 kN = 6.9x IS 456,excluded from load model,"load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type"
+beam,935,load_kn,218.9 kN = 6.5x IS 456,excluded from load model,"load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type"
+beam,962,load_kn,9.25 kN = 0.2x IS 456,excluded from load model,"load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type"
+beam,963,load_kn,8.77 kN = 0.2x IS 456,excluded from load model,"load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type"
+beam,964,load_kn,14.31 kN = 0.3x IS 456,excluded from load model,"load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type"
+beam,965,load_kn,11.06 kN = 0.2x IS 456,excluded from load model,"load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type"
+beam,966,load_kn,11.41 kN = 0.3x IS 456,excluded from load model,"load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type"
+beam,967,load_kn,5.58 kN = 0.1x IS 456,excluded from load model,"load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type"
+beam,968,load_kn,6.2 kN = 0.1x IS 456,excluded from load model,"load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type"
+beam,969,load_kn,6.14 kN = 0.1x IS 456,excluded from load model,"load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type"
+beam,970,load_kn,6.81 kN = 0.1x IS 456,excluded from load model,"load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type"
+beam,1001,load_kn,28.6 kN = 0.3x IS 456,excluded from load model,"load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type"
+rebar,3667,corrosion method,"M52 Grade 10.9 high-strength bolt, 0% corrosion level, 0h exposure",row dropped,"bolt/strand/wire, not a rebar"
+rebar,3668,corrosion method,"M52 Grade 10.9 high-strength bolt, 25% corrosion level, 6h exposure",row dropped,"bolt/strand/wire, not a rebar"
+rebar,3669,corrosion method,"M52 Grade 10.9 high-strength bolt, 50% corrosion level, 12h exposure",row dropped,"bolt/strand/wire, not a rebar"
+rebar,3670,corrosion method,"M52 Grade 10.9 high-strength bolt, 75% corrosion level, 18h exposure",row dropped,"bolt/strand/wire, not a rebar"
+rebar,3671,corrosion method,"M52 Grade 10.9 high-strength bolt, 100% corrosion level, 24h exposure",row dropped,"bolt/strand/wire, not a rebar"
+rebar,3672,corrosion method,"M52 Grade 10.9 high-strength bolt, 0% corrosion level, 0h exposure",row dropped,"bolt/strand/wire, not a rebar"
+rebar,3673,corrosion method,"M52 Grade 10.9 high-strength bolt, 25% corrosion level, 6h exposure",row dropped,"bolt/strand/wire, not a rebar"
+rebar,3674,corrosion method,"M52 Grade 10.9 high-strength bolt, 50% corrosion level, 12h exposure",row dropped,"bolt/strand/wire, not a rebar"
+rebar,3675,corrosion method,"M52 Grade 10.9 high-strength bolt, 75% corrosion level, 18h exposure",row dropped,"bolt/strand/wire, not a rebar"
+rebar,3676,corrosion method,"M52 Grade 10.9 high-strength bolt, 100% corrosion level, 24h exposure",row dropped,"bolt/strand/wire, not a rebar"
+rebar,3677,corrosion method,"M52 Grade 10.9 high-strength bolt, 0% corrosion level, 0h exposure",row dropped,"bolt/strand/wire, not a rebar"
+rebar,3678,corrosion method,"M52 Grade 10.9 high-strength bolt, 25% corrosion level, 6h exposure",row dropped,"bolt/strand/wire, not a rebar"
+rebar,3679,corrosion method,"M52 Grade 10.9 high-strength bolt, 50% corrosion level, 12h exposure",row dropped,"bolt/strand/wire, not a rebar"
+rebar,3680,corrosion method,"M52 Grade 10.9 high-strength bolt, 75% corrosion level, 18h exposure",row dropped,"bolt/strand/wire, not a rebar"
+rebar,3681,corrosion method,"M52 Grade 10.9 high-strength bolt, 100% corrosion level, 24h exposure",row dropped,"bolt/strand/wire, not a rebar"
+rebar,3682,corrosion method,"M52 Grade 10.9 high-strength bolt, 0% corrosion level, 0h exposure",row dropped,"bolt/strand/wire, not a rebar"
+rebar,3683,corrosion method,"M52 Grade 10.9 high-strength bolt, 25% corrosion level, 6h exposure",row dropped,"bolt/strand/wire, not a rebar"
+rebar,3684,corrosion method,"M52 Grade 10.9 high-strength bolt, 50% corrosion level, 12h exposure",row dropped,"bolt/strand/wire, not a rebar"
+rebar,3685,corrosion method,"M52 Grade 10.9 high-strength bolt, 75% corrosion level, 18h exposure",row dropped,"bolt/strand/wire, not a rebar"
+rebar,3686,corrosion method,"M52 Grade 10.9 high-strength bolt, 100% corrosion level, 24h exposure",row dropped,"bolt/strand/wire, not a rebar"
+rebar,3687,corrosion method,"M52 Grade 10.9 high-strength bolt, 0% corrosion level, 0h exposure",row dropped,"bolt/strand/wire, not a rebar"
+rebar,3688,corrosion method,"M52 Grade 10.9 high-strength bolt, 25% corrosion level, 6h exposure",row dropped,"bolt/strand/wire, not a rebar"
+rebar,3689,corrosion method,"M52 Grade 10.9 high-strength bolt, 50% corrosion level, 12h exposure",row dropped,"bolt/strand/wire, not a rebar"
+rebar,3690,corrosion method,"M52 Grade 10.9 high-strength bolt, 75% corrosion level, 18h exposure",row dropped,"bolt/strand/wire, not a rebar"
+rebar,3691,corrosion method,"M52 Grade 10.9 high-strength bolt, 100% corrosion level, 24h exposure",row dropped,"bolt/strand/wire, not a rebar"
+rebar,3692,corrosion method,"M30 Grade 10.9 high-strength bolt, 25% corrosion, cross-specimen validation (82% accuracy)",row dropped,"bolt/strand/wire, not a rebar"
+rebar,4035,corrosion method,"Series 2; Concrete cube strength fcc=41.5MPa; Prestressed beam 200×300×3000mm, span=2700mm; Prestressing: 3 strands (2 bottom + 1 top) 1/2"" (≈12.7mm) 7-wire; Strand fy=1788MPa, fu=1976MPa; Initial prestress=1300MPa; Ordinary rebars: 4Ø10 + stirrups Ø8@200 (epoxy coated); Corrosion zone: central ~700mm; Only bottom 2 strands corroded; Failure mode: Wire rupture (strand failure); Bearing-capacity loss ~65% vs ref. Post-peak: progressive wire break.",row dropped,"bolt/strand/wire, not a rebar"
+rebar,4036,corrosion method,"Series 2; Concrete cube strength fcc=41.5MPa; Prestressed beam 200×300×3000mm, span=2700mm; Prestressing: 3 strands (2 bottom + 1 top) 1/2"" (≈12.7mm) 7-wire; Strand fy=1788MPa, fu=1976MPa; Initial prestress=1300MPa; Ordinary rebars: 4Ø10 + stirrups Ø8@200 (epoxy coated); Corrosion zone: central ~700mm; Only bottom 2 strands corroded; Failure mode: Concrete crushing; Reference beam. Strand slip ~4mm prior to failure. Max load 190kN.",row dropped,"bolt/strand/wire, not a rebar"
+rebar,4037,corrosion method,"Series 2; Concrete cube strength fcc=41.5MPa; Prestressed beam 200×300×3000mm, span=2700mm; Prestressing: 3 strands (2 bottom + 1 top) 1/2"" (≈12.7mm) 7-wire; Strand fy=1788MPa, fu=1976MPa; Initial prestress=1300MPa; Ordinary rebars: 4Ø10 + stirrups Ø8@200 (epoxy coated); Corrosion zone: central ~700mm; Only bottom 2 strands corroded; Failure mode: Wire rupture (strand failure); Bearing-capacity loss ~55% vs ref. Post-peak: progressive wire break.",row dropped,"bolt/strand/wire, not a rebar"
+rebar,4038,corrosion method,"Series 3; Concrete cube strength fcc=47.4MPa; Prestressed beam 200×300×3000mm, span=2700mm; Prestressing: 3 strands (2 bottom + 1 top) 1/2"" (≈12.7mm) 7-wire; Strand fy=1788MPa, fu=1976MPa; Initial prestress=1300MPa; Ordinary rebars: 4Ø10 + stirrups Ø8@200 (epoxy coated); Corrosion zone: central ~700mm; Only bottom 2 strands corroded; Failure mode: Concrete crushing (pure bending); Reference beam. Strand slip starts at 150kN, reaches 3mm prior to failure.",row dropped,"bolt/strand/wire, not a rebar"
+rebar,4039,corrosion method,"Series 3; Concrete cube strength fcc=47.4MPa; Prestressed beam 200×300×3000mm, span=2700mm; Prestressing: 3 strands (2 bottom + 1 top) 1/2"" (≈12.7mm) 7-wire; Strand fy=1788MPa, fu=1976MPa; Initial prestress=1300MPa; Ordinary rebars: 4Ø10 + stirrups Ø8@200 (epoxy coated); Corrosion zone: central ~700mm; Only bottom 2 strands corroded; Failure mode: Wire rupture (strand failure); Bearing-capacity loss ~66% vs ref. Residual capacity ~70kN at 10mm disp.",row dropped,"bolt/strand/wire, not a rebar"
+rebar,4040,corrosion method,"Series 3; Concrete cube strength fcc=47.4MPa; Prestressed beam 200×300×3000mm, span=2700mm; Prestressing: 3 strands (2 bottom + 1 top) 1/2"" (≈12.7mm) 7-wire; Strand fy=1788MPa, fu=1976MPa; Initial prestress=1300MPa; Ordinary rebars: 4Ø10 + stirrups Ø8@200 (epoxy coated); Corrosion zone: central ~700mm; Only bottom 2 strands corroded; Failure mode: Simultaneous concrete crushing and wire rupture; 'Transition case'. Peak ~200kN (only ~5% below ref). Abrupt failure.",row dropped,"bolt/strand/wire, not a rebar"
+rebar,4041,corrosion method,"Series 1; Concrete cube strength fcc=34.0MPa; Prestressed beam 200×300×3000mm, span=2700mm; Prestressing: 3 strands (2 bottom + 1 top) 1/2"" (≈12.7mm) 7-wire; Strand fy=1788MPa, fu=1976MPa; Initial prestress=1300MPa; Ordinary rebars: 4Ø10 + stirrups Ø8@200 (epoxy coated); Corrosion zone: central ~700mm; Only bottom 2 strands corroded; Failure mode: Concrete crushing with bending-shear interaction; Reference beam. First crack ~70kN. Strand slip starts ~80kN, ~30mm at failure.",row dropped,"bolt/strand/wire, not a rebar"
+rebar,4042,corrosion method,"Series 1; Concrete cube strength fcc=34.0MPa; Prestressed beam 200×300×3000mm, span=2700mm; Prestressing: 3 strands (2 bottom + 1 top) 1/2"" (≈12.7mm) 7-wire; Strand fy=1788MPa, fu=1976MPa; Initial prestress=1300MPa; Ordinary rebars: 4Ø10 + stirrups Ø8@200 (epoxy coated); Corrosion zone: central ~700mm; Only bottom 2 strands corroded; Failure mode: Wire rupture (strand failure); Bearing-capacity loss ~41% vs ref. Sudden wire rupture at 45kN. Peak ~95kN. No significant strand slip at ends.",row dropped,"bolt/strand/wire, not a rebar"
+rebar,4043,corrosion method,"Series 1; Concrete cube strength fcc=34.0MPa; Prestressed beam 200×300×3000mm, span=2700mm; Prestressing: 3 strands (2 bottom + 1 top) 1/2"" (≈12.7mm) 7-wire; Strand fy=1788MPa, fu=1976MPa; Initial prestress=1300MPa; Ordinary rebars: 4Ø10 + stirrups Ø8@200 (epoxy coated); Corrosion zone: central ~700mm; Only bottom 2 strands corroded; Failure mode: Strand rupture (sudden break); Bearing-capacity loss ~28% vs ref. Peak ~115kN (20% higher than Beam 8). Sudden strand break.",row dropped,"bolt/strand/wire, not a rebar"
+rebar,4,exposure_days,54 years,set blank,not a number
+rebar,5,exposure_days,54 years,set blank,not a number
+rebar,6,exposure_days,54 years,set blank,not a number
+rebar,7,exposure_days,54 years,set blank,not a number
+rebar,8,exposure_days,54 years,set blank,not a number
+rebar,9,exposure_days,54 years,set blank,not a number
+rebar,10,exposure_days,54 years,set blank,not a number
+rebar,11,exposure_days,54 years,set blank,not a number
+rebar,12,exposure_days,54 years,set blank,not a number
+rebar,13,exposure_days,54 years,set blank,not a number
+rebar,14,exposure_days,54 years,set blank,not a number
+rebar,15,exposure_days,54 years,set blank,not a number
+rebar,16,exposure_days,54 years,set blank,not a number
+rebar,17,exposure_days,54 years,set blank,not a number
+rebar,18,exposure_days,54 years,set blank,not a number
+rebar,19,exposure_days,54 years,set blank,not a number
+rebar,20,exposure_days,54 years,set blank,not a number
+rebar,21,exposure_days,54 years,set blank,not a number
+rebar,22,exposure_days,54 years,set blank,not a number
+rebar,23,exposure_days,54 years,set blank,not a number
+rebar,24,exposure_days,54 years,set blank,not a number
+rebar,25,exposure_days,54 years,set blank,not a number
+rebar,26,exposure_days,54 years,set blank,not a number
+rebar,27,exposure_days,54 years,set blank,not a number
+rebar,28,exposure_days,54 years,set blank,not a number
+rebar,29,exposure_days,54 years,set blank,not a number
+rebar,30,exposure_days,54 years,set blank,not a number
+rebar,31,exposure_days,54 years,set blank,not a number
+rebar,32,exposure_days,54 years,set blank,not a number
+rebar,33,exposure_days,54 years,set blank,not a number
+rebar,34,exposure_days,54 years,set blank,not a number
+rebar,35,exposure_days,54 years,set blank,not a number
+rebar,36,exposure_days,54 years,set blank,not a number
+rebar,37,exposure_days,54 years,set blank,not a number
+rebar,38,exposure_days,54 years,set blank,not a number
+rebar,39,exposure_days,54 years,set blank,not a number
+rebar,40,exposure_days,54 years,set blank,not a number
+rebar,41,exposure_days,54 years,set blank,not a number
+rebar,193,exposure_days,14 days immersion + air-dried,set blank,not a number
+rebar,194,exposure_days,stored indoors since 2010,set blank,not a number
+rebar,195,exposure_days,7 days immersion + 14 days drying,set blank,not a number
+rebar,196,exposure_days,Baseline (before exposure),set blank,not a number
+rebar,197,exposure_days,Baseline (104 days old),set blank,not a number
+rebar,198,exposure_days,Baseline (104 days old),set blank,not a number
+rebar,199,exposure_days,>30 years,set blank,not a number
+rebar,200,exposure_days,>30 years,set blank,not a number
+rebar,201,exposure_days,>40 years,set blank,not a number
+rebar,464,exposure_days,2 months to 2 years,set blank,not a number
+rebar,465,exposure_days,2 months to 2 years,set blank,not a number
+rebar,466,exposure_days,2 months to 2 years,set blank,not a number
+rebar,467,exposure_days,2 months to 2 years,set blank,not a number
+rebar,468,exposure_days,2 months to 2 years,set blank,not a number
+rebar,469,exposure_days,2 months to 2 years,set blank,not a number
+rebar,470,exposure_days,2 months to 2 years,set blank,not a number
+rebar,471,exposure_days,2 months to 2 years,set blank,not a number
+rebar,472,exposure_days,2 months to 2 years,set blank,not a number
+rebar,473,exposure_days,2 months to 2 years,set blank,not a number
+rebar,474,exposure_days,2 months to 2 years,set blank,not a number
+rebar,475,exposure_days,2 months to 2 years,set blank,not a number
+rebar,476,exposure_days,2 months to 2 years,set blank,not a number
+rebar,477,exposure_days,2 months to 2 years,set blank,not a number
+rebar,478,exposure_days,2 months to 2 years,set blank,not a number
+rebar,479,exposure_days,2 months to 2 years,set blank,not a number
+rebar,480,exposure_days,2 months to 2 years,set blank,not a number
+rebar,481,exposure_days,2 months to 2 years,set blank,not a number
+rebar,3081,exposure_days, (6  – 26 ),set blank,not a number
+rebar,3082,exposure_days, (6  – 26 ),set blank,not a number
+rebar,3086,exposure_days,--,set blank,not a number
+rebar,3705,exposure_days,4 days to 3 weeks (range),set blank,not a number
+rebar,3706,exposure_days,4 days to 3 weeks (range),set blank,not a number
+rebar,3707,exposure_days,4 days to 3 weeks (range),set blank,not a number
+rebar,3708,exposure_days,4 days to 3 weeks (range),set blank,not a number
+rebar,3709,exposure_days,4 days to 3 weeks (range),set blank,not a number
+rebar,3710,exposure_days,4 days to 3 weeks (range),set blank,not a number
+rebar,3711,exposure_days,4 days to 3 weeks (range),set blank,not a number
+rebar,42,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,43,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,44,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,45,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,46,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,47,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,48,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,49,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,50,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,51,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,52,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,53,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,54,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,55,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,56,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,57,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,58,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,59,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,60,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,61,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,62,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,63,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,64,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,65,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,66,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,67,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,68,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,69,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,70,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,71,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,72,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,73,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,74,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,75,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,76,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,77,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,78,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,79,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,80,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,81,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,82,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,83,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,84,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,85,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,86,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,87,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,88,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,89,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,90,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,91,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,92,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,93,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,94,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,95,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,96,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,97,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,98,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,99,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,100,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,101,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,102,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,103,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,104,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,105,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,106,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,107,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,108,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,109,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,110,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,111,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,112,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,113,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,114,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,115,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,116,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,117,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,118,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,119,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,120,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,121,nacl_pct,3.5% NaCl,set blank,not a number
+rebar,124,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,125,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,126,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,127,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,128,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,129,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,130,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,131,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,132,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,133,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,134,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,135,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,136,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,137,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,138,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,139,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,140,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,141,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,142,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,143,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,144,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,145,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,146,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,147,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,148,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,149,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,150,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,151,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,152,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,153,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,154,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,155,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,156,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,157,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,158,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,159,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,160,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,161,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,162,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,163,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,164,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,165,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,166,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,167,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,168,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,169,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,170,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,171,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,172,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,173,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,174,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,175,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,176,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,177,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,178,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,179,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,180,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,181,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,182,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,183,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,184,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,185,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,186,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,187,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,188,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,189,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,190,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,191,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,192,nacl_pct,3.5% NaCl solution,set blank,not a number
+rebar,215,nacl_pct,5% NaCl solution,set blank,not a number
+rebar,216,nacl_pct,5% NaCl solution,set blank,not a number
+rebar,217,nacl_pct,5% NaCl solution,set blank,not a number
+rebar,218,nacl_pct,5% NaCl solution,set blank,not a number
+rebar,219,nacl_pct,5% NaCl solution,set blank,not a number
+rebar,328,nacl_pct,3% NaCl,set blank,not a number
+rebar,329,nacl_pct,3% NaCl,set blank,not a number
+rebar,330,nacl_pct,3% NaCl,set blank,not a number
+rebar,331,nacl_pct,3% NaCl,set blank,not a number
+rebar,332,nacl_pct,3% NaCl,set blank,not a number
+rebar,333,nacl_pct,3% NaCl,set blank,not a number
+rebar,334,nacl_pct,5% NaCl,set blank,not a number
+rebar,335,nacl_pct,5% NaCl,set blank,not a number
+rebar,336,nacl_pct,5% NaCl,set blank,not a number
+rebar,337,nacl_pct,5% NaCl,set blank,not a number
+rebar,338,nacl_pct,5% NaCl,set blank,not a number
+rebar,339,nacl_pct,5% NaCl,set blank,not a number
+rebar,340,nacl_pct,5% NaCl,set blank,not a number
+rebar,341,nacl_pct,5% NaCl,set blank,not a number
+rebar,342,nacl_pct,5% NaCl,set blank,not a number
+rebar,343,nacl_pct,5% NaCl,set blank,not a number
+rebar,344,nacl_pct,5% NaCl,set blank,not a number
+rebar,345,nacl_pct,5% NaCl,set blank,not a number
+rebar,346,nacl_pct,5% NaCl,set blank,not a number
+rebar,347,nacl_pct,5% NaCl,set blank,not a number
+rebar,348,nacl_pct,5% NaCl,set blank,not a number
+rebar,349,nacl_pct,5% NaCl,set blank,not a number
+rebar,375,nacl_pct,5% sodium chloride solution,set blank,not a number
+rebar,376,nacl_pct,5% sodium chloride solution,set blank,not a number
+rebar,377,nacl_pct,5% sodium chloride solution,set blank,not a number
+rebar,378,nacl_pct,5% sodium chloride solution,set blank,not a number
+rebar,379,nacl_pct,5% sodium chloride solution,set blank,not a number
+rebar,380,nacl_pct,5% sodium chloride solution,set blank,not a number
+rebar,381,nacl_pct,5% sodium chloride solution,set blank,not a number
+rebar,382,nacl_pct,5% sodium chloride solution,set blank,not a number
+rebar,383,nacl_pct,5% sodium chloride solution,set blank,not a number
+rebar,388,nacl_pct,3.5% and 4.5% salinity,set blank,not a number
+rebar,389,nacl_pct,3.5% and 4.5% salinity,set blank,not a number
+rebar,390,nacl_pct,3.5% and 4.5% salinity,set blank,not a number
+rebar,391,nacl_pct,3.5% and 4.5% salinity,set blank,not a number
+rebar,392,nacl_pct,3.5% and 4.5% salinity,set blank,not a number
+rebar,393,nacl_pct,3.5% and 4.5% salinity,set blank,not a number
+rebar,394,nacl_pct,3.5% and 4.5% salinity,set blank,not a number
+rebar,395,nacl_pct,3.5% and 4.5% salinity,set blank,not a number
+rebar,396,nacl_pct,5% NaCl,set blank,not a number
+rebar,397,nacl_pct,5% NaCl,set blank,not a number
+rebar,398,nacl_pct,5% NaCl,set blank,not a number
+rebar,399,nacl_pct,5% NaCl,set blank,not a number
+rebar,400,nacl_pct,5% NaCl,set blank,not a number
+rebar,401,nacl_pct,5% NaCl,set blank,not a number
+rebar,402,nacl_pct,5% NaCl,set blank,not a number
+rebar,403,nacl_pct,5% NaCl,set blank,not a number
+rebar,404,nacl_pct,5% NaCl,set blank,not a number
+rebar,405,nacl_pct,5% NaCl,set blank,not a number
+rebar,406,nacl_pct,5% NaCl,set blank,not a number
+rebar,407,nacl_pct,5% NaCl,set blank,not a number
+rebar,408,nacl_pct,5% NaCl,set blank,not a number
+rebar,409,nacl_pct,5% NaCl,set blank,not a number
+rebar,410,nacl_pct,5% NaCl,set blank,not a number
+rebar,411,nacl_pct,5% NaCl,set blank,not a number
+rebar,412,nacl_pct,5% NaCl,set blank,not a number
+rebar,413,nacl_pct,5% NaCl,set blank,not a number
+rebar,414,nacl_pct,5% NaCl,set blank,not a number
+rebar,415,nacl_pct,5% NaCl,set blank,not a number
+rebar,416,nacl_pct,5% NaCl,set blank,not a number
+rebar,417,nacl_pct,5% NaCl,set blank,not a number
+rebar,418,nacl_pct,5% NaCl,set blank,not a number
+rebar,419,nacl_pct,5% NaCl,set blank,not a number
+rebar,420,nacl_pct,5% NaCl,set blank,not a number
+rebar,421,nacl_pct,5% NaCl,set blank,not a number
+rebar,422,nacl_pct,5% NaCl,set blank,not a number
+rebar,423,nacl_pct,5% NaCl,set blank,not a number
+rebar,424,nacl_pct,5% NaCl,set blank,not a number
+rebar,425,nacl_pct,5% NaCl,set blank,not a number
+rebar,426,nacl_pct,5% NaCl,set blank,not a number
+rebar,427,nacl_pct,5% NaCl,set blank,not a number
+rebar,428,nacl_pct,5% NaCl,set blank,not a number
+rebar,429,nacl_pct,5% NaCl,set blank,not a number
+rebar,430,nacl_pct,5% NaCl,set blank,not a number
+rebar,431,nacl_pct,5% NaCl,set blank,not a number
+rebar,432,nacl_pct,5% NaCl,set blank,not a number
+rebar,433,nacl_pct,5% NaCl,set blank,not a number
+rebar,434,nacl_pct,5% NaCl,set blank,not a number
+rebar,435,nacl_pct,5% NaCl,set blank,not a number
+rebar,436,nacl_pct,5% NaCl,set blank,not a number
+rebar,440,nacl_pct,3.5% NaCl + 0.001 mol/L NaHSO3,set blank,not a number
+rebar,441,nacl_pct,3.5% NaCl + 0.001 mol/L NaHSO3,set blank,not a number
+rebar,442,nacl_pct,3.5% NaCl + 0.001 mol/L NaHSO3,set blank,not a number
+rebar,443,nacl_pct,3.5% NaCl + 0.001 mol/L NaHSO3,set blank,not a number
+rebar,444,nacl_pct,3.5% NaCl + 0.001 mol/L NaHSO3,set blank,not a number
+rebar,445,nacl_pct,3.5% NaCl + 0.001 mol/L NaHSO3,set blank,not a number
+rebar,446,nacl_pct,3.5% NaCl + 0.001 mol/L NaHSO3,set blank,not a number
+rebar,447,nacl_pct,3.5% NaCl + 0.001 mol/L NaHSO3,set blank,not a number
+rebar,448,nacl_pct,3.5% NaCl + 0.001 mol/L NaHSO3,set blank,not a number
+rebar,449,nacl_pct,3.5% NaCl + 0.001 mol/L NaHSO3,set blank,not a number
+rebar,450,nacl_pct,3.5% NaCl + 0.001 mol/L NaHSO3,set blank,not a number
+rebar,451,nacl_pct,3.5% NaCl + 0.001 mol/L NaHSO3,set blank,not a number
+rebar,452,nacl_pct,3.5% NaCl + 0.001 mol/L NaHSO3,set blank,not a number
+rebar,453,nacl_pct,3.5% NaCl + 0.001 mol/L NaHSO3,set blank,not a number
+rebar,454,nacl_pct,0.01 mol/L NaHSO3 + 0.001 mol/L NaCl,set blank,not a number
+rebar,455,nacl_pct,0.01 mol/L NaHSO3 + 0.001 mol/L NaCl,set blank,not a number
+rebar,456,nacl_pct,0.01 mol/L NaHSO3 + 0.001 mol/L NaCl,set blank,not a number
+rebar,457,nacl_pct,0.01 mol/L NaHSO3 + 0.001 mol/L NaCl,set blank,not a number
+rebar,458,nacl_pct,0.01 mol/L NaHSO3 + 0.001 mol/L NaCl,set blank,not a number
+rebar,459,nacl_pct,0.01 mol/L NaHSO3 + 0.001 mol/L NaCl,set blank,not a number
+rebar,460,nacl_pct,0.01 mol/L NaHSO3 + 0.001 mol/L NaCl,set blank,not a number
+rebar,461,nacl_pct,0.01 mol/L NaHSO3 + 0.001 mol/L NaCl,set blank,not a number
+rebar,462,nacl_pct,0.01 mol/L NaHSO3 + 0.001 mol/L NaCl,set blank,not a number
+rebar,463,nacl_pct,0.01 mol/L NaHSO3 + 0.001 mol/L NaCl,set blank,not a number
+rebar,464,nacl_pct,3.5% and 4.5% (35‰ and 45‰),set blank,not a number
+rebar,465,nacl_pct,3.5% and 4.5% (35‰ and 45‰),set blank,not a number
+rebar,466,nacl_pct,3.5% and 4.5% (35‰ and 45‰),set blank,not a number
+rebar,467,nacl_pct,3.5% and 4.5% (35‰ and 45‰),set blank,not a number
+rebar,468,nacl_pct,3.5% and 4.5% (35‰ and 45‰),set blank,not a number
+rebar,469,nacl_pct,3.5% and 4.5% (35‰ and 45‰),set blank,not a number
+rebar,470,nacl_pct,3.5% and 4.5% (35‰ and 45‰),set blank,not a number
+rebar,471,nacl_pct,3.5% and 4.5% (35‰ and 45‰),set blank,not a number
+rebar,472,nacl_pct,3.5% and 4.5% (35‰ and 45‰),set blank,not a number
+rebar,473,nacl_pct,3.5% and 4.5% (35‰ and 45‰),set blank,not a number
+rebar,474,nacl_pct,3.5% and 4.5% (35‰ and 45‰),set blank,not a number
+rebar,475,nacl_pct,3.5% and 4.5% (35‰ and 45‰),set blank,not a number
+rebar,476,nacl_pct,3.5% and 4.5% (35‰ and 45‰),set blank,not a number
+rebar,477,nacl_pct,3.5% and 4.5% (35‰ and 45‰),set blank,not a number
+rebar,478,nacl_pct,3.5% and 4.5% (35‰ and 45‰),set blank,not a number
+rebar,479,nacl_pct,3.5% and 4.5% (35‰ and 45‰),set blank,not a number
+rebar,480,nacl_pct,3.5% and 4.5% (35‰ and 45‰),set blank,not a number
+rebar,481,nacl_pct,3.5% and 4.5% (35‰ and 45‰),set blank,not a number
+rebar,506,nacl_pct,5% NaCl,set blank,not a number
+rebar,507,nacl_pct,5% NaCl,set blank,not a number
+rebar,508,nacl_pct,5% NaCl,set blank,not a number
+rebar,509,nacl_pct,5% NaCl,set blank,not a number
+rebar,510,nacl_pct,5% NaCl,set blank,not a number
+rebar,511,nacl_pct,5% NaCl,set blank,not a number
+rebar,512,nacl_pct,5% NaCl,set blank,not a number
+rebar,513,nacl_pct,5% NaCl,set blank,not a number
+rebar,514,nacl_pct,5% NaCl,set blank,not a number
+rebar,515,nacl_pct,5% NaCl,set blank,not a number
+rebar,516,nacl_pct,5% NaCl,set blank,not a number
+rebar,517,nacl_pct,5% NaCl,set blank,not a number
+rebar,518,nacl_pct,5% NaCl,set blank,not a number
+rebar,519,nacl_pct,5% NaCl,set blank,not a number
+rebar,520,nacl_pct,5% NaCl,set blank,not a number
+rebar,521,nacl_pct,5% NaCl,set blank,not a number
+rebar,522,nacl_pct,5% NaCl,set blank,not a number
+rebar,523,nacl_pct,5% NaCl,set blank,not a number
+rebar,524,nacl_pct,5% NaCl,set blank,not a number
+rebar,525,nacl_pct,5% NaCl,set blank,not a number
+rebar,526,nacl_pct,5% NaCl,set blank,not a number
+rebar,527,nacl_pct,5% NaCl,set blank,not a number
+rebar,528,nacl_pct,5% NaCl,set blank,not a number
+rebar,529,nacl_pct,5% NaCl,set blank,not a number
+rebar,530,nacl_pct,5% NaCl,set blank,not a number
+rebar,531,nacl_pct,5% NaCl,set blank,not a number
+rebar,532,nacl_pct,5% NaCl,set blank,not a number
+rebar,533,nacl_pct,5% NaCl,set blank,not a number
+rebar,534,nacl_pct,5% NaCl,set blank,not a number
+rebar,535,nacl_pct,5% NaCl,set blank,not a number
+rebar,536,nacl_pct,5% NaCl,set blank,not a number
+rebar,537,nacl_pct,5% NaCl,set blank,not a number
+rebar,538,nacl_pct,5% NaCl,set blank,not a number
+rebar,539,nacl_pct,5% NaCl,set blank,not a number
+rebar,540,nacl_pct,5% NaCl,set blank,not a number
+rebar,541,nacl_pct,5% NaCl,set blank,not a number
+rebar,542,nacl_pct,5% NaCl,set blank,not a number
+rebar,543,nacl_pct,5% NaCl,set blank,not a number
+rebar,544,nacl_pct,5% NaCl,set blank,not a number
+rebar,545,nacl_pct,5% NaCl,set blank,not a number
+rebar,546,nacl_pct,5% NaCl,set blank,not a number
+rebar,547,nacl_pct,5% NaCl,set blank,not a number
+rebar,548,nacl_pct,5% NaCl,set blank,not a number
+rebar,549,nacl_pct,5% NaCl,set blank,not a number
+rebar,550,nacl_pct,5% NaCl,set blank,not a number
+rebar,551,nacl_pct,5% NaCl,set blank,not a number
+rebar,552,nacl_pct,5% NaCl,set blank,not a number
+rebar,553,nacl_pct,5% NaCl,set blank,not a number
+rebar,554,nacl_pct,5% NaCl,set blank,not a number
+rebar,555,nacl_pct,5% NaCl,set blank,not a number
+rebar,556,nacl_pct,5% NaCl,set blank,not a number
+rebar,557,nacl_pct,5% NaCl,set blank,not a number
+rebar,558,nacl_pct,5% NaCl,set blank,not a number
+rebar,3187,nacl_pct,  ( 90% 35 ),set blank,not a number
+rebar,3199,nacl_pct,3% ( )  5% (),set blank,not a number
+rebar,3227,nacl_pct, ( ),set blank,not a number
+rebar,3231,nacl_pct,  (  ),set blank,not a number
+rebar,372,bar_dia_mm,12 (Top) / 14 (Bottom),set blank,not a number
+rebar,3127,bar_dia_mm,13  10,set blank,not a number
+rebar,3128,bar_dia_mm,13  10,set blank,not a number
+rebar,3129,bar_dia_mm,13  10,set blank,not a number
+rebar,3130,bar_dia_mm,13  10,set blank,not a number
+rebar,3131,bar_dia_mm,13  10,set blank,not a number
+rebar,3132,bar_dia_mm,13  10,set blank,not a number
+rebar,3133,bar_dia_mm,13  10,set blank,not a number
+rebar,3134,bar_dia_mm,13  10,set blank,not a number
+rebar,3135,bar_dia_mm,13  10,set blank,not a number
+rebar,3136,bar_dia_mm,13  10,set blank,not a number
+rebar,3171,bar_dia_mm,12 16  20,set blank,not a number
+rebar,3172,bar_dia_mm,12 16  20,set blank,not a number
+rebar,3173,bar_dia_mm,12 16  20,set blank,not a number
+rebar,3174,bar_dia_mm,12 16  20,set blank,not a number
+rebar,3175,bar_dia_mm,12 16  20,set blank,not a number
+rebar,3176,bar_dia_mm,12 16  20,set blank,not a number
+rebar,3177,bar_dia_mm,12 16  20,set blank,not a number
+rebar,3178,bar_dia_mm,12 16  20,set blank,not a number
+rebar,3179,bar_dia_mm,12 16  20,set blank,not a number
+rebar,3213,bar_dia_mm,14   11  ( ),set blank,not a number
+rebar,3214,bar_dia_mm,14   11 ,set blank,not a number
+rebar,3215,bar_dia_mm,14   11 ,set blank,not a number
+rebar,3216,bar_dia_mm,14   11 ,set blank,not a number
+rebar,3539,bar_dia_mm,"14 (main), 8 (hanger/stirrup)",set blank,not a number
+rebar,3540,bar_dia_mm,"14 (main), 8 (hanger/stirrup)",set blank,not a number
+rebar,3541,bar_dia_mm,"14 (main), 8 (hanger/stirrup)",set blank,not a number
+rebar,3542,bar_dia_mm,"14 (main), 8 (hanger/stirrup)",set blank,not a number
+rebar,3543,bar_dia_mm,"14 (main), 8 (hanger/stirrup)",set blank,not a number
+rebar,3544,bar_dia_mm,"14 (main), 8 (hanger/stirrup)",set blank,not a number
+rebar,3545,bar_dia_mm,"14 (main), 8 (hanger/stirrup)",set blank,not a number
+rebar,3546,bar_dia_mm,"14 (main), 8 (hanger/stirrup)",set blank,not a number
+rebar,3547,bar_dia_mm,"14 (main), 8 (hanger/stirrup)",set blank,not a number
+rebar,3548,bar_dia_mm,"14 (main), 8 (hanger/stirrup)",set blank,not a number
+rebar,3549,bar_dia_mm,"14 (main), 8 (hanger/stirrup)",set blank,not a number
+rebar,3550,bar_dia_mm,"14 (main), 8 (hanger/stirrup)",set blank,not a number
+rebar,3551,bar_dia_mm,"14 (main), 8 (hanger/stirrup)",set blank,not a number
+rebar,3552,bar_dia_mm,"14 (main), 8 (hanger/stirrup)",set blank,not a number
+rebar,3553,bar_dia_mm,"14 (main), 8 (hanger/stirrup)",set blank,not a number
+rebar,3554,bar_dia_mm,"14 (main), 8 (hanger/stirrup)",set blank,not a number
+rebar,3555,bar_dia_mm,"14 (main), 8 (hanger/stirrup)",set blank,not a number
+rebar,3556,bar_dia_mm,"14 (main), 8 (hanger/stirrup)",set blank,not a number
+rebar,3557,bar_dia_mm,"14 (main), 8 (hanger/stirrup)",set blank,not a number
+rebar,3558,bar_dia_mm,"14 (main), 8 (hanger/stirrup)",set blank,not a number
+rebar,3559,bar_dia_mm,"14 (main), 8 (hanger/stirrup)",set blank,not a number
+rebar,3560,bar_dia_mm,"14 (main), 8 (hanger/stirrup)",set blank,not a number
+rebar,3561,bar_dia_mm,"14 (main), 8 (hanger/stirrup)",set blank,not a number
+rebar,3562,bar_dia_mm,"14 (main), 8 (hanger/stirrup)",set blank,not a number
+rebar,3563,bar_dia_mm,"14 (main), 8 (hanger/stirrup)",set blank,not a number
+rebar,3564,bar_dia_mm,"14 (main), 8 (hanger/stirrup)",set blank,not a number
+rebar,3565,bar_dia_mm,2Ã¸12 (bottom) + 2Ã¸8 (top),set blank,not a number
+rebar,3566,bar_dia_mm,2Ã¸12 (bottom) + 2Ã¸8 (top),set blank,not a number
+rebar,3567,bar_dia_mm,2Ã¸12 (bottom) + 2Ã¸8 (top),set blank,not a number
+rebar,3568,bar_dia_mm,2Ã¸12 (bottom) + 2Ã¸8 (top),set blank,not a number
+rebar,3569,bar_dia_mm,2Ã¸12 (bottom) + 2Ã¸8 (top),set blank,not a number
+rebar,3570,bar_dia_mm,2Ã¸12 (bottom) + 2Ã¸8 (top),set blank,not a number
+rebar,3571,bar_dia_mm,2Ã¸12 (bottom) + 2Ã¸8 (top),set blank,not a number
+rebar,3572,bar_dia_mm,2Ã¸12 (bottom) + 2Ã¸8 (top) + Ã¸8 (shear),set blank,not a number
+rebar,3573,bar_dia_mm,2Ã¸12 (bottom) + 2Ã¸8 (top) + Ã¸8 (shear),set blank,not a number
+rebar,3705,bar_dia_mm,8-18 (tensile); 6-8 (compression),set blank,not a number
+rebar,3706,bar_dia_mm,8-18 (tensile); 6-8 (compression),set blank,not a number
+rebar,3707,bar_dia_mm,8-18 (tensile); 6-8 (compression),set blank,not a number
+rebar,3708,bar_dia_mm,8-18 (tensile); 6-8 (compression),set blank,not a number
+rebar,3709,bar_dia_mm,8-18 (tensile); 6-8 (compression),set blank,not a number
+rebar,3710,bar_dia_mm,8-18 (tensile); 6-8 (compression),set blank,not a number
+rebar,3711,bar_dia_mm,8-18 (tensile); 6-8 (compression),set blank,not a number
+rebar,3946,bar_dia_mm,CB-1,set blank,not a number
+rebar,3947,bar_dia_mm,CB-2,set blank,not a number
+rebar,3948,bar_dia_mm,CB-3,set blank,not a number
+rebar,3949,bar_dia_mm,C2.5-1,set blank,not a number
+rebar,3950,bar_dia_mm,C2.5-2,set blank,not a number
+rebar,3951,bar_dia_mm,C2.5-3,set blank,not a number
+rebar,3952,bar_dia_mm,C5-1,set blank,not a number
+rebar,3953,bar_dia_mm,C5-2,set blank,not a number
+rebar,3954,bar_dia_mm,C5-3,set blank,not a number
+rebar,3955,bar_dia_mm,C7.5-1,set blank,not a number
+rebar,3956,bar_dia_mm,C7.5-2,set blank,not a number
+rebar,3957,bar_dia_mm,C7.5-3,set blank,not a number
+rebar,3958,bar_dia_mm,C10-1,set blank,not a number
+rebar,3959,bar_dia_mm,C10-2,set blank,not a number
+rebar,3960,bar_dia_mm,C10-3,set blank,not a number
+rebar,3961,bar_dia_mm,S01,set blank,not a number
+rebar,3962,bar_dia_mm,S02,set blank,not a number
+rebar,3963,bar_dia_mm,S03,set blank,not a number
+rebar,3964,bar_dia_mm,S04,set blank,not a number
+rebar,3965,bar_dia_mm,S05,set blank,not a number
+rebar,3966,bar_dia_mm,S06,set blank,not a number
+rebar,3967,bar_dia_mm,S07,set blank,not a number
+rebar,3968,bar_dia_mm,S08,set blank,not a number
+rebar,3969,bar_dia_mm,S09,set blank,not a number
+rebar,3970,bar_dia_mm,S10,set blank,not a number
+rebar,3971,bar_dia_mm,S11,set blank,not a number
+rebar,3972,bar_dia_mm,S12,set blank,not a number
+rebar,3973,bar_dia_mm,S13,set blank,not a number
+rebar,3974,bar_dia_mm,S14,set blank,not a number
+rebar,3975,bar_dia_mm,S15,set blank,not a number
+rebar,3976,bar_dia_mm,S16,set blank,not a number
+rebar,3977,bar_dia_mm,S17,set blank,not a number
+rebar,3978,bar_dia_mm,S18,set blank,not a number
+rebar,3979,bar_dia_mm,S19,set blank,not a number
+rebar,3980,bar_dia_mm,S20,set blank,not a number
+rebar,3981,bar_dia_mm,S21,set blank,not a number
+rebar,3982,bar_dia_mm,S22,set blank,not a number
+rebar,3983,bar_dia_mm,S23,set blank,not a number
+rebar,3984,bar_dia_mm,S24,set blank,not a number
+rebar,3985,bar_dia_mm,S25,set blank,not a number
+rebar,3986,bar_dia_mm,S26,set blank,not a number
+rebar,3987,bar_dia_mm,S27,set blank,not a number
+rebar,3988,bar_dia_mm,S28,set blank,not a number
+rebar,3989,bar_dia_mm,S29,set blank,not a number
+rebar,3990,bar_dia_mm,S30,set blank,not a number
+rebar,3991,bar_dia_mm,S31,set blank,not a number
+rebar,3992,bar_dia_mm,S32,set blank,not a number
+rebar,3993,bar_dia_mm,S33,set blank,not a number
+rebar,3994,bar_dia_mm,S34,set blank,not a number
+rebar,3995,bar_dia_mm,S35,set blank,not a number
+rebar,3996,bar_dia_mm,S36,set blank,not a number
+rebar,3997,bar_dia_mm,S37,set blank,not a number
+rebar,3998,bar_dia_mm,S38,set blank,not a number
+rebar,3999,bar_dia_mm,S39,set blank,not a number
+rebar,4000,bar_dia_mm,S40,set blank,not a number
+rebar,4001,bar_dia_mm,S41,set blank,not a number
+rebar,4002,bar_dia_mm,S42,set blank,not a number
+rebar,4003,bar_dia_mm,S43,set blank,not a number
+rebar,4004,bar_dia_mm,S44,set blank,not a number
+rebar,4005,bar_dia_mm,S45,set blank,not a number
+rebar,4006,bar_dia_mm,S46,set blank,not a number
+rebar,4007,bar_dia_mm,S47,set blank,not a number
+rebar,4008,bar_dia_mm,S48,set blank,not a number
+rebar,4009,bar_dia_mm,S49,set blank,not a number
+rebar,4010,bar_dia_mm,S50,set blank,not a number
+rebar,4011,bar_dia_mm,S51,set blank,not a number
+rebar,4012,bar_dia_mm,S52,set blank,not a number
+rebar,4013,bar_dia_mm,S53,set blank,not a number
+rebar,4014,bar_dia_mm,S54,set blank,not a number
+rebar,220,corr_pct,24.3 (Stirrups); 11.3 (Longitudinal),set blank,not a number
+rebar,221,corr_pct,30.0 (Stirrups); 13.2 (Longitudinal),set blank,not a number
+rebar,222,corr_pct,32.2 (Stirrups); 12.9 (Longitudinal),set blank,not a number
+rebar,223,corr_pct,0.0 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,224,corr_pct,0.0 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,225,corr_pct,21.4 (Stirrups); 10.4 (Longitudinal),set blank,not a number
+rebar,226,corr_pct,22.6 (Stirrups); 11.3 (Longitudinal),set blank,not a number
+rebar,227,corr_pct,30.6 (Stirrups); 12.9 (Longitudinal),set blank,not a number
+rebar,228,corr_pct,32.2 (Stirrups); 12.6 (Longitudinal),set blank,not a number
+rebar,229,corr_pct,23.1 (Stirrups); 12.0 (Longitudinal),set blank,not a number
+rebar,230,corr_pct,27.2 (Stirrups); 10.1 (Longitudinal),set blank,not a number
+rebar,231,corr_pct,31.7 (Stirrups); 13.8 (Longitudinal),set blank,not a number
+rebar,232,corr_pct,37.6 (Stirrups); 16.9 (Longitudinal),set blank,not a number
+rebar,233,corr_pct,37.6 (Stirrups); 16.3 (Longitudinal),set blank,not a number
+rebar,234,corr_pct,0.0 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,235,corr_pct,0.4 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,236,corr_pct,1.3 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,237,corr_pct,1.8 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,238,corr_pct,2.4 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,239,corr_pct,2.9 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,240,corr_pct,0.0 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,241,corr_pct,0.3 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,242,corr_pct,0.5 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,243,corr_pct,1.6 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,244,corr_pct,2.6 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,245,corr_pct,3.6 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,246,corr_pct,0.0 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,247,corr_pct,0.6 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,248,corr_pct,1.5 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,249,corr_pct,2.8 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,250,corr_pct,2.8 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,251,corr_pct,2.8 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,252,corr_pct,0.0 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,253,corr_pct,24.9 (Stirrups); 5.7 (Longitudinal),set blank,not a number
+rebar,254,corr_pct,35.9 (Stirrups); 24.8 (Longitudinal),set blank,not a number
+rebar,255,corr_pct,0.0 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,256,corr_pct,26.2 (Stirrups); 9.5 (Longitudinal),set blank,not a number
+rebar,257,corr_pct,38.9 (Stirrups); 26.2 (Longitudinal),set blank,not a number
+rebar,258,corr_pct,0.0 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,259,corr_pct,9.9 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,260,corr_pct,15.6 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,261,corr_pct,0.0 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,262,corr_pct,8.0 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,263,corr_pct,15.0 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,264,corr_pct,0.0 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,265,corr_pct,1.2 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,266,corr_pct,3.7 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,267,corr_pct,0.0 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,268,corr_pct,1.0 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,269,corr_pct,2.9 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,270,corr_pct,0.0 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,271,corr_pct,0.0 (Stirrups); 3.1 (Longitudinal),set blank,not a number
+rebar,272,corr_pct,0.0 (Stirrups); 18.4 (Longitudinal),set blank,not a number
+rebar,273,corr_pct,0.0 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,274,corr_pct,0.0 (Stirrups); 5.0 (Longitudinal),set blank,not a number
+rebar,275,corr_pct,0.0 (Stirrups); 6.0 (Longitudinal),set blank,not a number
+rebar,276,corr_pct,0.0 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,277,corr_pct,5.6 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,278,corr_pct,8.3 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,279,corr_pct,14.0 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,280,corr_pct,16.3 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,281,corr_pct,19.3 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,282,corr_pct,0.0 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,283,corr_pct,0.0 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,284,corr_pct,0.0 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,285,corr_pct,5.5 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,286,corr_pct,9.1 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,287,corr_pct,13.4 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,288,corr_pct,0.0 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,289,corr_pct,0.0 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,290,corr_pct,7.2 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,291,corr_pct,17.0 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,292,corr_pct,0.0 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,293,corr_pct,10.3 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,294,corr_pct,16.8 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,295,corr_pct,0.0 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,296,corr_pct,9.0 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,297,corr_pct,18.0 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,298,corr_pct,0.0 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,299,corr_pct,0.0 (Stirrups); 1.1 (Longitudinal),set blank,not a number
+rebar,300,corr_pct,0.0 (Stirrups); 4.1 (Longitudinal),set blank,not a number
+rebar,301,corr_pct,0.0 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,302,corr_pct,0.0 (Stirrups); 1.6 (Longitudinal),set blank,not a number
+rebar,303,corr_pct,0.0 (Stirrups); 4.6 (Longitudinal),set blank,not a number
+rebar,304,corr_pct,5.6 (Stirrups); 1.3 (Longitudinal),set blank,not a number
+rebar,305,corr_pct,34.2 (Stirrups); 12.1 (Longitudinal),set blank,not a number
+rebar,306,corr_pct,32.6 (Stirrups); 11.5 (Longitudinal),set blank,not a number
+rebar,307,corr_pct,0.0 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,308,corr_pct,44.2 (Stirrups); 16.7 (Longitudinal),set blank,not a number
+rebar,309,corr_pct,12.9 (Stirrups); 3.2 (Longitudinal),set blank,not a number
+rebar,310,corr_pct,28.5 (Stirrups); 9.3 (Longitudinal),set blank,not a number
+rebar,311,corr_pct,30.0 (Stirrups); 9.9 (Longitudinal),set blank,not a number
+rebar,312,corr_pct,9.8 (Stirrups); 2.4 (Longitudinal),set blank,not a number
+rebar,313,corr_pct,22.4 (Stirrups); 7.6 (Longitudinal),set blank,not a number
+rebar,314,corr_pct,37.8 (Stirrups); 10.4 (Longitudinal),set blank,not a number
+rebar,315,corr_pct,32.4 (Stirrups); 11.6 (Longitudinal),set blank,not a number
+rebar,316,corr_pct,29.9 (Stirrups); 7.8 (Longitudinal),set blank,not a number
+rebar,317,corr_pct,23.8 (Stirrups); 7.7 (Longitudinal),set blank,not a number
+rebar,318,corr_pct,0.0 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,319,corr_pct,24.4 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,320,corr_pct,16.6 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,321,corr_pct,39.1 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,322,corr_pct,24.1 (Stirrups); 4.7 (Longitudinal),set blank,not a number
+rebar,323,corr_pct,0.0 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,324,corr_pct,18.4 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,325,corr_pct,16.6 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,326,corr_pct,32.5 (Stirrups); 0.0 (Longitudinal),set blank,not a number
+rebar,327,corr_pct,17.1 (Stirrups); 4.7 (Longitudinal),set blank,not a number
+rebar,3086,corr_pct,--,set blank,not a number
+rebar,3095,corr_pct,-,set blank,not a number
+rebar,3115,corr_pct, (-),set blank,not a number
+rebar,3194,corr_pct,10% . ( 16%),set blank,not a number
+rebar,3195,corr_pct,10% . ( 16%),set blank,not a number
+rebar,3569,corr_pct,2.9 (bottom) / 2.65 (top),set blank,not a number
+rebar,3570,corr_pct,4.7 (bottom) / 4.45 (top),set blank,not a number
+rebar,3571,corr_pct,8.7 (bottom) / 7.93 (top),set blank,not a number
+rebar,3572,corr_pct,2.08 (bottom) / 1.52 (top) / 2.66 (shear),set blank,not a number
+rebar,3573,corr_pct,3.90 (bottom) / 1.59 (top) / 7.34 (shear),set blank,not a number
+rebar,395,corr_pct,-3.1,set to 0,small negative mass loss (weighing noise)
+rebar,3760,corr_pct,-3.125,set to 0,small negative mass loss (weighing noise)
+rebar,3761,corr_pct,-3.125,set to 0,small negative mass loss (weighing noise)
+rebar,3762,corr_pct,-3.125,set to 0,small negative mass loss (weighing noise)
+rebar,3763,corr_pct,-2.532,set to 0,small negative mass loss (weighing noise)
+rebar,3764,corr_pct,-2.5,set to 0,small negative mass loss (weighing noise)
+rebar,3765,corr_pct,-2.516,set to 0,small negative mass loss (weighing noise)
+rebar,3766,corr_pct,-2.5,set to 0,small negative mass loss (weighing noise)
+rebar,3767,corr_pct,-2.5,set to 0,small negative mass loss (weighing noise)
+rebar,3768,corr_pct,-2.5,set to 0,small negative mass loss (weighing noise)
+rebar,3769,corr_pct,-3.125,set to 0,small negative mass loss (weighing noise)
+rebar,3770,corr_pct,-3.125,set to 0,small negative mass loss (weighing noise)
+rebar,3771,corr_pct,-2.5,set to 0,small negative mass loss (weighing noise)
+rebar,3126,exposure_days,-0.15,set blank,"outside plausible range [0, 40000]"
+rebar,806,nacl_pct,-1.0,set blank,"outside plausible range [0, 20]"
+rebar,807,nacl_pct,-1.0,set blank,"outside plausible range [0, 20]"
+rebar,808,nacl_pct,-1.0,set blank,"outside plausible range [0, 20]"
+rebar,3235,nacl_pct,-3000.0,set blank,"outside plausible range [0, 20]"
+rebar,3236,nacl_pct,-10402.0,set blank,"outside plausible range [0, 20]"
+rebar,3237,nacl_pct,-2000.0,set blank,"outside plausible range [0, 20]"
+rebar,3961,nacl_pct,750.0,set blank,"outside plausible range [0, 20]"
+rebar,3962,nacl_pct,750.0,set blank,"outside plausible range [0, 20]"
+rebar,3963,nacl_pct,750.0,set blank,"outside plausible range [0, 20]"
+rebar,3964,nacl_pct,750.0,set blank,"outside plausible range [0, 20]"
+rebar,3965,nacl_pct,750.0,set blank,"outside plausible range [0, 20]"
+rebar,3966,nacl_pct,750.0,set blank,"outside plausible range [0, 20]"
+rebar,3967,nacl_pct,750.0,set blank,"outside plausible range [0, 20]"
+rebar,3968,nacl_pct,750.0,set blank,"outside plausible range [0, 20]"
+rebar,3969,nacl_pct,750.0,set blank,"outside plausible range [0, 20]"
+rebar,3970,nacl_pct,750.0,set blank,"outside plausible range [0, 20]"
+rebar,3971,nacl_pct,750.0,set blank,"outside plausible range [0, 20]"
+rebar,3972,nacl_pct,750.0,set blank,"outside plausible range [0, 20]"
+rebar,3973,nacl_pct,750.0,set blank,"outside plausible range [0, 20]"
+rebar,3974,nacl_pct,750.0,set blank,"outside plausible range [0, 20]"
+rebar,3975,nacl_pct,750.0,set blank,"outside plausible range [0, 20]"
+rebar,3976,nacl_pct,750.0,set blank,"outside plausible range [0, 20]"
+rebar,3977,nacl_pct,750.0,set blank,"outside plausible range [0, 20]"
+rebar,3978,nacl_pct,750.0,set blank,"outside plausible range [0, 20]"
+rebar,3979,nacl_pct,750.0,set blank,"outside plausible range [0, 20]"
+rebar,3980,nacl_pct,750.0,set blank,"outside plausible range [0, 20]"
+rebar,3981,nacl_pct,750.0,set blank,"outside plausible range [0, 20]"
+rebar,3982,nacl_pct,750.0,set blank,"outside plausible range [0, 20]"
+rebar,3983,nacl_pct,750.0,set blank,"outside plausible range [0, 20]"
+rebar,3984,nacl_pct,750.0,set blank,"outside plausible range [0, 20]"
+rebar,3985,nacl_pct,750.0,set blank,"outside plausible range [0, 20]"
+rebar,3986,nacl_pct,750.0,set blank,"outside plausible range [0, 20]"
+rebar,3987,nacl_pct,750.0,set blank,"outside plausible range [0, 20]"
+rebar,3988,nacl_pct,750.0,set blank,"outside plausible range [0, 20]"
+rebar,3989,nacl_pct,750.0,set blank,"outside plausible range [0, 20]"
+rebar,3990,nacl_pct,750.0,set blank,"outside plausible range [0, 20]"
+rebar,3991,nacl_pct,750.0,set blank,"outside plausible range [0, 20]"
+rebar,3992,nacl_pct,750.0,set blank,"outside plausible range [0, 20]"
+rebar,3993,nacl_pct,750.0,set blank,"outside plausible range [0, 20]"
+rebar,3994,nacl_pct,750.0,set blank,"outside plausible range [0, 20]"
+rebar,3995,nacl_pct,750.0,set blank,"outside plausible range [0, 20]"
+rebar,3996,nacl_pct,750.0,set blank,"outside plausible range [0, 20]"
+rebar,3997,nacl_pct,750.0,set blank,"outside plausible range [0, 20]"
+rebar,3998,nacl_pct,750.0,set blank,"outside plausible range [0, 20]"
+rebar,3999,nacl_pct,750.0,set blank,"outside plausible range [0, 20]"
+rebar,4000,nacl_pct,750.0,set blank,"outside plausible range [0, 20]"
+rebar,4001,nacl_pct,750.0,set blank,"outside plausible range [0, 20]"
+rebar,4002,nacl_pct,750.0,set blank,"outside plausible range [0, 20]"
+rebar,4003,nacl_pct,750.0,set blank,"outside plausible range [0, 20]"
+rebar,4004,nacl_pct,750.0,set blank,"outside plausible range [0, 20]"
+rebar,4005,nacl_pct,750.0,set blank,"outside plausible range [0, 20]"
+rebar,4006,nacl_pct,750.0,set blank,"outside plausible range [0, 20]"
+rebar,4007,nacl_pct,750.0,set blank,"outside plausible range [0, 20]"
+rebar,4008,nacl_pct,750.0,set blank,"outside plausible range [0, 20]"
+rebar,4009,nacl_pct,750.0,set blank,"outside plausible range [0, 20]"
+rebar,4010,nacl_pct,750.0,set blank,"outside plausible range [0, 20]"
+rebar,4011,nacl_pct,750.0,set blank,"outside plausible range [0, 20]"
+rebar,4012,nacl_pct,750.0,set blank,"outside plausible range [0, 20]"
+rebar,4013,nacl_pct,750.0,set blank,"outside plausible range [0, 20]"
+rebar,4014,nacl_pct,750.0,set blank,"outside plausible range [0, 20]"
+rebar,4479,nacl_pct,-1.0,set blank,"outside plausible range [0, 20]"
+rebar,4480,nacl_pct,-1.0,set blank,"outside plausible range [0, 20]"
+rebar,4481,nacl_pct,-1.0,set blank,"outside plausible range [0, 20]"
+rebar,199,bar_dia_mm,0.0,set blank,"outside plausible range [4, 50]"
+rebar,200,bar_dia_mm,0.0,set blank,"outside plausible range [4, 50]"
+rebar,201,bar_dia_mm,0.0,set blank,"outside plausible range [4, 50]"
+rebar,3187,bar_dia_mm,335.0,set blank,"outside plausible range [4, 50]"
+rebar,3188,bar_dia_mm,335.0,set blank,"outside plausible range [4, 50]"
+rebar,3189,bar_dia_mm,335.0,set blank,"outside plausible range [4, 50]"
+rebar,3190,bar_dia_mm,335.0,set blank,"outside plausible range [4, 50]"
+rebar,3191,bar_dia_mm,335.0,set blank,"outside plausible range [4, 50]"
+rebar,3192,bar_dia_mm,335.0,set blank,"outside plausible range [4, 50]"
+rebar,3193,bar_dia_mm,335.0,set blank,"outside plausible range [4, 50]"
+rebar,3705,icorr_ua_cm2,46082.0,set blank,"outside plausible range [0, 5000]"
+rebar,3706,icorr_ua_cm2,46082.0,set blank,"outside plausible range [0, 5000]"
+rebar,3707,icorr_ua_cm2,46082.0,set blank,"outside plausible range [0, 5000]"
+rebar,3708,icorr_ua_cm2,46082.0,set blank,"outside plausible range [0, 5000]"
+rebar,3709,icorr_ua_cm2,46082.0,set blank,"outside plausible range [0, 5000]"
+rebar,3710,icorr_ua_cm2,46082.0,set blank,"outside plausible range [0, 5000]"
+rebar,3711,icorr_ua_cm2,46082.0,set blank,"outside plausible range [0, 5000]"
+rebar,3809,icorr_ua_cm2,10000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3810,icorr_ua_cm2,10000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3811,icorr_ua_cm2,10000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3812,icorr_ua_cm2,10000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3813,icorr_ua_cm2,10000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3814,icorr_ua_cm2,10000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3815,icorr_ua_cm2,10000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3816,icorr_ua_cm2,20000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3817,icorr_ua_cm2,20000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3818,icorr_ua_cm2,20000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3819,icorr_ua_cm2,20000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3820,icorr_ua_cm2,20000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3821,icorr_ua_cm2,20000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3822,icorr_ua_cm2,20000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3823,icorr_ua_cm2,30000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3824,icorr_ua_cm2,30000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3825,icorr_ua_cm2,30000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3826,icorr_ua_cm2,30000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3827,icorr_ua_cm2,30000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3828,icorr_ua_cm2,30000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3829,icorr_ua_cm2,30000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3837,icorr_ua_cm2,10000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3838,icorr_ua_cm2,10000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3839,icorr_ua_cm2,10000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3840,icorr_ua_cm2,10000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3841,icorr_ua_cm2,10000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3842,icorr_ua_cm2,10000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3843,icorr_ua_cm2,10000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3844,icorr_ua_cm2,20000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3845,icorr_ua_cm2,20000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3846,icorr_ua_cm2,20000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3847,icorr_ua_cm2,20000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3848,icorr_ua_cm2,20000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3849,icorr_ua_cm2,20000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3850,icorr_ua_cm2,20000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3851,icorr_ua_cm2,30000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3852,icorr_ua_cm2,30000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3853,icorr_ua_cm2,30000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3854,icorr_ua_cm2,30000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3855,icorr_ua_cm2,30000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3856,icorr_ua_cm2,30000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3857,icorr_ua_cm2,30000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3865,icorr_ua_cm2,10000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3866,icorr_ua_cm2,10000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3867,icorr_ua_cm2,10000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3868,icorr_ua_cm2,10000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3869,icorr_ua_cm2,10000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3870,icorr_ua_cm2,10000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3871,icorr_ua_cm2,10000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3872,icorr_ua_cm2,20000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3873,icorr_ua_cm2,20000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3874,icorr_ua_cm2,20000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3875,icorr_ua_cm2,20000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3876,icorr_ua_cm2,20000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3877,icorr_ua_cm2,20000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3878,icorr_ua_cm2,20000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3879,icorr_ua_cm2,30000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3880,icorr_ua_cm2,30000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3881,icorr_ua_cm2,30000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3882,icorr_ua_cm2,30000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3883,icorr_ua_cm2,30000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3884,icorr_ua_cm2,30000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3885,icorr_ua_cm2,30000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3893,icorr_ua_cm2,10000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3894,icorr_ua_cm2,10000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3895,icorr_ua_cm2,10000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3896,icorr_ua_cm2,10000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3897,icorr_ua_cm2,10000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3898,icorr_ua_cm2,10000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3899,icorr_ua_cm2,10000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3900,icorr_ua_cm2,20000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3901,icorr_ua_cm2,20000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3902,icorr_ua_cm2,20000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3903,icorr_ua_cm2,20000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3904,icorr_ua_cm2,20000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3905,icorr_ua_cm2,20000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3906,icorr_ua_cm2,20000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3907,icorr_ua_cm2,30000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3908,icorr_ua_cm2,30000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3909,icorr_ua_cm2,30000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3910,icorr_ua_cm2,30000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3911,icorr_ua_cm2,30000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3912,icorr_ua_cm2,30000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3913,icorr_ua_cm2,30000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3921,icorr_ua_cm2,10000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3922,icorr_ua_cm2,10000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3923,icorr_ua_cm2,10000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3924,icorr_ua_cm2,10000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3925,icorr_ua_cm2,10000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3926,icorr_ua_cm2,10000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3927,icorr_ua_cm2,10000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3928,icorr_ua_cm2,20000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3929,icorr_ua_cm2,20000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3930,icorr_ua_cm2,20000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3931,icorr_ua_cm2,20000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3932,icorr_ua_cm2,20000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3933,icorr_ua_cm2,20000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3934,icorr_ua_cm2,20000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3935,icorr_ua_cm2,30000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3936,icorr_ua_cm2,30000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3937,icorr_ua_cm2,30000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3938,icorr_ua_cm2,30000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3939,icorr_ua_cm2,30000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3940,icorr_ua_cm2,30000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3941,icorr_ua_cm2,30000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3943,icorr_ua_cm2,10000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3944,icorr_ua_cm2,20000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3945,icorr_ua_cm2,30000.0,set blank,"outside plausible range [0, 5000]"
+rebar,3539,ru_eng_pct,2.77,set blank,"outside plausible range [5, 150]"
+rebar,3542,ru_eng_pct,3.92,set blank,"outside plausible range [5, 150]"
+rebar,3543,ru_eng_pct,2.4,set blank,"outside plausible range [5, 150]"
+rebar,3545,ru_eng_pct,3.33,set blank,"outside plausible range [5, 150]"
+rebar,3546,ru_eng_pct,2.94,set blank,"outside plausible range [5, 150]"
+rebar,3548,ru_eng_pct,4.79,set blank,"outside plausible range [5, 150]"
+rebar,3550,ru_eng_pct,2.23,set blank,"outside plausible range [5, 150]"
+rebar,3551,ru_eng_pct,2.32,set blank,"outside plausible range [5, 150]"
+rebar,3552,ru_eng_pct,2.77,set blank,"outside plausible range [5, 150]"
+rebar,3555,ru_eng_pct,3.92,set blank,"outside plausible range [5, 150]"
+rebar,3556,ru_eng_pct,2.4,set blank,"outside plausible range [5, 150]"
+rebar,3558,ru_eng_pct,3.33,set blank,"outside plausible range [5, 150]"
+rebar,3559,ru_eng_pct,2.94,set blank,"outside plausible range [5, 150]"
+rebar,3561,ru_eng_pct,4.79,set blank,"outside plausible range [5, 150]"
+rebar,3563,ru_eng_pct,2.23,set blank,"outside plausible range [5, 150]"
+rebar,3564,ru_eng_pct,2.32,set blank,"outside plausible range [5, 150]"
+rebar,3565,ru_eng_pct,3.8,set blank,"outside plausible range [5, 150]"
+rebar,3566,ru_eng_pct,3.3,set blank,"outside plausible range [5, 150]"
+rebar,3567,ru_eng_pct,4.2,set blank,"outside plausible range [5, 150]"
+rebar,3568,ru_eng_pct,3.6,set blank,"outside plausible range [5, 150]"
+rebar,3569,ru_eng_pct,2.4,set blank,"outside plausible range [5, 150]"
+rebar,3570,ru_eng_pct,3.5,set blank,"outside plausible range [5, 150]"
+rebar,3571,ru_eng_pct,3.4,set blank,"outside plausible range [5, 150]"
+rebar,3572,ru_eng_pct,4.5,set blank,"outside plausible range [5, 150]"
+rebar,3573,ru_eng_pct,4.9,set blank,"outside plausible range [5, 150]"
+rebar,3574,ru_eng_pct,2.77,set blank,"outside plausible range [5, 150]"
+rebar,3577,ru_eng_pct,3.92,set blank,"outside plausible range [5, 150]"
+rebar,3578,ru_eng_pct,2.4,set blank,"outside plausible range [5, 150]"
+rebar,3580,ru_eng_pct,3.33,set blank,"outside plausible range [5, 150]"
+rebar,3581,ru_eng_pct,2.94,set blank,"outside plausible range [5, 150]"
+rebar,3583,ru_eng_pct,4.79,set blank,"outside plausible range [5, 150]"
+rebar,3585,ru_eng_pct,2.23,set blank,"outside plausible range [5, 150]"
+rebar,3586,ru_eng_pct,2.32,set blank,"outside plausible range [5, 150]"
+rebar,3588,ru_eng_pct,4.1,set blank,"outside plausible range [5, 150]"
+rebar,3593,ru_eng_pct,1.0,set blank,"outside plausible range [5, 150]"
+rebar,3594,ru_eng_pct,4.31,set blank,"outside plausible range [5, 150]"
+rebar,3595,ru_eng_pct,4.89,set blank,"outside plausible range [5, 150]"
+rebar,3609,ru_eng_pct,4.49,set blank,"outside plausible range [5, 150]"
+rebar,3610,ru_eng_pct,4.29,set blank,"outside plausible range [5, 150]"
+rebar,3616,ru_eng_pct,4.16,set blank,"outside plausible range [5, 150]"
+rebar,3660,ru_eng_pct,2.0,set blank,"outside plausible range [5, 150]"
+rebar,3740,ru_eng_pct,2.55,set blank,"outside plausible range [5, 150]"
+rebar,3741,ru_eng_pct,2.55,set blank,"outside plausible range [5, 150]"
+rebar,3742,ru_eng_pct,3.04,set blank,"outside plausible range [5, 150]"
+rebar,3743,ru_eng_pct,3.04,set blank,"outside plausible range [5, 150]"
+rebar,3744,ru_eng_pct,3.63,set blank,"outside plausible range [5, 150]"
+rebar,3745,ru_eng_pct,3.63,set blank,"outside plausible range [5, 150]"
+rebar,3746,ru_eng_pct,3.95,set blank,"outside plausible range [5, 150]"
+rebar,3747,ru_eng_pct,3.95,set blank,"outside plausible range [5, 150]"
+rebar,3748,ru_eng_pct,1.41,set blank,"outside plausible range [5, 150]"
+rebar,3749,ru_eng_pct,1.4,set blank,"outside plausible range [5, 150]"
+rebar,3750,ru_eng_pct,1.39,set blank,"outside plausible range [5, 150]"
+rebar,3751,ru_eng_pct,1.42,set blank,"outside plausible range [5, 150]"
+rebar,3752,ru_eng_pct,1.43,set blank,"outside plausible range [5, 150]"
+rebar,3753,ru_eng_pct,1.4,set blank,"outside plausible range [5, 150]"
+rebar,3754,ru_eng_pct,1.38,set blank,"outside plausible range [5, 150]"
+rebar,3755,ru_eng_pct,1.4,set blank,"outside plausible range [5, 150]"
+rebar,3756,ru_eng_pct,1.39,set blank,"outside plausible range [5, 150]"
+rebar,3757,ru_eng_pct,1.42,set blank,"outside plausible range [5, 150]"
+rebar,3758,ru_eng_pct,1.4,set blank,"outside plausible range [5, 150]"
+rebar,3759,ru_eng_pct,1.42,set blank,"outside plausible range [5, 150]"
+rebar,3760,ru_eng_pct,1.46,set blank,"outside plausible range [5, 150]"
+rebar,3761,ru_eng_pct,1.45,set blank,"outside plausible range [5, 150]"
+rebar,3762,ru_eng_pct,1.44,set blank,"outside plausible range [5, 150]"
+rebar,3763,ru_eng_pct,1.47,set blank,"outside plausible range [5, 150]"
+rebar,3764,ru_eng_pct,1.48,set blank,"outside plausible range [5, 150]"
+rebar,3765,ru_eng_pct,1.45,set blank,"outside plausible range [5, 150]"
+rebar,3766,ru_eng_pct,1.43,set blank,"outside plausible range [5, 150]"
+rebar,3767,ru_eng_pct,1.45,set blank,"outside plausible range [5, 150]"
+rebar,3768,ru_eng_pct,1.44,set blank,"outside plausible range [5, 150]"
+rebar,3769,ru_eng_pct,1.47,set blank,"outside plausible range [5, 150]"
+rebar,3770,ru_eng_pct,1.45,set blank,"outside plausible range [5, 150]"
+rebar,3771,ru_eng_pct,1.47,set blank,"outside plausible range [5, 150]"
+rebar,3772,ru_eng_pct,1.42,set blank,"outside plausible range [5, 150]"
+rebar,3773,ru_eng_pct,1.41,set blank,"outside plausible range [5, 150]"
+rebar,3774,ru_eng_pct,1.39,set blank,"outside plausible range [5, 150]"
+rebar,3775,ru_eng_pct,1.42,set blank,"outside plausible range [5, 150]"
+rebar,3776,ru_eng_pct,1.44,set blank,"outside plausible range [5, 150]"
+rebar,3777,ru_eng_pct,1.4,set blank,"outside plausible range [5, 150]"
+rebar,3778,ru_eng_pct,1.38,set blank,"outside plausible range [5, 150]"
+rebar,3779,ru_eng_pct,1.41,set blank,"outside plausible range [5, 150]"
+rebar,3780,ru_eng_pct,1.4,set blank,"outside plausible range [5, 150]"
+rebar,3781,ru_eng_pct,1.43,set blank,"outside plausible range [5, 150]"
+rebar,3782,ru_eng_pct,1.4,set blank,"outside plausible range [5, 150]"
+rebar,3783,ru_eng_pct,1.43,set blank,"outside plausible range [5, 150]"
+rebar,4109,ru_eng_pct,3.0,set blank,"outside plausible range [5, 150]"
+rebar,4110,ru_eng_pct,2.33,set blank,"outside plausible range [5, 150]"
+rebar,4111,ru_eng_pct,2.56,set blank,"outside plausible range [5, 150]"
+rebar,4112,ru_eng_pct,1.61,set blank,"outside plausible range [5, 150]"
+rebar,4113,ru_eng_pct,3.57,set blank,"outside plausible range [5, 150]"
+rebar,4117,ru_eng_pct,3.0,set blank,"outside plausible range [5, 150]"
+rebar,4133,ru_eng_pct,3.79,set blank,"outside plausible range [5, 150]"
+rebar,4188,ru_eng_pct,3.0,set blank,"outside plausible range [5, 150]"
+rebar,4189,ru_eng_pct,2.33,set blank,"outside plausible range [5, 150]"
+rebar,4190,ru_eng_pct,2.56,set blank,"outside plausible range [5, 150]"
+rebar,4191,ru_eng_pct,1.61,set blank,"outside plausible range [5, 150]"
+rebar,4192,ru_eng_pct,3.57,set blank,"outside plausible range [5, 150]"
+rebar,4196,ru_eng_pct,3.0,set blank,"outside plausible range [5, 150]"
+rebar,4212,ru_eng_pct,3.79,set blank,"outside plausible range [5, 150]"
+rebar,23,ry_eff_pct,223.68,set blank,"outside plausible range [20, 200]"
+rebar,24,ry_eff_pct,251.3,set blank,"outside plausible range [20, 200]"
+rebar,3542,ry_eff_pct,19.86,set blank,"outside plausible range [20, 200]"
+rebar,3543,ry_eff_pct,11.19,set blank,"outside plausible range [20, 200]"
+rebar,3550,ry_eff_pct,10.38,set blank,"outside plausible range [20, 200]"
+rebar,3551,ry_eff_pct,11.82,set blank,"outside plausible range [20, 200]"
+rebar,3555,ry_eff_pct,19.86,set blank,"outside plausible range [20, 200]"
+rebar,3556,ry_eff_pct,11.19,set blank,"outside plausible range [20, 200]"
+rebar,3563,ry_eff_pct,10.38,set blank,"outside plausible range [20, 200]"
+rebar,3564,ry_eff_pct,11.82,set blank,"outside plausible range [20, 200]"
+rebar,3593,ry_eff_pct,7.2,set blank,"outside plausible range [20, 200]"
+rebar,3616,ry_eff_pct,15.4,set blank,"outside plausible range [20, 200]"
+rebar,3740,ry_eff_pct,14.0,set blank,"outside plausible range [20, 200]"
+rebar,3741,ry_eff_pct,14.0,set blank,"outside plausible range [20, 200]"
+rebar,3742,ry_eff_pct,14.3,set blank,"outside plausible range [20, 200]"
+rebar,3743,ry_eff_pct,14.3,set blank,"outside plausible range [20, 200]"
+rebar,3744,ry_eff_pct,14.9,set blank,"outside plausible range [20, 200]"
+rebar,3745,ry_eff_pct,14.9,set blank,"outside plausible range [20, 200]"
+rebar,3746,ry_eff_pct,15.0,set blank,"outside plausible range [20, 200]"
+rebar,3747,ry_eff_pct,15.0,set blank,"outside plausible range [20, 200]"
+rebar,4109,ry_eff_pct,1.8,set blank,"outside plausible range [20, 200]"
+rebar,4110,ry_eff_pct,1.4,set blank,"outside plausible range [20, 200]"
+rebar,4111,ry_eff_pct,4.6,set blank,"outside plausible range [20, 200]"
+rebar,4112,ry_eff_pct,0.37,set blank,"outside plausible range [20, 200]"
+rebar,4113,ry_eff_pct,2.5,set blank,"outside plausible range [20, 200]"
+rebar,4114,ry_eff_pct,11.1,set blank,"outside plausible range [20, 200]"
+rebar,4115,ry_eff_pct,11.4,set blank,"outside plausible range [20, 200]"
+rebar,4116,ry_eff_pct,16.4,set blank,"outside plausible range [20, 200]"
+rebar,4117,ry_eff_pct,1.8,set blank,"outside plausible range [20, 200]"
+rebar,4118,ry_eff_pct,7.6,set blank,"outside plausible range [20, 200]"
+rebar,4119,ry_eff_pct,6.0,set blank,"outside plausible range [20, 200]"
+rebar,4120,ry_eff_pct,18.4,set blank,"outside plausible range [20, 200]"
+rebar,4121,ry_eff_pct,11.7,set blank,"outside plausible range [20, 200]"
+rebar,4123,ry_eff_pct,18.4,set blank,"outside plausible range [20, 200]"
+rebar,4124,ry_eff_pct,17.6,set blank,"outside plausible range [20, 200]"
+rebar,4125,ry_eff_pct,13.1,set blank,"outside plausible range [20, 200]"
+rebar,4127,ry_eff_pct,19.0,set blank,"outside plausible range [20, 200]"
+rebar,4129,ry_eff_pct,19.0,set blank,"outside plausible range [20, 200]"
+rebar,4133,ry_eff_pct,7.2,set blank,"outside plausible range [20, 200]"
+rebar,4134,ry_eff_pct,10.0,set blank,"outside plausible range [20, 200]"
+rebar,4135,ry_eff_pct,14.0,set blank,"outside plausible range [20, 200]"
+rebar,4136,ry_eff_pct,10.31,set blank,"outside plausible range [20, 200]"
+rebar,4137,ry_eff_pct,19.0,set blank,"outside plausible range [20, 200]"
+rebar,4138,ry_eff_pct,14.0,set blank,"outside plausible range [20, 200]"
+rebar,4188,ry_eff_pct,1.8,set blank,"outside plausible range [20, 200]"
+rebar,4189,ry_eff_pct,1.4,set blank,"outside plausible range [20, 200]"
+rebar,4190,ry_eff_pct,4.6,set blank,"outside plausible range [20, 200]"
+rebar,4191,ry_eff_pct,0.37,set blank,"outside plausible range [20, 200]"
+rebar,4192,ry_eff_pct,2.5,set blank,"outside plausible range [20, 200]"
+rebar,4193,ry_eff_pct,11.1,set blank,"outside plausible range [20, 200]"
+rebar,4194,ry_eff_pct,11.4,set blank,"outside plausible range [20, 200]"
+rebar,4195,ry_eff_pct,16.4,set blank,"outside plausible range [20, 200]"
+rebar,4196,ry_eff_pct,1.8,set blank,"outside plausible range [20, 200]"
+rebar,4197,ry_eff_pct,7.6,set blank,"outside plausible range [20, 200]"
+rebar,4198,ry_eff_pct,6.0,set blank,"outside plausible range [20, 200]"
+rebar,4199,ry_eff_pct,18.4,set blank,"outside plausible range [20, 200]"
+rebar,4200,ry_eff_pct,11.7,set blank,"outside plausible range [20, 200]"
+rebar,4202,ry_eff_pct,18.4,set blank,"outside plausible range [20, 200]"
+rebar,4203,ry_eff_pct,17.6,set blank,"outside plausible range [20, 200]"
+rebar,4204,ry_eff_pct,13.1,set blank,"outside plausible range [20, 200]"
+rebar,4206,ry_eff_pct,19.0,set blank,"outside plausible range [20, 200]"
+rebar,4208,ry_eff_pct,19.0,set blank,"outside plausible range [20, 200]"
+rebar,4212,ry_eff_pct,7.2,set blank,"outside plausible range [20, 200]"
+rebar,4213,ry_eff_pct,10.0,set blank,"outside plausible range [20, 200]"
+rebar,4214,ry_eff_pct,14.0,set blank,"outside plausible range [20, 200]"
+rebar,4215,ry_eff_pct,10.31,set blank,"outside plausible range [20, 200]"
+rebar,4216,ry_eff_pct,19.0,set blank,"outside plausible range [20, 200]"
+rebar,4217,ry_eff_pct,14.0,set blank,"outside plausible range [20, 200]"
+rebar,3540,ru_eng_pct,5.22,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,3541,ru_eng_pct,6.77,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,3544,ru_eng_pct,7.86,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,3547,ru_eng_pct,6.8,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,3549,ru_eng_pct,5.2,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,3553,ru_eng_pct,5.22,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,3554,ru_eng_pct,6.77,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,3557,ru_eng_pct,7.86,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,3560,ru_eng_pct,6.8,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,3562,ru_eng_pct,5.2,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,3575,ru_eng_pct,5.22,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,3576,ru_eng_pct,6.77,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,3579,ru_eng_pct,7.86,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,3582,ru_eng_pct,6.8,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,3584,ru_eng_pct,5.2,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,3596,ru_eng_pct,8.3,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,3597,ru_eng_pct,9.71,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,3598,ru_eng_pct,11.45,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,3599,ru_eng_pct,11.66,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,3600,ru_eng_pct,10.23,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,3601,ru_eng_pct,9.71,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,3602,ru_eng_pct,5.49,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,3603,ru_eng_pct,7.28,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,3604,ru_eng_pct,6.67,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,3605,ru_eng_pct,11.34,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,3606,ru_eng_pct,9.59,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,3607,ru_eng_pct,11.95,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,3608,ru_eng_pct,12.75,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,3611,ru_eng_pct,12.23,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,3612,ru_eng_pct,5.82,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,3613,ru_eng_pct,11.22,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,3614,ru_eng_pct,8.21,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,3615,ru_eng_pct,8.18,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,3617,ru_eng_pct,9.81,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,3618,ru_eng_pct,11.37,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4114,ru_eng_pct,5.04,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4115,ru_eng_pct,5.7,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4116,ru_eng_pct,8.2,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4118,ru_eng_pct,9.5,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4119,ru_eng_pct,5.45,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4120,ru_eng_pct,13.14,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4121,ru_eng_pct,5.57,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4122,ru_eng_pct,11.05,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4123,ru_eng_pct,13.14,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4124,ru_eng_pct,9.26,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4125,ru_eng_pct,6.89,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4126,ru_eng_pct,10.86,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4127,ru_eng_pct,8.26,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4128,ru_eng_pct,10.0,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4129,ru_eng_pct,8.64,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4130,ru_eng_pct,11.5,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4131,ru_eng_pct,10.0,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4132,ru_eng_pct,11.36,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4134,ru_eng_pct,5.0,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4135,ru_eng_pct,6.67,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4136,ru_eng_pct,5.16,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4137,ru_eng_pct,9.5,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4138,ru_eng_pct,6.67,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4139,ru_eng_pct,16.5,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4140,ru_eng_pct,12.5,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4141,ru_eng_pct,14.5,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4142,ru_eng_pct,14.5,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4143,ru_eng_pct,16.84,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4144,ru_eng_pct,10.48,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4145,ru_eng_pct,11.76,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4146,ru_eng_pct,10.53,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4147,ru_eng_pct,17.65,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4148,ru_eng_pct,11.11,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4149,ru_eng_pct,12.5,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4150,ru_eng_pct,15.33,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4151,ru_eng_pct,11.9,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4152,ru_eng_pct,14.21,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4193,ru_eng_pct,5.04,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4194,ru_eng_pct,5.7,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4195,ru_eng_pct,8.2,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4197,ru_eng_pct,9.5,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4198,ru_eng_pct,5.45,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4199,ru_eng_pct,13.14,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4200,ru_eng_pct,5.57,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4201,ru_eng_pct,11.05,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4202,ru_eng_pct,13.14,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4203,ru_eng_pct,9.26,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4204,ru_eng_pct,6.89,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4205,ru_eng_pct,10.86,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4206,ru_eng_pct,8.26,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4207,ru_eng_pct,10.0,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4208,ru_eng_pct,8.64,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4209,ru_eng_pct,11.5,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4210,ru_eng_pct,10.0,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4211,ru_eng_pct,11.36,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4213,ru_eng_pct,5.0,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4214,ru_eng_pct,6.67,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4215,ru_eng_pct,5.16,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4216,ru_eng_pct,9.5,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4217,ru_eng_pct,6.67,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4218,ru_eng_pct,16.5,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4219,ru_eng_pct,12.5,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4220,ru_eng_pct,14.5,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4221,ru_eng_pct,14.5,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4222,ru_eng_pct,16.84,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4223,ru_eng_pct,10.48,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4224,ru_eng_pct,11.76,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4225,ru_eng_pct,10.53,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4226,ru_eng_pct,17.65,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4227,ru_eng_pct,11.11,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4228,ru_eng_pct,12.5,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4229,ru_eng_pct,15.33,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4230,ru_eng_pct,11.9,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,4231,ru_eng_pct,14.21,set blank,residual stress < 30 % of the remaining steel area - probably another quantity in this column
+rebar,3587,corrosion method,Uncorroded_Reference,kept as 'Other',labelled control but corrosion % missing or > 0.5
+rebar,3588,corrosion method,Uncorroded_Reference,kept as 'Other',labelled control but corrosion % missing or > 0.5
+rebar,3589,corrosion method,Uncorroded_Reference,kept as 'Other',labelled control but corrosion % missing or > 0.5
+rebar,3590,corrosion method,Uncorroded_Reference,kept as 'Other',labelled control but corrosion % missing or > 0.5
+rebar,3591,corrosion method,Uncorroded_Reference,kept as 'Other',labelled control but corrosion % missing or > 0.5
+rebar,3592,corrosion method,Uncorroded_Reference,kept as 'Other',labelled control but corrosion % missing or > 0.5
+rebar,3946,corrosion method,Uncorroded (Control),kept as 'Other',labelled control but corrosion % missing or > 0.5
+rebar,3947,corrosion method,Uncorroded (Control),kept as 'Other',labelled control but corrosion % missing or > 0.5
+rebar,3948,corrosion method,Uncorroded (Control),kept as 'Other',labelled control but corrosion % missing or > 0.5
+rebar,2652,*,R080-A,row dropped,duplicate of an earlier row
+rebar,2653,*,R080-B,row dropped,duplicate of an earlier row
+rebar,2654,*,R080-C,row dropped,duplicate of an earlier row
+rebar,2655,*,R0814-A,row dropped,duplicate of an earlier row
+rebar,2656,*,R0814-B,row dropped,duplicate of an earlier row
+rebar,2657,*,R0814-C,row dropped,duplicate of an earlier row
+rebar,2658,*,R0821-A,row dropped,duplicate of an earlier row
+rebar,2659,*,R0821-B,row dropped,duplicate of an earlier row
+rebar,2660,*,R0821-C,row dropped,duplicate of an earlier row
+rebar,2661,*,R0828-A,row dropped,duplicate of an earlier row
+rebar,2662,*,R0828-B,row dropped,duplicate of an earlier row
+rebar,2663,*,R0828-C,row dropped,duplicate of an earlier row
+rebar,2664,*,R0835-A,row dropped,duplicate of an earlier row
+rebar,2665,*,R0835-B,row dropped,duplicate of an earlier row
+rebar,2666,*,R0835-C,row dropped,duplicate of an earlier row
+rebar,2667,*,R0842-A,row dropped,duplicate of an earlier row
+rebar,2668,*,R0842-B,row dropped,duplicate of an earlier row
+rebar,2669,*,R0842-C,row dropped,duplicate of an earlier row
+rebar,2670,*,T080-A,row dropped,duplicate of an earlier row
+rebar,2671,*,T080-B,row dropped,duplicate of an earlier row
+rebar,2672,*,T080-C,row dropped,duplicate of an earlier row
+rebar,2673,*,T0814-A,row dropped,duplicate of an earlier row
+rebar,2674,*,T0814-B,row dropped,duplicate of an earlier row
+rebar,2675,*,T0814-C,row dropped,duplicate of an earlier row
+rebar,2676,*,T0821-A,row dropped,duplicate of an earlier row
+rebar,2677,*,T0821-B,row dropped,duplicate of an earlier row
+rebar,2678,*,T0821-C,row dropped,duplicate of an earlier row
+rebar,2679,*,T0828-A,row dropped,duplicate of an earlier row
+rebar,2680,*,T0828-B,row dropped,duplicate of an earlier row
+rebar,2681,*,T0828-C,row dropped,duplicate of an earlier row
+rebar,2682,*,T0835-A,row dropped,duplicate of an earlier row
+rebar,2683,*,T0835-B,row dropped,duplicate of an earlier row
+rebar,2684,*,T0835-C,row dropped,duplicate of an earlier row
+rebar,2685,*,T0842-A,row dropped,duplicate of an earlier row
+rebar,2686,*,T0842-B,row dropped,duplicate of an earlier row
+rebar,2687,*,T0842-C,row dropped,duplicate of an earlier row
+rebar,2688,*,R160-A,row dropped,duplicate of an earlier row
+rebar,2689,*,R160-B,row dropped,duplicate of an earlier row
+rebar,2690,*,R160-C,row dropped,duplicate of an earlier row
+rebar,2691,*,R1621-A,row dropped,duplicate of an earlier row
+rebar,2692,*,R1621-B,row dropped,duplicate of an earlier row
+rebar,2693,*,R1621-C,row dropped,duplicate of an earlier row
+rebar,2694,*,R1642-A,row dropped,duplicate of an earlier row
+rebar,2695,*,R1642-B,row dropped,duplicate of an earlier row
+rebar,2696,*,R1642-C,row dropped,duplicate of an earlier row
+rebar,2697,*,R1656-A,row dropped,duplicate of an earlier row
+rebar,2698,*,R1656-B,row dropped,duplicate of an earlier row
+rebar,2699,*,R1656-C,row dropped,duplicate of an earlier row
+rebar,2700,*,R1670-A,row dropped,duplicate of an earlier row
+rebar,2701,*,R1670-B,row dropped,duplicate of an earlier row
+rebar,2702,*,R1670-C,row dropped,duplicate of an earlier row
+rebar,2703,*,R1684-A,row dropped,duplicate of an earlier row
+rebar,2704,*,R1684-B,row dropped,duplicate of an earlier row
+rebar,2705,*,R1684-C,row dropped,duplicate of an earlier row
+rebar,2706,*,T160-A,row dropped,duplicate of an earlier row
+rebar,2707,*,T160-B,row dropped,duplicate of an earlier row
+rebar,2708,*,T160-C,row dropped,duplicate of an earlier row
+rebar,2709,*,T1621-A,row dropped,duplicate of an earlier row
+rebar,2710,*,T1621-B,row dropped,duplicate of an earlier row
+rebar,2711,*,T1621-C,row dropped,duplicate of an earlier row
+rebar,2712,*,T1642-A,row dropped,duplicate of an earlier row
+rebar,2713,*,T1642-B,row dropped,duplicate of an earlier row
+rebar,2714,*,T1642-C,row dropped,duplicate of an earlier row
+rebar,2715,*,T1656-A,row dropped,duplicate of an earlier row
+rebar,2716,*,T1656-B,row dropped,duplicate of an earlier row
+rebar,2717,*,T1656-C,row dropped,duplicate of an earlier row
+rebar,2718,*,T1670-A,row dropped,duplicate of an earlier row
+rebar,2719,*,T1670-B,row dropped,duplicate of an earlier row
+rebar,2720,*,T1670-C,row dropped,duplicate of an earlier row
+rebar,2721,*,T1684-A,row dropped,duplicate of an earlier row
+rebar,2722,*,T1684-B,row dropped,duplicate of an earlier row
+rebar,2723,*,T1684-C,row dropped,duplicate of an earlier row
+rebar,2724,*,T200-A,row dropped,duplicate of an earlier row
+rebar,2725,*,T200-B,row dropped,duplicate of an earlier row
+rebar,2726,*,T200-C,row dropped,duplicate of an earlier row
+rebar,2727,*,T2021-A,row dropped,duplicate of an earlier row
+rebar,2728,*,T2021-B,row dropped,duplicate of an earlier row
+rebar,2729,*,T2021-C,row dropped,duplicate of an earlier row
+rebar,2730,*,T2042-A,row dropped,duplicate of an earlier row
+rebar,2731,*,T2042-B,row dropped,duplicate of an earlier row
+rebar,2732,*,T2042-C,row dropped,duplicate of an earlier row
+rebar,2733,*,T2056-A,row dropped,duplicate of an earlier row
+rebar,2734,*,T2056-B,row dropped,duplicate of an earlier row
+rebar,2735,*,T2056-C,row dropped,duplicate of an earlier row
+rebar,2736,*,T2070-A,row dropped,duplicate of an earlier row
+rebar,2737,*,T2070-B,row dropped,duplicate of an earlier row
+rebar,2738,*,T2070-C,row dropped,duplicate of an earlier row
+rebar,2739,*,T2084-A,row dropped,duplicate of an earlier row
+rebar,2740,*,T2084-B,row dropped,duplicate of an earlier row
+rebar,2741,*,T2084-C,row dropped,duplicate of an earlier row
+rebar,2742,*,T320-A,row dropped,duplicate of an earlier row
+rebar,2743,*,T320-B,row dropped,duplicate of an earlier row
+rebar,2744,*,T320-C,row dropped,duplicate of an earlier row
+rebar,2745,*,T3214-A,row dropped,duplicate of an earlier row
+rebar,2746,*,T3214-B,row dropped,duplicate of an earlier row
+rebar,2747,*,T3214-C,row dropped,duplicate of an earlier row
+rebar,2748,*,T3228-A,row dropped,duplicate of an earlier row
+rebar,2749,*,T3228-B,row dropped,duplicate of an earlier row
+rebar,2750,*,T3228-C,row dropped,duplicate of an earlier row
+rebar,2751,*,T3242-A,row dropped,duplicate of an earlier row
+rebar,2752,*,T3242-B,row dropped,duplicate of an earlier row
+rebar,2753,*,T3242-C,row dropped,duplicate of an earlier row
+rebar,2754,*,T3256-A,row dropped,duplicate of an earlier row
+rebar,2755,*,T3256-B,row dropped,duplicate of an earlier row
+rebar,2756,*,T3256-C,row dropped,duplicate of an earlier row
+rebar,2757,*,RC160-A,row dropped,duplicate of an earlier row
+rebar,2758,*,RC160-B,row dropped,duplicate of an earlier row
+rebar,2759,*,RC160-C,row dropped,duplicate of an earlier row
+rebar,2760,*,RC1628-A,row dropped,duplicate of an earlier row
+rebar,2761,*,RC1628-B,row dropped,duplicate of an earlier row
+rebar,2762,*,RC1628-C,row dropped,duplicate of an earlier row
+rebar,2763,*,RC1656-A,row dropped,duplicate of an earlier row
+rebar,2764,*,RC1656-B,row dropped,duplicate of an earlier row
+rebar,2765,*,RC1656-C,row dropped,duplicate of an earlier row
+rebar,2766,*,RC1684-A,row dropped,duplicate of an earlier row
+rebar,2767,*,RC1684-B,row dropped,duplicate of an earlier row
+rebar,2768,*,RC1684-C,row dropped,duplicate of an earlier row
+rebar,2769,*,RC16112-A,row dropped,duplicate of an earlier row
+rebar,2770,*,RC16112-B,row dropped,duplicate of an earlier row
+rebar,2771,*,RC16112-C,row dropped,duplicate of an earlier row
+rebar,2772,*,TC160-A,row dropped,duplicate of an earlier row
+rebar,2773,*,TC160-B,row dropped,duplicate of an earlier row
+rebar,2774,*,TC160-C,row dropped,duplicate of an earlier row
+rebar,2775,*,TC1628-A,row dropped,duplicate of an earlier row
+rebar,2776,*,TC1628-B,row dropped,duplicate of an earlier row
+rebar,2777,*,TC1628-C,row dropped,duplicate of an earlier row
+rebar,2778,*,TC1656-A,row dropped,duplicate of an earlier row
+rebar,2779,*,TC1656-B,row dropped,duplicate of an earlier row
+rebar,2780,*,TC1656-C,row dropped,duplicate of an earlier row
+rebar,2781,*,TC1684-A,row dropped,duplicate of an earlier row
+rebar,2782,*,TC1684-B,row dropped,duplicate of an earlier row
+rebar,2783,*,TC1684-C,row dropped,duplicate of an earlier row
+rebar,2784,*,TC16112-A,row dropped,duplicate of an earlier row
+rebar,2785,*,TC16112-B,row dropped,duplicate of an earlier row
+rebar,2786,*,TC16112-C,row dropped,duplicate of an earlier row
+rebar,2787,*,MACHINED-A,row dropped,duplicate of an earlier row
+rebar,2788,*,MACHINED-B,row dropped,duplicate of an earlier row
+rebar,2789,*,MACHINED-C,row dropped,duplicate of an earlier row
+rebar,2790,*,J-CTRL-A,row dropped,duplicate of an earlier row
+rebar,2791,*,L-CTRL-A,row dropped,duplicate of an earlier row
+rebar,2792,*,J-CTRL-B,row dropped,duplicate of an earlier row
+rebar,2793,*,L-CTRL-B,row dropped,duplicate of an earlier row
+rebar,2794,*,J-CTRL-C,row dropped,duplicate of an earlier row
+rebar,2795,*,L-CTRL-C,row dropped,duplicate of an earlier row
+rebar,2796,*,J-CTRL-D,row dropped,duplicate of an earlier row
+rebar,2797,*,L-CTRL-D,row dropped,duplicate of an earlier row
+rebar,2798,*,J1-A,row dropped,duplicate of an earlier row
+rebar,2799,*,J1-B,row dropped,duplicate of an earlier row
+rebar,2800,*,J1-C,row dropped,duplicate of an earlier row
+rebar,2801,*,J1-D,row dropped,duplicate of an earlier row
+rebar,2802,*,J2-A,row dropped,duplicate of an earlier row
+rebar,2803,*,J2-B,row dropped,duplicate of an earlier row
+rebar,2804,*,J2-C,row dropped,duplicate of an earlier row
+rebar,2805,*,J2-D,row dropped,duplicate of an earlier row
+rebar,2806,*,J3-A,row dropped,duplicate of an earlier row
+rebar,2807,*,J3-B,row dropped,duplicate of an earlier row
+rebar,2808,*,J3-C,row dropped,duplicate of an earlier row
+rebar,2809,*,J3-D,row dropped,duplicate of an earlier row
+rebar,2810,*,J4-A,row dropped,duplicate of an earlier row
+rebar,2811,*,J4-B,row dropped,duplicate of an earlier row
+rebar,2812,*,J4-C,row dropped,duplicate of an earlier row
+rebar,2813,*,J4-D,row dropped,duplicate of an earlier row
+rebar,2814,*,J5-A,row dropped,duplicate of an earlier row
+rebar,2815,*,J5-B,row dropped,duplicate of an earlier row
+rebar,2816,*,J5-C,row dropped,duplicate of an earlier row
+rebar,2817,*,J5-D,row dropped,duplicate of an earlier row
+rebar,2818,*,L1-A,row dropped,duplicate of an earlier row
+rebar,2819,*,L1-B,row dropped,duplicate of an earlier row
+rebar,2820,*,L1-C,row dropped,duplicate of an earlier row
+rebar,2821,*,L1-D,row dropped,duplicate of an earlier row
+rebar,2822,*,L2-A,row dropped,duplicate of an earlier row
+rebar,2823,*,L2-B,row dropped,duplicate of an earlier row
+rebar,2824,*,L2-C,row dropped,duplicate of an earlier row
+rebar,2825,*,L2-D,row dropped,duplicate of an earlier row
+rebar,2826,*,L3-A,row dropped,duplicate of an earlier row
+rebar,2827,*,L3-B,row dropped,duplicate of an earlier row
+rebar,2828,*,L3-C,row dropped,duplicate of an earlier row
+rebar,2829,*,L3-D,row dropped,duplicate of an earlier row
+rebar,2830,*,L4-A,row dropped,duplicate of an earlier row
+rebar,2831,*,L4-B,row dropped,duplicate of an earlier row
+rebar,2832,*,L4-C,row dropped,duplicate of an earlier row
+rebar,2833,*,L4-D,row dropped,duplicate of an earlier row
+rebar,2834,*,L5-A,row dropped,duplicate of an earlier row
+rebar,2835,*,L5-B,row dropped,duplicate of an earlier row
+rebar,2836,*,L5-C,row dropped,duplicate of an earlier row
+rebar,2837,*,L5-D,row dropped,duplicate of an earlier row
+rebar,2838,*,J-INT-1.5-A,row dropped,duplicate of an earlier row
+rebar,2839,*,L-INT-1.5-A,row dropped,duplicate of an earlier row
+rebar,2840,*,J-INT-1.5-B,row dropped,duplicate of an earlier row
+rebar,2841,*,L-INT-1.5-B,row dropped,duplicate of an earlier row
+rebar,2842,*,J-INT-5.0-A,row dropped,duplicate of an earlier row
+rebar,2843,*,L-INT-5.0-A,row dropped,duplicate of an earlier row
+rebar,2844,*,J-INT-5.0-B,row dropped,duplicate of an earlier row
+rebar,2845,*,L-INT-5.0-B,row dropped,duplicate of an earlier row
+rebar,2846,*,J-INT-9.0-A,row dropped,duplicate of an earlier row
+rebar,2847,*,L-INT-9.0-A,row dropped,duplicate of an earlier row
+rebar,2848,*,J-INT-9.0-B,row dropped,duplicate of an earlier row
+rebar,2849,*,L-INT-9.0-B,row dropped,duplicate of an earlier row
+rebar,2850,*,J-INT-14.0-A,row dropped,duplicate of an earlier row
+rebar,2851,*,L-INT-14.0-A,row dropped,duplicate of an earlier row
+rebar,2852,*,J-INT-14.0-B,row dropped,duplicate of an earlier row
+rebar,2853,*,L-INT-14.0-B,row dropped,duplicate of an earlier row
+rebar,2854,*,J-INT-20.0-A,row dropped,duplicate of an earlier row
+rebar,2855,*,L-INT-20.0-A,row dropped,duplicate of an earlier row
+rebar,2856,*,J-INT-20.0-B,row dropped,duplicate of an earlier row
+rebar,2857,*,L-INT-20.0-B,row dropped,duplicate of an earlier row
+rebar,2858,*,WS-9.5-3-A,row dropped,duplicate of an earlier row
+rebar,2859,*,WS-9.5-3-B,row dropped,duplicate of an earlier row
+rebar,2860,*,WS-9.5-5-A,row dropped,duplicate of an earlier row
+rebar,2861,*,WS-9.5-5-B,row dropped,duplicate of an earlier row
+rebar,2862,*,WS-9.5-10-A,row dropped,duplicate of an earlier row
+rebar,2863,*,WS-9.5-10-B,row dropped,duplicate of an earlier row
+rebar,2864,*,WS-9.5-15-A,row dropped,duplicate of an earlier row
+rebar,2865,*,WS-9.5-15-B,row dropped,duplicate of an earlier row
+rebar,2866,*,WS-19-3-A,row dropped,duplicate of an earlier row
+rebar,2867,*,WS-19-3-B,row dropped,duplicate of an earlier row
+rebar,2868,*,WS-19-5-A,row dropped,duplicate of an earlier row
+rebar,2869,*,WS-19-5-B,row dropped,duplicate of an earlier row
+rebar,2870,*,WS-19-10-A,row dropped,duplicate of an earlier row
+rebar,2871,*,WS-19-10-B,row dropped,duplicate of an earlier row
+rebar,2872,*,WS-19-15-A,row dropped,duplicate of an earlier row
+rebar,2873,*,WS-19-15-B,row dropped,duplicate of an earlier row
+rebar,2874,*,PS40-9.5-3-A,row dropped,duplicate of an earlier row
+rebar,2875,*,PS40-9.5-5-A,row dropped,duplicate of an earlier row
+rebar,2876,*,PS40-9.5-10-A,row dropped,duplicate of an earlier row
+rebar,2877,*,PS40-9.5-15-A,row dropped,duplicate of an earlier row
+rebar,2878,*,PS60-9.5-3-A,row dropped,duplicate of an earlier row
+rebar,2879,*,PS60-9.5-5-A,row dropped,duplicate of an earlier row
+rebar,2880,*,PS60-9.5-10-A,row dropped,duplicate of an earlier row
+rebar,2881,*,PS60-9.5-15-A,row dropped,duplicate of an earlier row
+rebar,2882,*,PS100-9.5-3-A,row dropped,duplicate of an earlier row
+rebar,2883,*,PS100-9.5-5-A,row dropped,duplicate of an earlier row
+rebar,2884,*,PS100-9.5-10-A,row dropped,duplicate of an earlier row
+rebar,2885,*,PS100-9.5-15-A,row dropped,duplicate of an earlier row
+rebar,2886,*,PS40-19-3-A,row dropped,duplicate of an earlier row
+rebar,2887,*,PS40-19-5-A,row dropped,duplicate of an earlier row
+rebar,2888,*,PS40-19-10-A,row dropped,duplicate of an earlier row
+rebar,2889,*,PS40-19-15-A,row dropped,duplicate of an earlier row
+rebar,2890,*,PS60-19-3-A,row dropped,duplicate of an earlier row
+rebar,2891,*,PS60-19-5-A,row dropped,duplicate of an earlier row
+rebar,2892,*,PS60-19-10-A,row dropped,duplicate of an earlier row
+rebar,2893,*,PS60-19-15-A,row dropped,duplicate of an earlier row
+rebar,2894,*,PS100-19-3-A,row dropped,duplicate of an earlier row
+rebar,2895,*,PS100-19-5-A,row dropped,duplicate of an earlier row
+rebar,2896,*,PS100-19-10-A,row dropped,duplicate of an earlier row
+rebar,2897,*,PS100-19-15-A,row dropped,duplicate of an earlier row
+rebar,3164,*,Sound,row dropped,duplicate of an earlier row
+rebar,3165,*,R-11,row dropped,duplicate of an earlier row
+rebar,3166,*,R-17A,row dropped,duplicate of an earlier row
+rebar,3167,*,R-17B,row dropped,duplicate of an earlier row
+rebar,3168,*,R-26A,row dropped,duplicate of an earlier row
+rebar,3169,*,R-26B,row dropped,duplicate of an earlier row
+rebar,3170,*,R-38,row dropped,duplicate of an earlier row
+rebar,3552,*,RC,row dropped,duplicate of an earlier row
+rebar,3553,*,RCU60-0-0,row dropped,duplicate of an earlier row
+rebar,3554,*,RCU60-0.35-6.7,row dropped,duplicate of an earlier row
+rebar,3555,*,RCU60-0.35-11.0,row dropped,duplicate of an earlier row
+rebar,3556,*,RCU60-0.35-13.3,row dropped,duplicate of an earlier row
+rebar,3557,*,RCU80-0-0,row dropped,duplicate of an earlier row
+rebar,3558,*,RCU80-0.35-8.6,row dropped,duplicate of an earlier row
+rebar,3559,*,RCU80-0-6.5,row dropped,duplicate of an earlier row
+rebar,3560,*,RCU80-0.1-10.6,row dropped,duplicate of an earlier row
+rebar,3561,*,RCU80-0.23-10.3,row dropped,duplicate of an earlier row
+rebar,3562,*,RCU80-0.35-11.6,row dropped,duplicate of an earlier row
+rebar,3563,*,RCU80-0.35-16.3,row dropped,duplicate of an earlier row
+rebar,3564,*,RCU80-0.45-11.6,row dropped,duplicate of an earlier row
+rebar,3647,*,RC1-0,row dropped,duplicate of an earlier row
+rebar,3648,*,RC1-1,row dropped,duplicate of an earlier row
+rebar,3649,*,RC1-2,row dropped,duplicate of an earlier row
+rebar,3650,*,RC1-3,row dropped,duplicate of an earlier row
+rebar,3651,*,RC2-0,row dropped,duplicate of an earlier row
+rebar,3652,*,RC2-1,row dropped,duplicate of an earlier row
+rebar,3653,*,RC2-2,row dropped,duplicate of an earlier row
+rebar,3654,*,RC2-3,row dropped,duplicate of an earlier row
+rebar,3655,*,RC3-0,row dropped,duplicate of an earlier row
+rebar,3656,*,RC3-1,row dropped,duplicate of an earlier row
+rebar,3657,*,RC3-2,row dropped,duplicate of an earlier row
+rebar,3658,*,RC3-3,row dropped,duplicate of an earlier row
+rebar,3693,*,RC1-0,row dropped,duplicate of an earlier row
+rebar,3694,*,RC1-1,row dropped,duplicate of an earlier row
+rebar,3695,*,RC1-2,row dropped,duplicate of an earlier row
+rebar,3696,*,RC1-3,row dropped,duplicate of an earlier row
+rebar,3697,*,RC2-0,row dropped,duplicate of an earlier row
+rebar,3698,*,RC2-1,row dropped,duplicate of an earlier row
+rebar,3699,*,RC2-2,row dropped,duplicate of an earlier row
+rebar,3700,*,RC2-3,row dropped,duplicate of an earlier row
+rebar,3701,*,RC3-0,row dropped,duplicate of an earlier row
+rebar,3702,*,RC3-1,row dropped,duplicate of an earlier row
+rebar,3703,*,RC3-2,row dropped,duplicate of an earlier row
+rebar,3704,*,RC3-3,row dropped,duplicate of an earlier row
+rebar,3947,*,5,row dropped,duplicate of an earlier row
+rebar,3948,*,5,row dropped,duplicate of an earlier row
+rebar,3949,*,5,row dropped,duplicate of an earlier row
+rebar,3950,*,5,row dropped,duplicate of an earlier row
+rebar,3951,*,5,row dropped,duplicate of an earlier row
+rebar,3952,*,5,row dropped,duplicate of an earlier row
+rebar,3953,*,5,row dropped,duplicate of an earlier row
+rebar,3954,*,5,row dropped,duplicate of an earlier row
+rebar,3955,*,5,row dropped,duplicate of an earlier row
+rebar,3956,*,5,row dropped,duplicate of an earlier row
+rebar,3957,*,5,row dropped,duplicate of an earlier row
+rebar,3958,*,5,row dropped,duplicate of an earlier row
+rebar,3959,*,5,row dropped,duplicate of an earlier row
+rebar,3960,*,5,row dropped,duplicate of an earlier row
+rebar,3965,*,5,row dropped,duplicate of an earlier row
+rebar,3967,*,5,row dropped,duplicate of an earlier row
+rebar,3969,*,5,row dropped,duplicate of an earlier row
+rebar,3970,*,5,row dropped,duplicate of an earlier row
+rebar,3973,*,5,row dropped,duplicate of an earlier row
+rebar,3978,*,5,row dropped,duplicate of an earlier row
+rebar,3984,*,5,row dropped,duplicate of an earlier row
+rebar,3987,*,5,row dropped,duplicate of an earlier row
+rebar,3990,*,5,row dropped,duplicate of an earlier row
+rebar,3994,*,5,row dropped,duplicate of an earlier row
+rebar,4008,*,5,row dropped,duplicate of an earlier row
+rebar,4013,*,5,row dropped,duplicate of an earlier row
+rebar,4014,*,5,row dropped,duplicate of an earlier row
+rebar,4153,*,B1,row dropped,duplicate of an earlier row
+rebar,4154,*,B2,row dropped,duplicate of an earlier row
+rebar,4155,*,A1,row dropped,duplicate of an earlier row
+rebar,4156,*,A2,row dropped,duplicate of an earlier row
+rebar,4157,*,C1,row dropped,duplicate of an earlier row
+rebar,4158,*,C2,row dropped,duplicate of an earlier row
+rebar,4159,*,D1,row dropped,duplicate of an earlier row
+rebar,4160,*,D2,row dropped,duplicate of an earlier row
+rebar,4161,*,F,row dropped,duplicate of an earlier row
+rebar,4162,*,E1,row dropped,duplicate of an earlier row
+rebar,4163,*,E2,row dropped,duplicate of an earlier row
+rebar,4164,*,N0_1,row dropped,duplicate of an earlier row
+rebar,4165,*,N0_2,row dropped,duplicate of an earlier row
+rebar,4166,*,N1_1,row dropped,duplicate of an earlier row
+rebar,4167,*,N1_2,row dropped,duplicate of an earlier row
+rebar,4168,*,N2_1,row dropped,duplicate of an earlier row
+rebar,4169,*,N2_2,row dropped,duplicate of an earlier row
+rebar,4170,*,N2_3,row dropped,duplicate of an earlier row
+rebar,4171,*,N2_1-b,row dropped,duplicate of an earlier row
+rebar,4172,*,N2_2-b,row dropped,duplicate of an earlier row
+rebar,4173,*,N2_3-b,row dropped,duplicate of an earlier row
+rebar,4174,*,N3_1,row dropped,duplicate of an earlier row
+rebar,4175,*,N3_2,row dropped,duplicate of an earlier row
+rebar,4176,*,N4_1,row dropped,duplicate of an earlier row
+rebar,4177,*,N4_2,row dropped,duplicate of an earlier row
+rebar,4178,*,BC1,row dropped,duplicate of an earlier row
+rebar,4179,*,BC2,row dropped,duplicate of an earlier row
+rebar,4180,*,AC1,row dropped,duplicate of an earlier row
+rebar,4181,*,AC2,row dropped,duplicate of an earlier row
+rebar,4182,*,CC1,row dropped,duplicate of an earlier row
+rebar,4183,*,CC2,row dropped,duplicate of an earlier row
+rebar,4184,*,DC1,row dropped,duplicate of an earlier row
+rebar,4185,*,DC2,row dropped,duplicate of an earlier row
+rebar,4186,*,EC1,row dropped,duplicate of an earlier row
+rebar,4187,*,EC2,row dropped,duplicate of an earlier row
+rebar,4188,*,No.1,row dropped,duplicate of an earlier row
+rebar,4189,*,No.2,row dropped,duplicate of an earlier row
+rebar,4190,*,No.3,row dropped,duplicate of an earlier row
+rebar,4191,*,No.4,row dropped,duplicate of an earlier row
+rebar,4192,*,No.5,row dropped,duplicate of an earlier row
+rebar,4193,*,No.6,row dropped,duplicate of an earlier row
+rebar,4194,*,No.7,row dropped,duplicate of an earlier row
+rebar,4195,*,No.8,row dropped,duplicate of an earlier row
+rebar,4196,*,No.9,row dropped,duplicate of an earlier row
+rebar,4197,*,No.10,row dropped,duplicate of an earlier row
+rebar,4198,*,No.11,row dropped,duplicate of an earlier row
+rebar,4199,*,No.12,row dropped,duplicate of an earlier row
+rebar,4200,*,No.13,row dropped,duplicate of an earlier row
+rebar,4201,*,No.14,row dropped,duplicate of an earlier row
+rebar,4202,*,No.15,row dropped,duplicate of an earlier row
+rebar,4203,*,No.16,row dropped,duplicate of an earlier row
+rebar,4204,*,No.17,row dropped,duplicate of an earlier row
+rebar,4205,*,No.18,row dropped,duplicate of an earlier row
+rebar,4206,*,No.19,row dropped,duplicate of an earlier row
+rebar,4207,*,No.20,row dropped,duplicate of an earlier row
+rebar,4208,*,No.21,row dropped,duplicate of an earlier row
+rebar,4209,*,No.22,row dropped,duplicate of an earlier row
+rebar,4210,*,No.23,row dropped,duplicate of an earlier row
+rebar,4211,*,No.24,row dropped,duplicate of an earlier row
+rebar,4212,*,No.25,row dropped,duplicate of an earlier row
+rebar,4213,*,No.26,row dropped,duplicate of an earlier row
+rebar,4214,*,No.27,row dropped,duplicate of an earlier row
+rebar,4215,*,No.28,row dropped,duplicate of an earlier row
+rebar,4216,*,No.29,row dropped,duplicate of an earlier row
+rebar,4217,*,No.30,row dropped,duplicate of an earlier row
+rebar,4218,*,No.31,row dropped,duplicate of an earlier row
+rebar,4219,*,No.32,row dropped,duplicate of an earlier row
+rebar,4220,*,No.33,row dropped,duplicate of an earlier row
+rebar,4221,*,No.34,row dropped,duplicate of an earlier row
+rebar,4222,*,No.35,row dropped,duplicate of an earlier row
+rebar,4223,*,No.36,row dropped,duplicate of an earlier row
+rebar,4224,*,No.37,row dropped,duplicate of an earlier row
+rebar,4225,*,No.38,row dropped,duplicate of an earlier row
+rebar,4226,*,No.39,row dropped,duplicate of an earlier row
+rebar,4227,*,No.40,row dropped,duplicate of an earlier row
+rebar,4228,*,No.41,row dropped,duplicate of an earlier row
+rebar,4229,*,No.42,row dropped,duplicate of an earlier row
+rebar,4230,*,No.43,row dropped,duplicate of an earlier row
+rebar,4231,*,No.44,row dropped,duplicate of an earlier row
+rebar,4370,*,B-0,row dropped,duplicate of an earlier row

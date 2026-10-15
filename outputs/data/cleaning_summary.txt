@@ -1,0 +1,42 @@
+CLEANING SUMMARY
+================
+
+Beams kept: 984 rows from 172 papers
+  corr_pct        available in   965 rows
+  load_kn         available in   951 rows
+  residual_pct    available in   761 rows
+  half_cell_mv    available in   935 rows
+  exposure_days   available in   972 rows
+  beams with a matched control: 767
+
+Rebars kept: 4645 rows from 745 papers
+  corr_pct        available in  4309 rows
+  ry_eng_pct      available in  2787 rows
+  ru_eng_pct      available in  2844 rows
+  bar_dia_mm      available in  4418 rows
+  corrosion method groups: Impressed current=2077, Other / Unspecified=835, Control=732, Salt spray / Environmental=558, Natural=443
+
+Cleaning actions (dataset / action / reason -> count):
+    661  rebar  set blank        not a number
+    397  rebar  row dropped      duplicate of an earlier row
+    115  rebar  set blank        outside plausible range [0, 5000]
+    109  rebar  set blank        residual stress < 30 % of the remaining steel area - probably another quantity in this column
+     99  rebar  set blank        outside plausible range [5, 150]
+     68  rebar  set blank        outside plausible range [20, 200]
+     64  beam   row dropped      duplicate of an earlier row
+     63  rebar  set blank        outside plausible range [0, 20]
+     63  beam   excluded from load model  load outside 0.4-5.0x the IS 456 capacity of the recorded section - check units, dimensions, bars or member type
+     57  beam   row dropped      not a plain RC flexural beam
+     35  rebar  row dropped      bolt/strand/wire, not a rebar
+     17  beam   set blank        outside plausible range [0, 10]
+     13  rebar  set to 0         small negative mass loss (weighing noise)
+     10  beam   set blank        outside plausible range [0, 5]
+     10  rebar  set blank        outside plausible range [4, 50]
+      9  rebar  kept as 'Other'  labelled control but corrosion % missing or > 0.5
+      6  beam   set blank        residual strength outside [10.0, 160.0] % - check load or control
+      2  beam   set blank        outside plausible range [0, 80]
+      2  beam   set blank        not a number
+      1  beam   set blank        outside plausible range [0, 4]
+      1  beam   set blank        outside plausible range [6, 40]
+      1  beam   set blank        outside plausible range [1, 16]
+      1  rebar  set blank        outside plausible range [0, 40000]
