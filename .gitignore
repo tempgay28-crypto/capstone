@@ -1,0 +1,34 @@
+# ---- Python ----
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# ---- Large media and raw data copies ----
+*.mp4
+*.mov
+*.avi
+Capstone Project 2026-27/
+
+# ---- Secrets and local settings ----
+.env
+.env.*
+!.env.example
+.vercel/
+
+# ---- Editors and operating systems ----
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---- Logs and temporary files ----
+*.log
+*.tmp
+~$*

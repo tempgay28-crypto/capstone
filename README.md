@@ -5,7 +5,9 @@ Covers **Objective 2** (ANN to predict corrosion % and residual flexural strengt
 **Objective 3** (benchmark beams for ABAQUS) and runs **Objective 4** (comparison of ANN, IS 456
 analytical, experimental and – once filled in – ABAQUS results).
 
-The raw spreadsheets in `../Capstone Project 2026-27/` are only read, never modified.
+The raw spreadsheets are **not in this repository**. The scripts expect them next to the repository
+folder, in `../Capstone Project 2026-27/` (see `config.py`), and only read them. The cleaned data,
+trained models and outputs are included, so `predict.py` and the web app work without them.
 
 ## How to run
 
@@ -29,7 +31,13 @@ Useful variants:
 `predict.py` needs a measured corrosion level (`--corr`). Estimating it from exposure and NDT
 data (`--estimate-corrosion`, model M1) is available but unreliable – see Results.
 
-On a fresh machine: `python -m venv .venv` then `.venv\Scripts\python.exe -m pip install -r ann_model\requirements.txt`.
+On a fresh machine (the commands above expect the virtual environment one level up, in `..\.venv`):
+
+```powershell
+git clone https://github.com/tempgay28-crypto/capstone.git ann_model
+python -m venv .venv
+.venv\Scripts\python.exe -m pip install -r ann_model\requirements.txt
+```
 
 ## Web app
 
