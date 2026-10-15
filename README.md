@@ -30,22 +30,35 @@ data (`--estimate-corrosion`, model M1) is available but unreliable – see Resu
 
 On a fresh machine: `python -m venv .venv` then `.venv\Scripts\python.exe -m pip install -r ann_model\requirements.txt`.
 
-## Web app (stage 1)
+## Web app
 
 ```powershell
 ..\.venv\Scripts\python.exe app.py          # opens http://localhost:8000 (this computer only)
 ```
 
-`http://localhost:8000/?example` loads and assesses the worked example; add `&theme=light` or
-`&theme=dark` to force a theme. **Print** gives a light-theme report (save as PDF from the print
-dialog), **Download JSON** saves the full result.
+`http://localhost:8000/?example=inspection` (NDT and visual only, corrosion inferred) and
+`?example=measured` (measured mass loss) load the worked examples; add `&theme=light` or `&theme=dark`
+to force a theme. **Print** gives a light-theme report (save as PDF from the print dialog),
+**Download JSON** saves the full result.
 
 For one beam it reports:
 
-* **Flexure – learned model:** ANN (M3) residual strength % with a 90 % range, converted to kN·m
+* **Corrosion state** (`condition.py`) – Negligible < 1 %, Low 1–5 %, Moderate 5–10 %, High 10–20 %,
+  Severe 20–40 % mass loss. A prior from the exposure class and age is updated with each NDT reading
+  (half-cell, corrosion rate, resistivity, UPV, chloride, carbonation/cover), each visual observation
+  (staining, cracking, crack width along bars, hammer survey, exposed bars, water ingress) and, if
+  entered, a measured mass loss. Shows the probabilities, expected mass loss and its 90 % range, how
+  much each group of evidence contributed (bits), every reading's band, and the **most informative
+  next observation** (expected entropy reduction of each test not yet done).
+  The band limits come from ASTM C876, RILEM TC 154-EMC, Concrete Society TR 54 and IS 13311-1; the
+  probabilities attached to each band are **engineering judgement, not fitted to data** (the beam
+  data cannot support that – model M1 scored R² ≈ 0). Correlated visual signs are tempered (×0.75).
+  A measurement that conflicts with the NDT/visual evidence is flagged.
+* **Flexure – learned model:** ANN (M3) residual strength % averaged over the corrosion distribution
+  (measured value ± its uncertainty, or the inferred state mix), with a 90 % range, converted to kN·m
   with the IS 456 design capacity of the uncorroded section. The range combines three sources,
   each estimated from the data (see `assessment.py`):
-  * *diagnostic* – the stated uncertainty of the corrosion level, pushed through the ANN;
+  * *diagnostic* – the spread of the corrosion level, pushed through the ANN;
   * *model* – held-out test error (16.6 points for corroded beams) minus specimen scatter;
   * *residual* – scatter between nominally identical specimens in the same study (13.5 points,
     from 301 replicate specimens), which no model can remove.
@@ -56,16 +69,25 @@ For one beam it reports:
 * **IS 456 conformity:** cover and grade for the exposure class (Tables 16, 5), w/c ratio, cover vs
   bar Ø, crack width (cl. 35.3.2), minimum/maximum tension steel after section loss, xu/d,
   minimum shear steel and stirrup spacing, and capacity vs factored demand.
-* **Input completeness** and **cautions** (extrapolation, truncated upper bound, judged corrosion level, …).
+* **Rehabilitation strategy** (`rehab.py`) – urgency (Immediate / Urgent / Planned / Routine) with the
+  structural and durability findings behind it, and interventions grouped as structural, corrosion
+  control and protection/monitoring. Each is tagged PRIMARY, REQUIRED or CONTINGENT, with its
+  EN 1504-9 principle and method, the findings that triggered it, limitations and references
+  (EN 1504 parts, EN ISO 12696, ACI 440.2R, ACI 546R, …). Thresholds marked "judgement" are project
+  assumptions; this is decision support, not a design.
+* **Repair material specification** – minimum grade, maximum w/c, minimum cement content and nominal
+  cover for the exposure class (IS 456 Tables 5 and 16), and the EN 1504-3 repair-mortar class.
+* **Input completeness** and **cautions** (inferred corrosion, extrapolation, truncated upper bound, …).
 
 The corrosion-method uncertainties (±1 / 3 / 5 / 8 points) are engineering assumptions and can be
-overridden per case in the form. Stage 2 (corrosion state from NDT and visual inspection, and repair
-recommendations) is not built yet.
+overridden per case in the form.
 
 | File | Role |
 |---|---|
 | `app.py` | Local web server (Python standard library only) |
-| `assessment.py` | Assessment engine: inputs → flexure, shear, checks, cautions |
+| `assessment.py` | Assessment engine: inputs → corrosion state, flexure, shear, checks, strategy, cautions |
+| `condition.py` | Corrosion-state evidence model, its likelihood tables and the next-test ranking |
+| `rehab.py` | Urgency, intervention rules and repair material specification |
 | `is456.py` | IS 456 tables, shear capacity and conformity checks |
 | `web/` | Page, styles and script |
 

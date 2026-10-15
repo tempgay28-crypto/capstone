@@ -37,6 +37,9 @@ async function init() {
   }
   const exp = form.elements.exposure_class;
   META.exposure_classes.forEach((c) => exp.add(new Option(c, c)));
+  for (const sel of form.querySelectorAll("select[data-choices]")) {
+    (META.choices[sel.name] || []).forEach((c) => sel.add(new Option(c, c)));
+  }
   const cm = form.elements.corr_method;
   Object.entries(META.corrosion_methods).forEach(([k, m]) => cm.add(new Option(`${m.label} (±${m.sd})`, k)));
   const sd = form.elements.corr_sd_pp;
@@ -47,8 +50,9 @@ async function init() {
     sd.value = m ? m.sd : "";
   });
   sd.addEventListener("input", () => { sdTouched = sd.value.trim() !== ""; });
-  if (new URLSearchParams(location.search).has("example")) {  // http://localhost:8000/?example
-    fill(META.worked_example);
+  const ex = new URLSearchParams(location.search).get("example");  // ?example=inspection or ?example=measured
+  if (ex !== null) {
+    fill(META.examples[ex] || META.examples.inspection);
     form.requestSubmit();
   }
 }
@@ -93,11 +97,12 @@ form.addEventListener("submit", async (e) => {
   }
 });
 
-$("#example").addEventListener("click", () => {
-  if (!META) return;
-  fill(META.worked_example);
-  form.requestSubmit();
-});
+form.querySelectorAll("[data-example]").forEach((btn) =>
+  btn.addEventListener("click", () => {
+    if (!META) return;
+    fill(META.examples[btn.dataset.example]);
+    form.requestSubmit();
+  }));
 
 $("#clear").addEventListener("click", () => {
   form.reset();
@@ -130,6 +135,8 @@ function render(d) {
   const fl = d.flexure;
   const sh = d.shear;
 
+  f("r-label").textContent = fl.corrosion_source === "inferred"
+    ? "Flexure — learned model · corrosion inferred" : "Flexure — learned model · corrosion measured";
   f("r").textContent = `${fmt(fl.residual_pct)} %`;
   f("r-range").textContent = `90 % range ${fmt(fl.low_pct)}–${fmt(fl.high_pct)} %`;
   f("r-knm").textContent = `≈ ${fmt(fl.mu_res_knm)} kN·m of ${fmt(fl.mu0_knm)} kN·m (IS 456 design)`;
@@ -175,9 +182,144 @@ function render(d) {
     `${p.replicate_specimens} replicate specimens. IS 456 values use the design formulae (0.87 fy, Tables 19 and 20) ` +
     `with corrosion as loss of steel area only.`;
 
+  renderStage2(d, f);
   report.replaceChildren(node);
   report.querySelector('[data-act="json"]').addEventListener("click", downloadJson);
   report.querySelector('[data-act="print"]').addEventListener("click", () => window.print());
+}
+
+function renderStage2(d, f) {
+  const x = d.inputs;
+  const c = d.condition;
+  const corr = d.corrosion;
+
+  // Identification line (only what was entered)
+  const ident = f("ident");
+  const bits = [x.member_ref, x.structure, x.location].filter(Boolean);
+  if (bits.length) {
+    ident.append(el("b", bits[0]));
+    bits.slice(1).forEach((b) => ident.append(document.createTextNode(` · ${b}`)));
+  }
+  if (x.inspector || x.inspection_date) {
+    const by = [x.inspector ? `inspected by ${x.inspector}` : "inspected", x.inspection_date ? `on ${x.inspection_date}` : ""];
+    ident.append(document.createTextNode(`${ident.childNodes.length ? " · " : ""}${by.join(" ").trim()}`));
+  }
+
+  // Corrosion state
+  f("state").textContent = c.state;
+  f("state-meta").textContent = `probability ${fmt(c.state_prob, 2)} · ` + (corr.source === "measured"
+    ? `measured mass loss ${fmt(corr.mean)} %` : `expected mass loss ${fmt(c.mass_loss_mean)} %`);
+  const plural = (n, word) => `${n} ${word}${n === 1 ? "" : "s"}`;
+  const info = [
+    ["90 % range of mass loss (state model)", `${fmt(c.mass_loss_90[0])}–${fmt(c.mass_loss_90[1])} %`],
+    ["Corrosion level used", `${corr.source} ${fmt(corr.mean)} % ± ${fmt(corr.sd)}`],
+    ["Remaining uncertainty", `${fmt(c.entropy_bits, 2)} bits (prior ${fmt(c.prior_entropy_bits, 2)})`],
+    ["Information from instruments", `${fmt(c.info_instruments_bits, 2)} bits · ${plural(c.n_instruments, "reading")}`],
+    ["Information from observations", `${fmt(c.info_observations_bits, 2)} bits · ${plural(c.n_observations, "field")}`],
+  ];
+  if (c.n_measured) info.push(["Information from measurement", `${fmt(c.info_measurement_bits, 2)} bits`]);
+  info.forEach(([k, v]) => {
+    const tr = el("tr");
+    tr.append(el("td", k), el("td", v));
+    f("state-info").append(tr);
+  });
+  const bars = f("state-bars");
+  c.states.forEach((name, i) => {
+    const lab = el("span", `${name} (${c.state_bins[i][0]}–${c.state_bins[i][1]} %)`, "name");
+    if (name === c.state) lab.classList.add("best");
+    const track = el("div", undefined, "track");
+    const fill = el("div", undefined, "fill");
+    fill.style.width = `${(c.posterior[i] * 100).toFixed(1)}%`;
+    const tick = el("div", undefined, "prior");
+    tick.style.left = `calc(${(c.prior[i] * 100).toFixed(1)}% - 1px)`;
+    tick.title = `Prior ${fmt(c.prior[i] * 100, 0)} %`;
+    track.append(fill, tick);
+    track.title = `${name}: ${fmt(c.posterior[i] * 100, 1)} % (prior ${fmt(c.prior[i] * 100, 1)} %)`;
+    bars.append(lab, track, el("span", `${fmt(c.posterior[i] * 100, 0)} %`, "pct"));
+  });
+  bars.append(el("div", "Bar: probability with all evidence · tick: prior from exposure class and age", "bars-legend"));
+
+  f("ev-count").textContent = `(${c.evidence_used.length})`;
+  if (!c.evidence_used.length) {
+    const tr = el("tr");
+    const td = el("td", "No NDT or visual evidence entered.");
+    td.colSpan = 5;
+    tr.append(td);
+    f("evidence").append(tr);
+  }
+  c.evidence_used.forEach((e) => {
+    const tr = el("tr");
+    tr.append(el("td", e.evidence), el("td", String(e.value)), el("td", e.band), el("td", e.favours), el("td", e.source));
+    f("evidence").append(tr);
+  });
+  const useful = c.next_observations.filter((n) => n.gain_bits >= 0.01);
+  useful.forEach((n) => {
+    const tr = el("tr");
+    tr.append(el("td", n.test), el("td", n.kind), el("td", n.cost), el("td", fmt(n.gain_bits, 2), "num"));
+    f("next").append(tr);
+  });
+  if (!useful.length) {
+    const tr = el("tr");
+    const td = el("td", "Further tests would add little: the corrosion state is already well determined.");
+    td.colSpan = 4;
+    tr.append(td);
+    f("next").append(tr);
+  }
+
+  // Rehabilitation strategy
+  const r = d.rehabilitation;
+  const u = r.urgency;
+  const banner = el("div", undefined, `urgency u-${u.level.toLowerCase()}`);
+  const body = el("div");
+  body.append(el("div", `Urgency: ${u.level} — ${u.action}`, "title"));
+  const ul = el("ul");
+  u.structural.forEach((t) => ul.append(el("li", `Structural: ${t}`)));
+  u.durability.forEach((t) => ul.append(el("li", `Durability: ${t}`)));
+  body.append(ul);
+  banner.append(el("span", u.level === "Routine" ? "✓" : "!", "ic"), body);
+  f("urgency").append(banner);
+
+  const groups = {};
+  r.interventions.forEach((it) => (groups[it.group] ||= []).push(it));
+  Object.entries(groups).forEach(([g, items]) => {
+    const box = el("div", undefined, "group");
+    box.append(el("h3", g));
+    items.forEach((it) => {
+      const card = el("div", undefined, "iv");
+      const head = el("div", undefined, "iv-head");
+      head.append(el("span", it.role, `role role-${it.role.toLowerCase()}`), el("span", it.name, "iv-name"));
+      card.append(head, el("div", it.principle, "principle"), el("p", it.purpose));
+      const trig = el("div", undefined, "trig");
+      trig.append(el("b", "Triggered by: "), document.createTextNode(it.triggered_by.join("; ")));
+      card.append(trig);
+      if (it.limitations.length) {
+        const det = el("details");
+        det.append(el("summary", `Limitations (${it.limitations.length})`));
+        const lu = el("ul");
+        it.limitations.forEach((l) => lu.append(el("li", l)));
+        det.append(lu);
+        card.append(det);
+      }
+      card.append(el("div", `References: ${it.references.join(" · ")}`, "refs"));
+      box.append(card);
+    });
+    f("interventions").append(box);
+  });
+
+  const spec = r.material_spec;
+  if (!spec) {
+    f("spec-panel").remove();
+    return;
+  }
+  [["Exposure class (IS 456 Table 3)", spec.exposure_class], ["Minimum concrete grade", spec.min_grade],
+   ["Maximum free w/c ratio", fmt(spec.max_wc, 2)], ["Minimum cement content", `${spec.min_cement_kg_m3} kg/m³`],
+   ["Nominal cover to reinforcement", `${spec.nominal_cover_mm} mm`], ["Repair mortar", spec.repair_mortar]]
+    .forEach(([k, v]) => {
+      const tr = el("tr");
+      tr.append(el("td", k), el("td", v));
+      f("spec").append(tr);
+    });
+  f("spec").closest("table").after(el("p", spec.note, "muted small-note"));
 }
 
 function downloadJson() {

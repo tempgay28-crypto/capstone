@@ -1,12 +1,15 @@
 """Assessment engine behind the web app: one beam in, one report out.
 
-Residual flexural capacity comes from the ANN (M3); its 90 % range combines three
-independent sources of uncertainty, each estimated from the data:
-
-  diagnostic  how uncertain the entered corrosion level is, pushed through the ANN
-  model       error between studies that more / better data would reduce
-              (held-out test error minus specimen scatter, plus disagreement between networks)
-  residual    scatter between nominally identical specimens in the same study (irreducible)
+1. Corrosion state (condition.py): prior from exposure and age, updated with NDT and visual
+   evidence. If a measured corrosion level is entered it is used directly; otherwise the
+   corrosion level is inferred from the state probabilities ("full chain").
+2. Residual flexural capacity from the ANN (M3), averaged over the corrosion distribution. Its
+   90 % range combines three independent sources of uncertainty, each estimated from the data:
+     diagnostic  spread of the corrosion level (measurement error or inferred-state spread)
+     model       error between studies that more / better data would reduce
+                 (held-out test error minus specimen scatter, plus disagreement between networks)
+     residual    scatter between nominally identical specimens in the same study (irreducible)
+3. Shear and conformity checks (is456.py) and the rehabilitation strategy (rehab.py).
 """
 import json
 import warnings
@@ -15,13 +18,16 @@ import joblib
 import numpy as np
 import pandas as pd
 
+import condition
 import config
 import is456
-from analytical import effective_depth, steel_area
+import rehab
+from analytical import corroded_capacity, effective_depth, steel_area
 
 warnings.filterwarnings("ignore")
 
 Z90 = 1.645  # two-sided 90 % interval of a normal distribution
+CORR_GRID = np.arange(0.0, 80.01, 0.5)  # % mass loss
 
 # Typical 1-SD uncertainty of each way of establishing the corrosion level (percentage
 # points of mass loss). Engineering assumptions - shown in the app and editable per case.
@@ -49,29 +55,53 @@ FIELDS = {
     "fy_stirrup_mpa": ("Stirrup yield strength", "MPa", False, 200, 700),
     "age_years": ("Age", "years", False, 0, 200),
     "wc_ratio": ("Water-cement ratio", "", False, 0.2, 0.9),
-    "corr_pct": ("Average corrosion of tension bars", "% mass loss", True, 0, 80),
+    "corr_pct": ("Measured average corrosion of tension bars", "% mass loss", False, 0, 80),
     "corr_sd_pp": ("Uncertainty of corrosion level (1 SD)", "% points", False, 0, 30),
     "stirrup_corr_pct": ("Average corrosion of stirrups", "% mass loss", False, 0, 90),
+    "half_cell_mv": ("Half-cell potential (CSE)", "mV", False, -1000, 300),
+    "icorr_ua_cm2": ("Corrosion current density", "µA/cm²", False, 0, 100),
+    "resistivity_kohm_cm": ("Surface resistivity", "kΩ·cm", False, 0, 10000),
+    "upv_km_s": ("Ultrasonic pulse velocity", "km/s", False, 0.5, 7),
+    "chloride_pct_cement": ("Chloride at bar depth", "% by mass of cement", False, 0, 10),
+    "carbonation_mm": ("Carbonation depth", "mm", False, 0, 300),
     "crack_width_mm": ("Maximum surface crack width", "mm", False, 0, 20),
     "demand_moment_knm": ("Factored moment demand Mu", "kN·m", False, 0, 1e5),
     "demand_shear_kn": ("Factored shear demand Vu", "kN", False, 0, 1e5),
 }
+CHOICE_FIELDS = {ev["field"]: ev["bands"] for ev in condition.EVIDENCE.values() if "edges" not in ev}
+TEXT_FIELDS = ["structure", "member_ref", "inspector", "inspection_date", "location"]
+
 # Optional inputs that improve the assessment (counted for "input completeness").
-COMPLETENESS_FIELDS = ["exposure_class", "age_years", "wc_ratio", "corr_method", "stirrup_dia_mm",
-                       "stirrup_spacing_mm", "stirrup_corr_pct", "crack_width_mm",
-                       "demand_moment_knm", "demand_shear_kn"]
+COMPLETENESS_FIELDS = ["exposure_class", "age_years", "wc_ratio", "corr_pct", "stirrup_dia_mm", "stirrup_spacing_mm",
+                       "crack_width_mm", "demand_moment_knm", "demand_shear_kn", "half_cell_mv", "icorr_ua_cm2",
+                       "resistivity_kohm_cm", "upv_km_s", "chloride_pct_cement", "carbonation_mm",
+                       "rust_staining", "crack_pattern", "cover_condition", "exposed_rebar", "water_ingress"]
 
 # Model inputs checked against the range of the training data.
 RANGE_CHECK = {"b_mm": "Width b", "D_mm": "Overall depth D", "L_mm": "Span L", "cover_mm": "Clear cover",
                "bar_dia_mm": "Bar diameter", "n_bars": "Number of bars", "fck_mpa": "fck",
                "corr_pct": "Corrosion level", "rho_pct": "Steel ratio ρ"}
 
-WORKED_EXAMPLE = {
-    "b_mm": 200, "D_mm": 300, "L_mm": 3000, "cover_mm": 30, "bar_dia_mm": 16, "n_bars": 2,
-    "fck_mpa": 30, "fy_mpa": 500, "fiber_pct": 0, "stirrup_dia_mm": 8, "stirrup_legs": 2,
-    "stirrup_spacing_mm": 150, "fy_stirrup_mpa": 500, "exposure_class": "Severe", "age_years": 18,
-    "wc_ratio": 0.5, "corr_pct": 15, "corr_method": "section", "corr_sd_pp": 3, "stirrup_corr_pct": 20,
-    "crack_width_mm": 0.4, "demand_moment_knm": 30, "demand_shear_kn": 50,
+EXAMPLES = {
+    "measured": {
+        "structure": "Example: laboratory-scale beam", "member_ref": "B-15",
+        "b_mm": 200, "D_mm": 300, "L_mm": 3000, "cover_mm": 30, "bar_dia_mm": 16, "n_bars": 2,
+        "fck_mpa": 30, "fy_mpa": 500, "fiber_pct": 0, "stirrup_dia_mm": 8, "stirrup_legs": 2,
+        "stirrup_spacing_mm": 150, "fy_stirrup_mpa": 500, "exposure_class": "Severe", "age_years": 18,
+        "wc_ratio": 0.5, "corr_pct": 15, "corr_method": "section", "corr_sd_pp": 3, "stirrup_corr_pct": 20,
+        "half_cell_mv": -380, "rust_staining": "Moderate", "crack_pattern": "Longitudinal along bars",
+        "cover_condition": "Cracked", "crack_width_mm": 0.4, "demand_moment_knm": 30, "demand_shear_kn": 50,
+    },
+    "inspection": {
+        "structure": "Example: coastal jetty approach", "member_ref": "Beam B-4", "location": "Soffit, mid-span, seaward",
+        "b_mm": 230, "D_mm": 450, "L_mm": 3500, "cover_mm": 25, "bar_dia_mm": 16, "n_bars": 3,
+        "fck_mpa": 25, "fy_mpa": 415, "stirrup_dia_mm": 8, "stirrup_legs": 2, "stirrup_spacing_mm": 175,
+        "fy_stirrup_mpa": 415, "exposure_class": "Very severe", "age_years": 24, "wc_ratio": 0.5,
+        "half_cell_mv": -410, "resistivity_kohm_cm": 12, "upv_km_s": 3.4, "chloride_pct_cement": 0.65,
+        "carbonation_mm": 12, "rust_staining": "Moderate", "crack_pattern": "Longitudinal along bars",
+        "crack_width_mm": 0.6, "cover_condition": "Delaminated (hollow)", "exposed_rebar": "Not visible",
+        "water_ingress": "Occasional", "demand_moment_knm": 55, "demand_shear_kn": 80,
+    },
 }
 
 
@@ -96,25 +126,21 @@ def parse_inputs(raw):
             errors.append(f"{label} must be between {lo:g} and {hi:g} {unit}".strip() + ".")
             continue
         x[name] = v
-    exp = (raw.get("exposure_class") or "").strip()
-    if exp and exp not in is456.EXPOSURE_CLASSES:
-        errors.append("Unknown exposure class.")
-    x["exposure_class"] = exp or None
-    method = (raw.get("corr_method") or "").strip()
-    if method and method not in CORROSION_METHODS:
-        errors.append("Unknown corrosion measurement method.")
-    x["corr_method"] = method or None
+    for name, options in {**CHOICE_FIELDS, "exposure_class": is456.EXPOSURE_CLASSES,
+                          "corr_method": list(CORROSION_METHODS)}.items():
+        v = str(raw.get(name) or "").strip()
+        if v and v not in options:
+            errors.append(f"Unknown value for {name.replace('_', ' ')}.")
+        x[name] = v or None
+    for name in TEXT_FIELDS:
+        x[name] = str(raw.get(name) or "").strip()[:120] or None
     if errors:
         raise InputError(" ".join(errors))
-
     if x["cover_mm"] >= x["D_mm"] / 2:
         raise InputError("Clear cover must be less than half the overall depth.")
     x.setdefault("fiber_pct", 0.0)
     x.setdefault("stirrup_legs", 2.0)
     x.setdefault("fy_stirrup_mpa", x["fy_mpa"])
-    x.setdefault("stirrup_corr_pct", x["corr_pct"])
-    if "corr_sd_pp" not in x:
-        x["corr_sd_pp"] = CORROSION_METHODS[x["corr_method"] or "judgement"][1]
     return x
 
 
@@ -173,18 +199,42 @@ class Assessor:
         members = np.array([m.predict(X) for m in self.model.estimators_])
         return members.mean(axis=0), members.std(axis=0)
 
-    def flexure(self, x):
-        c, sd_c = x["corr_pct"], x["corr_sd_pp"]
-        c_lo, c_hi = max(c - sd_c, 0.0), c + sd_c
-        mean, spread = self._ann(x, [c, c_lo, c_hi])
-        r = float(mean[0])
-        slope = (mean[2] - mean[1]) / (c_hi - c_lo) if c_hi > c_lo else 0.0
-        diagnostic = abs(slope) * sd_c
+    @staticmethod
+    def corrosion_belief(x, cond):
+        """Probability weights of the corrosion level on CORR_GRID."""
+        if x.get("corr_pct") is not None:
+            c = x["corr_pct"]
+            sd = x.get("corr_sd_pp")
+            if sd is None:
+                sd = CORROSION_METHODS[x["corr_method"] or "judgement"][1]
+            if sd < 0.25:
+                grid, w = np.array([c]), np.array([1.0])
+            else:
+                grid = CORR_GRID
+                w = np.exp(-0.5 * ((grid - c) / sd) ** 2)
+                w /= w.sum()
+            source = "measured"
+        else:
+            grid = condition.MASS_LOSS_GRID
+            w = condition.mass_loss_grid(cond["posterior"], grid)
+            source = "inferred"
+        mean = float(w @ grid)
+        sd = float(np.sqrt(w @ (grid - mean) ** 2))
+        return {"grid": grid, "weights": w, "mean": mean, "sd": sd, "source": source}
+
+    def flexure(self, x, belief):
+        keep = belief["weights"] > 1e-6
+        cs, w = belief["grid"][keep], belief["weights"][keep] / belief["weights"][keep].sum()
+        r_grid, _ = self._ann(x, cs)
+        r = float(w @ r_grid)
+        diagnostic = float(np.sqrt(w @ (r_grid - r) ** 2))
 
         # Uncorroded beams scatter less than corroded ones; blend from 0 to 5 % corrosion.
-        w = float(np.clip(c / 5.0, 0, 1))
+        c = belief["mean"]
+        _, spread = self._ann(x, [c])
+        blend = float(np.clip(c / 5.0, 0, 1))
         cal = self.cal
-        scale = (1 - w) * cal["rmse_controls"] / cal["rmse_corroded"] + w
+        scale = (1 - blend) * cal["rmse_controls"] / cal["rmse_corroded"] + blend
         residual = scale * cal["replicate_sd"]
         model = float(np.sqrt((scale * cal["model_sd"]) ** 2 + spread[0] ** 2))
         total = float(np.sqrt(diagnostic ** 2 + model ** 2 + residual ** 2))
@@ -193,14 +243,18 @@ class Assessor:
 
         code = is456.flexure_is456(x)
         mu0 = code["mu0_knm"]
+        if belief["source"] == "measured":
+            diag_what = f"Corrosion level ±{belief['sd']:.1f} points; measure mass loss on extracted bars"
+        else:
+            diag_what = (f"Corrosion inferred from evidence (±{belief['sd']:.1f} points); "
+                         "measure mass loss on an extracted bar")
         return {
             "residual_pct": r, "low_pct": lo, "high_pct": hi, "high_raw_pct": hi_raw,
-            "upper_truncated": hi_raw > 100, "mu0_knm": mu0,
+            "upper_truncated": hi_raw > 100, "mu0_knm": mu0, "corrosion_source": belief["source"],
             "mu_res_knm": r / 100 * mu0, "mu_low_knm": lo / 100 * mu0, "mu_high_knm": hi / 100 * mu0,
             "area_loss_residual_pct": code["area_loss_residual_pct"], "mu_area_loss_knm": code["mu_area_loss_knm"],
             "uncertainty": [
-                {"source": "Diagnostic", "sd": diagnostic,
-                 "what": f"Corrosion level ±{sd_c:g} points; measure mass loss on extracted bars"},
+                {"source": "Diagnostic", "sd": diagnostic, "what": diag_what},
                 {"source": "Model", "sd": model, "what": "More test data of this kind (similar beams, same inputs)"},
                 {"source": "Residual", "sd": residual, "what": "Not reducible: scatter between identical specimens"},
             ],
@@ -212,13 +266,34 @@ class Assessor:
         upper = max(40, 5 * int(np.ceil((x["corr_pct"] + 5) / 5)))
         cs = np.arange(0, upper + 1, 2.0)
         mean, _ = self._ann(x, cs)
-        from analytical import corroded_capacity
         ana = corroded_capacity(x["b_mm"], x["D_mm"], x["cover_mm"], x["bar_dia_mm"], x["n_bars"],
                                 x["fck_mpa"], cs, x["L_mm"], x["fy_mpa"])["residual_pct"]
         return {"corr_pct": cs.tolist(), "ann_pct": mean.tolist(), "is456_pct": np.asarray(ana).tolist()}
 
-    def cautions(self, x, flex, shear):
+    def cautions(self, x, flex, shear, cond, belief):
         out = []
+        n_evidence = cond["n_instruments"] + cond["n_observations"]
+        if belief["source"] == "inferred":
+            if n_evidence == 0:
+                out.append("No corrosion measurement and no NDT or visual evidence entered: the corrosion level "
+                           "reflects only the exposure-and-age prior, so the result is very uncertain.")
+            else:
+                out.append(f"Corrosion level inferred from {n_evidence} pieces of NDT and visual evidence "
+                           f"({cond['state']}, probability {cond['state_prob']:.2f}; expected mass loss "
+                           f"{belief['mean']:.1f} ± {belief['sd']:.1f} %). The evidence model is engineering judgement "
+                           "anchored to published thresholds, not fitted to data - confirm with a measured mass loss.")
+        else:
+            measured_state = condition.state_of(x["corr_pct"])
+            p_state = float(cond["evidence_only"][condition.STATES.index(measured_state)])
+            if n_evidence >= 2 and p_state < 0.10:
+                out.append(f"The NDT and visual evidence disagrees with the measured corrosion level: it gives only "
+                           f"{p_state:.2f} probability to '{measured_state}' and points to "
+                           f"'{condition.STATES[int(np.argmax(cond['evidence_only']))]}'. The sample may not represent "
+                           "the member - check where it was taken. The rehabilitation rules act on the combined, worse "
+                           "picture.")
+            if x["corr_method"] in (None, "judgement"):
+                out.append("The corrosion level is a judgement, not a measurement - it is the input the result is "
+                           "most sensitive to. Measure mass loss on extracted bars to narrow the range.")
         ast = steel_area(x["bar_dia_mm"], x["n_bars"])
         d = effective_depth(x["D_mm"], x["cover_mm"], x["bar_dia_mm"])
         values = {**x, "rho_pct": 100 * ast / (x["b_mm"] * d)}
@@ -233,9 +308,6 @@ class Assessor:
         if flex["upper_truncated"]:
             out.append(f"The upper bound reached {flex['high_raw_pct']:.0f} % before truncation at 100 %: on this "
                        "evidence the member cannot be distinguished from an undamaged one. The lower bound governs.")
-        if x["corr_method"] in (None, "judgement"):
-            out.append("The corrosion level is a judgement, not a measurement - it is the input the result is most "
-                       "sensitive to. Measure mass loss on extracted bars to narrow the range.")
         out.append("Steel fy is not an input of the ANN (the training data do not record it); it is used only in the "
                    "IS 456 baseline that converts the residual % to kN·m.")
         if not (x.get("stirrup_dia_mm") and x.get("stirrup_spacing_mm")):
@@ -248,16 +320,26 @@ class Assessor:
 
     def assess(self, raw):
         x = parse_inputs(raw)
-        flex = self.flexure(x)
+        cond = condition.assess(x)
+        belief = self.corrosion_belief(x, cond)
+        x["corr_measured"] = belief["source"] == "measured"
+        x["corr_pct"], x["corr_sd_pp"] = (x["corr_pct"], belief["sd"]) if x["corr_measured"] else (belief["mean"], belief["sd"])
+        x.setdefault("stirrup_corr_pct", x["corr_pct"])
+
+        flex = self.flexure(x, belief)
         shear = is456.corroded_shear(x)
-        # Count what the user entered, not the defaults parse_inputs filled in.
+        checks = is456.conformity(x, flex, shear)
+        # Count what the user entered, not the defaults filled in above.
         given = sum(str(raw.get(k) or "").strip() != "" for k in COMPLETENESS_FIELDS)
         return clean({
             "inputs": x,
+            "condition": cond,
+            "corrosion": {k: belief[k] for k in ("mean", "sd", "source")},
             "flexure": flex,
             "shear": shear,
-            "checks": is456.conformity(x, flex, shear),
-            "cautions": self.cautions(x, flex, shear),
+            "checks": checks,
+            "rehabilitation": rehab.recommend(x, flex, shear, checks, cond),
+            "cautions": self.cautions(x, flex, shear, cond, belief),
             "completeness": {"given": given, "of": len(COMPLETENESS_FIELDS),
                              "pct": 100 * given / len(COMPLETENESS_FIELDS)},
             "provenance": self.provenance,
@@ -267,14 +349,17 @@ class Assessor:
         return clean({"fields": {k: {"label": v[0], "unit": v[1], "required": v[2], "min": v[3], "max": v[4]}
                                  for k, v in FIELDS.items()},
                       "exposure_classes": is456.EXPOSURE_CLASSES,
+                      "choices": CHOICE_FIELDS,
                       "corrosion_methods": {k: {"label": v[0], "sd": v[1]} for k, v in CORROSION_METHODS.items()},
-                      "worked_example": WORKED_EXAMPLE, "provenance": self.provenance})
+                      "examples": EXAMPLES, "provenance": self.provenance})
 
 
 def clean(obj):
     """Make numpy values JSON-serialisable and round floats for display."""
     if isinstance(obj, dict):
         return {k: clean(v) for k, v in obj.items()}
+    if isinstance(obj, np.ndarray):
+        return clean(obj.tolist())
     if isinstance(obj, (list, tuple)):
         return [clean(v) for v in obj]
     if isinstance(obj, (np.bool_, bool)):

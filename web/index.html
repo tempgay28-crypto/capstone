@@ -10,13 +10,24 @@
   <header class="topbar">
     <div>
       <h1>RC corrosion assessment</h1>
-      <p class="sub">Residual capacity of corroded RC flexural members · ANN + IS 456:2000</p>
+      <p class="sub">Condition, residual capacity and rehabilitation of corroded RC flexural members · ANN + IS 456:2000</p>
     </div>
-    <span class="stage">Stage 1</span>
+    <span class="stage">Stage 2</span>
   </header>
 
   <main class="layout">
     <form id="form" class="panel form" novalidate autocomplete="off">
+      <fieldset>
+        <legend>Member identification</legend>
+        <div class="grid">
+          <label class="wide"><span class="lt">Structure</span><input name="structure" maxlength="120"></label>
+          <label><span class="lt">Member reference</span><input name="member_ref" maxlength="120"></label>
+          <label class="wide"><span class="lt">Location on member</span><input name="location" maxlength="120"></label>
+          <label><span class="lt">Inspection date</span><input name="inspection_date" type="date"></label>
+          <label class="full"><span class="lt">Inspector</span><input name="inspector" maxlength="120"></label>
+        </div>
+      </fieldset>
+
       <fieldset>
         <legend>Section and materials</legend>
         <div class="grid">
@@ -38,7 +49,7 @@
           <label><span class="lt">Stirrup Ø <span class="u">mm</span></span><input name="stirrup_dia_mm" inputmode="decimal"></label>
           <label><span class="lt">Legs</span><input name="stirrup_legs" inputmode="decimal" placeholder="2"></label>
           <label><span class="lt">Spacing <span class="u">mm</span></span><input name="stirrup_spacing_mm" inputmode="decimal"></label>
-          <label><span class="lt">Stirrup f<sub>y</sub> <span class="u">MPa</span></span><input name="fy_stirrup_mpa" inputmode="decimal" placeholder="same as f&#8203;y"></label>
+          <label><span class="lt">Stirrup f<sub>y</sub> <span class="u">MPa</span></span><input name="fy_stirrup_mpa" inputmode="decimal" placeholder="same as fy"></label>
         </div>
       </fieldset>
 
@@ -53,20 +64,43 @@
       </fieldset>
 
       <fieldset>
-        <legend>Corrosion</legend>
+        <legend>Non-destructive testing</legend>
         <div class="grid">
-          <label><span class="lt">Avg. corrosion of bars <span class="u">% mass loss</span></span><input name="corr_pct" inputmode="decimal" required></label>
-          <label><span class="lt">Stirrup corrosion <span class="u">%</span></span><input name="stirrup_corr_pct" inputmode="decimal" placeholder="same as bars"></label>
-          <label class="wide"><span class="lt">How was it established?</span>
-            <select name="corr_method"><option value="">not recorded</option></select></label>
-          <label><span class="lt">Uncertainty ±1 SD <span class="u">% points</span></span><input name="corr_sd_pp" inputmode="decimal"></label>
+          <label><span class="lt">Half-cell (CSE) <span class="u">mV</span></span><input name="half_cell_mv" inputmode="decimal"></label>
+          <label><span class="lt">I<sub>corr</sub> <span class="u">µA/cm²</span></span><input name="icorr_ua_cm2" inputmode="decimal"></label>
+          <label><span class="lt">Resistivity <span class="u">kΩ·cm</span></span><input name="resistivity_kohm_cm" inputmode="decimal"></label>
+          <label><span class="lt">UPV <span class="u">km/s</span></span><input name="upv_km_s" inputmode="decimal"></label>
+          <label><span class="lt">Chloride at bar <span class="u">% cement</span></span><input name="chloride_pct_cement" inputmode="decimal"></label>
+          <label><span class="lt">Carbonation <span class="u">mm</span></span><input name="carbonation_mm" inputmode="decimal"></label>
         </div>
       </fieldset>
 
       <fieldset>
-        <legend>Observed condition</legend>
+        <legend>Visual inspection</legend>
         <div class="grid">
+          <label class="wide"><span class="lt">Rust staining</span>
+            <select name="rust_staining" data-choices><option value="">not recorded</option></select></label>
           <label><span class="lt">Max. crack width <span class="u">mm</span></span><input name="crack_width_mm" inputmode="decimal"></label>
+          <label class="full"><span class="lt">Dominant cracking pattern</span>
+            <select name="crack_pattern" data-choices><option value="">not recorded</option></select></label>
+          <label class="wide"><span class="lt">Cover condition (hammer tapping)</span>
+            <select name="cover_condition" data-choices><option value="">not recorded</option></select></label>
+          <label><span class="lt">Water ingress</span>
+            <select name="water_ingress" data-choices><option value="">not recorded</option></select></label>
+          <label class="full"><span class="lt">Exposed reinforcement</span>
+            <select name="exposed_rebar" data-choices><option value="">not recorded</option></select></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Direct corrosion measurement</legend>
+        <p class="hint">Leave blank to infer the corrosion level from the NDT and visual evidence.</p>
+        <div class="grid">
+          <label><span class="lt">Avg. mass loss of bars <span class="u">%</span></span><input name="corr_pct" inputmode="decimal"></label>
+          <label><span class="lt">Stirrup mass loss <span class="u">%</span></span><input name="stirrup_corr_pct" inputmode="decimal" placeholder="same as bars"></label>
+          <label><span class="lt">±1 SD <span class="u">% points</span></span><input name="corr_sd_pp" inputmode="decimal"></label>
+          <label class="full"><span class="lt">How was it measured?</span>
+            <select name="corr_method"><option value="">not recorded</option></select></label>
         </div>
       </fieldset>
 
@@ -80,7 +114,8 @@
 
       <div class="actions">
         <button type="submit" class="primary">Assess</button>
-        <button type="button" id="example">Worked example</button>
+        <button type="button" data-example="inspection">Example: inspection only</button>
+        <button type="button" data-example="measured">Example: measured corrosion</button>
         <button type="button" id="clear">Clear</button>
       </div>
       <p id="error" class="error" role="alert" hidden></p>
@@ -89,26 +124,59 @@
     <section id="report" class="report" aria-live="polite">
       <div class="panel empty">
         <h2>No assessment yet</h2>
-        <p>Enter the member, its corrosion level and any optional details, then press <b>Assess</b> —
-          or load the <b>Worked example</b>.</p>
-        <p class="muted">The flexural result comes from an ANN trained on published corrosion tests; shear and
-          the conformity checks follow IS 456:2000 with corrosion treated as loss of steel area.</p>
+        <p>Enter the member and whatever inspection data you have, then press <b>Assess</b> — or load one of the
+          examples.</p>
+        <p class="muted">The corrosion state is inferred from NDT and visual evidence (or taken from a measured mass
+          loss); the flexural result comes from an ANN trained on published corrosion tests; shear, the conformity
+          checks and the rehabilitation strategy follow IS 456:2000 and EN 1504-9.</p>
       </div>
     </section>
   </main>
 
   <template id="report-tpl">
+    <div class="ident" data-f="ident"></div>
+
     <div class="panel">
       <div class="panel-head">
-        <h2>Residual capacity</h2>
+        <h2>Corrosion state</h2>
         <div class="report-actions">
           <button type="button" data-act="json">Download JSON</button>
           <button type="button" data-act="print">Print</button>
         </div>
       </div>
+      <div class="state-grid">
+        <div>
+          <div class="state-name" data-f="state"></div>
+          <div class="meta" data-f="state-meta"></div>
+          <table class="kv" data-f="state-info"></table>
+        </div>
+        <div>
+          <div class="bars" data-f="state-bars"></div>
+        </div>
+      </div>
+      <details class="sub-block">
+        <summary>Evidence used <span class="muted" data-f="ev-count"></span></summary>
+        <div class="table-wrap">
+          <table class="table">
+            <thead><tr><th>Evidence</th><th>Reading</th><th>Band</th><th>Points to</th><th>Basis of the band</th></tr></thead>
+            <tbody data-f="evidence"></tbody>
+          </table>
+        </div>
+      </details>
+      <div class="sub-block">
+        <h3>Most informative next observation</h3>
+        <table class="table">
+          <thead><tr><th>Test</th><th>Type</th><th>Cost</th><th class="num">Expected gain (bits)</th></tr></thead>
+          <tbody data-f="next"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>Residual capacity</h2>
       <div class="tiles">
         <div class="tile">
-          <div class="label">Flexure — learned model</div>
+          <div class="label" data-f="r-label">Flexure — learned model</div>
           <div class="value" data-f="r"></div>
           <div class="meta" data-f="r-range"></div>
           <div class="meta" data-f="r-knm"></div>
@@ -159,6 +227,19 @@
           <tbody data-f="checks"></tbody>
         </table>
       </div>
+    </div>
+
+    <div class="panel">
+      <h2>Rehabilitation strategy</h2>
+      <div data-f="urgency"></div>
+      <div data-f="interventions"></div>
+      <p class="muted small-note">Decision support, not a design: thresholds marked "judgement" are project assumptions,
+        and each intervention needs specialist design and the current edition of the cited standard.</p>
+    </div>
+
+    <div class="panel" data-f="spec-panel">
+      <h2>Repair material specification</h2>
+      <table class="table spec"><tbody data-f="spec"></tbody></table>
     </div>
 
     <p class="provenance" data-f="prov"></p>
