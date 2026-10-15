@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RC Corrosion Assessment</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>RC corrosion assessment</h1>
+      <p class="sub">Residual capacity of corroded RC flexural members · ANN + IS 456:2000</p>
+    </div>
+    <span class="stage">Stage 1</span>
+  </header>
+
+  <main class="layout">
+    <form id="form" class="panel form" novalidate autocomplete="off">
+      <fieldset>
+        <legend>Section and materials</legend>
+        <div class="grid">
+          <label><span class="lt">Width b <span class="u">mm</span></span><input name="b_mm" inputmode="decimal" required></label>
+          <label><span class="lt">Overall depth D <span class="u">mm</span></span><input name="D_mm" inputmode="decimal" required></label>
+          <label><span class="lt">Effective span L <span class="u">mm</span></span><input name="L_mm" inputmode="decimal" required></label>
+          <label><span class="lt">Clear cover <span class="u">mm</span></span><input name="cover_mm" inputmode="decimal" required></label>
+          <label><span class="lt">Tension bar Ø <span class="u">mm</span></span><input name="bar_dia_mm" inputmode="decimal" required></label>
+          <label><span class="lt">No. of tension bars</span><input name="n_bars" inputmode="decimal" required></label>
+          <label><span class="lt">f<sub>ck</sub> <span class="u">MPa</span></span><input name="fck_mpa" inputmode="decimal" required></label>
+          <label><span class="lt">f<sub>y</sub> <span class="u">MPa</span></span><input name="fy_mpa" inputmode="decimal" value="500" required></label>
+          <label><span class="lt">Fibre content <span class="u">%</span></span><input name="fiber_pct" inputmode="decimal" placeholder="0"></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Shear reinforcement</legend>
+        <div class="grid">
+          <label><span class="lt">Stirrup Ø <span class="u">mm</span></span><input name="stirrup_dia_mm" inputmode="decimal"></label>
+          <label><span class="lt">Legs</span><input name="stirrup_legs" inputmode="decimal" placeholder="2"></label>
+          <label><span class="lt">Spacing <span class="u">mm</span></span><input name="stirrup_spacing_mm" inputmode="decimal"></label>
+          <label><span class="lt">Stirrup f<sub>y</sub> <span class="u">MPa</span></span><input name="fy_stirrup_mpa" inputmode="decimal" placeholder="same as f&#8203;y"></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Exposure and history</legend>
+        <div class="grid">
+          <label class="wide"><span class="lt">IS 456 exposure class</span>
+            <select name="exposure_class"><option value="">not recorded</option></select></label>
+          <label><span class="lt">Age <span class="u">years</span></span><input name="age_years" inputmode="decimal"></label>
+          <label><span class="lt">w/c ratio</span><input name="wc_ratio" inputmode="decimal"></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Corrosion</legend>
+        <div class="grid">
+          <label><span class="lt">Avg. corrosion of bars <span class="u">% mass loss</span></span><input name="corr_pct" inputmode="decimal" required></label>
+          <label><span class="lt">Stirrup corrosion <span class="u">%</span></span><input name="stirrup_corr_pct" inputmode="decimal" placeholder="same as bars"></label>
+          <label class="wide"><span class="lt">How was it established?</span>
+            <select name="corr_method"><option value="">not recorded</option></select></label>
+          <label><span class="lt">Uncertainty ±1 SD <span class="u">% points</span></span><input name="corr_sd_pp" inputmode="decimal"></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Observed condition</legend>
+        <div class="grid">
+          <label><span class="lt">Max. crack width <span class="u">mm</span></span><input name="crack_width_mm" inputmode="decimal"></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Factored demand</legend>
+        <div class="grid">
+          <label><span class="lt">M<sub>u</sub> <span class="u">kN·m</span></span><input name="demand_moment_knm" inputmode="decimal"></label>
+          <label><span class="lt">V<sub>u</sub> <span class="u">kN</span></span><input name="demand_shear_kn" inputmode="decimal"></label>
+        </div>
+      </fieldset>
+
+      <div class="actions">
+        <button type="submit" class="primary">Assess</button>
+        <button type="button" id="example">Worked example</button>
+        <button type="button" id="clear">Clear</button>
+      </div>
+      <p id="error" class="error" role="alert" hidden></p>
+    </form>
+
+    <section id="report" class="report" aria-live="polite">
+      <div class="panel empty">
+        <h2>No assessment yet</h2>
+        <p>Enter the member, its corrosion level and any optional details, then press <b>Assess</b> —
+          or load the <b>Worked example</b>.</p>
+        <p class="muted">The flexural result comes from an ANN trained on published corrosion tests; shear and
+          the conformity checks follow IS 456:2000 with corrosion treated as loss of steel area.</p>
+      </div>
+    </section>
+  </main>
+
+  <template id="report-tpl">
+    <div class="panel">
+      <div class="panel-head">
+        <h2>Residual capacity</h2>
+        <div class="report-actions">
+          <button type="button" data-act="json">Download JSON</button>
+          <button type="button" data-act="print">Print</button>
+        </div>
+      </div>
+      <div class="tiles">
+        <div class="tile">
+          <div class="label">Flexure — learned model</div>
+          <div class="value" data-f="r"></div>
+          <div class="meta" data-f="r-range"></div>
+          <div class="meta" data-f="r-knm"></div>
+        </div>
+        <div class="tile">
+          <div class="label">Flexure — IS 456 area loss</div>
+          <div class="value" data-f="ana"></div>
+          <div class="meta" data-f="ana-knm"></div>
+        </div>
+        <div class="tile">
+          <div class="label">Shear — code mechanics</div>
+          <div class="value" data-f="v"></div>
+          <div class="meta" data-f="v-meta"></div>
+        </div>
+        <div class="tile">
+          <div class="label">Input completeness</div>
+          <div class="value" data-f="comp"></div>
+          <div class="meta" data-f="comp-meta"></div>
+        </div>
+      </div>
+      <div class="range" data-f="rangebar"></div>
+    </div>
+
+    <div class="panel">
+      <h2>Uncertainty of the flexural estimate</h2>
+      <table class="table">
+        <thead><tr><th>Source</th><th class="num">SD (% points)</th><th>What reduces it</th></tr></thead>
+        <tbody data-f="unc"></tbody>
+      </table>
+    </div>
+
+    <div class="panel">
+      <h2>Residual flexural strength vs corrosion</h2>
+      <p class="muted small">This beam's section at other corrosion levels; the dot is the assessed state with its 90 % range.</p>
+      <div class="chart" data-f="curve"></div>
+    </div>
+
+    <div class="panel cautions">
+      <h2><span class="icon" aria-hidden="true">!</span> Cautions</h2>
+      <ul data-f="cautions"></ul>
+    </div>
+
+    <div class="panel">
+      <h2>IS 456:2000 conformity</h2>
+      <div class="table-wrap">
+        <table class="table checks">
+          <thead><tr><th>Clause</th><th>Check</th><th>Required</th><th>Actual</th><th>Verdict</th></tr></thead>
+          <tbody data-f="checks"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <p class="provenance" data-f="prov"></p>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>

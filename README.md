@@ -30,6 +30,45 @@ data (`--estimate-corrosion`, model M1) is available but unreliable – see Resu
 
 On a fresh machine: `python -m venv .venv` then `.venv\Scripts\python.exe -m pip install -r ann_model\requirements.txt`.
 
+## Web app (stage 1)
+
+```powershell
+..\.venv\Scripts\python.exe app.py          # opens http://localhost:8000 (this computer only)
+```
+
+`http://localhost:8000/?example` loads and assesses the worked example; add `&theme=light` or
+`&theme=dark` to force a theme. **Print** gives a light-theme report (save as PDF from the print
+dialog), **Download JSON** saves the full result.
+
+For one beam it reports:
+
+* **Flexure – learned model:** ANN (M3) residual strength % with a 90 % range, converted to kN·m
+  with the IS 456 design capacity of the uncorroded section. The range combines three sources,
+  each estimated from the data (see `assessment.py`):
+  * *diagnostic* – the stated uncertainty of the corrosion level, pushed through the ANN;
+  * *model* – held-out test error (16.6 points for corroded beams) minus specimen scatter;
+  * *residual* – scatter between nominally identical specimens in the same study (13.5 points,
+    from 301 replicate specimens), which no model can remove.
+  The lower bound is the operative figure: on held-out studies the ANN overestimated corroded
+  beams by 3.4 points on average.
+* **Flexure – IS 456 area loss** for comparison.
+* **Shear – code mechanics:** IS 456 cl. 40 (Tables 19, 20) with corroded tension steel and stirrups.
+* **IS 456 conformity:** cover and grade for the exposure class (Tables 16, 5), w/c ratio, cover vs
+  bar Ø, crack width (cl. 35.3.2), minimum/maximum tension steel after section loss, xu/d,
+  minimum shear steel and stirrup spacing, and capacity vs factored demand.
+* **Input completeness** and **cautions** (extrapolation, truncated upper bound, judged corrosion level, …).
+
+The corrosion-method uncertainties (±1 / 3 / 5 / 8 points) are engineering assumptions and can be
+overridden per case in the form. Stage 2 (corrosion state from NDT and visual inspection, and repair
+recommendations) is not built yet.
+
+| File | Role |
+|---|---|
+| `app.py` | Local web server (Python standard library only) |
+| `assessment.py` | Assessment engine: inputs → flexure, shear, checks, cautions |
+| `is456.py` | IS 456 tables, shear capacity and conformity checks |
+| `web/` | Page, styles and script |
+
 ## Pipeline
 
 | Step | Script | What it does |
